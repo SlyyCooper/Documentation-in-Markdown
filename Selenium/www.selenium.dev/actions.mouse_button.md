@@ -1,7 +1,7 @@
 ## Table of Contents
 
     - [Navigation](#navigation)
-- [selenium.webdriver.common.actions.mouse_button¶](#seleniumwebdrivercommonactionsmouse_button)
+- [selenium.webdriver.common.actions.mouse_button](#seleniumwebdrivercommonactionsmouse_button)
     - [Table of Contents](#table-of-contents)
     - [This Page](#this-page)
     - [Quick search](#quick-search)
@@ -14,34 +14,34 @@
   * Selenium 4.25.0 documentation »
   * selenium.webdriver.common.actions.mouse_button
 
-# selenium.webdriver.common.actions.mouse_button¶
+# selenium.webdriver.common.actions.mouse_button
 
 Classes
 
 `MouseButton`() |   
 ---|---  
   
-_class _selenium.webdriver.common.actions.mouse_button.MouseButton[source]¶
+_class _selenium.webdriver.common.actions.mouse_button.MouseButton[source]
 
     
 
-LEFT _ = 0_¶
+LEFT _ = 0_
 
     
 
-MIDDLE _ = 1_¶
+MIDDLE _ = 1_
 
     
 
-RIGHT _ = 2_¶
+RIGHT _ = 2_
 
     
 
-BACK _ = 3_¶
+BACK _ = 3_
 
     
 
-FORWARD _ = 4_¶
+FORWARD _ = 4_
 
     
 

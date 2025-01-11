@@ -1,7 +1,7 @@
 ## Table of Contents
 
     - [Navigation](#navigation)
-- [selenium.webdriver.common.selenium_manager¶](#seleniumwebdrivercommonselenium_manager)
+- [selenium.webdriver.common.selenium_manager](#seleniumwebdrivercommonselenium_manager)
     - [Table of Contents](#table-of-contents)
     - [This Page](#this-page)
     - [Quick search](#quick-search)
@@ -14,14 +14,14 @@
   * Selenium 4.25.0 documentation »
   * selenium.webdriver.common.selenium_manager
 
-# selenium.webdriver.common.selenium_manager¶
+# selenium.webdriver.common.selenium_manager
 
 Classes
 
 `SeleniumManager`() | Wrapper for getting information from the Selenium Manager binaries.  
 ---|---  
   
-_class _selenium.webdriver.common.selenium_manager.SeleniumManager[source]¶
+_class _selenium.webdriver.common.selenium_manager.SeleniumManager[source]
 
     
 
@@ -29,7 +29,7 @@ Wrapper for getting information from the Selenium Manager binaries.
 
 This implementation is still in beta, and may change.
 
-binary_paths(_args : List_) -> dict[source]¶
+binary_paths(_args : List_) -> dict[source]
 
     
 

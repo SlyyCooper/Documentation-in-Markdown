@@ -1,7 +1,7 @@
 ## Table of Contents
 
     - [Navigation](#navigation)
-- [selenium.webdriver.common.desired_capabilities¶](#seleniumwebdrivercommondesired_capabilities)
+- [selenium.webdriver.common.desired_capabilities](#seleniumwebdrivercommondesired_capabilities)
     - [Table of Contents](#table-of-contents)
     - [This Page](#this-page)
     - [Quick search](#quick-search)
@@ -14,7 +14,7 @@
   * Selenium 4.25.0 documentation »
   * selenium.webdriver.common.desired_capabilities
 
-# selenium.webdriver.common.desired_capabilities¶
+# selenium.webdriver.common.desired_capabilities
 
 The Desired Capabilities implementation.
 
@@ -24,7 +24,7 @@ Classes
 ---|---  
   
 _class
-_selenium.webdriver.common.desired_capabilities.DesiredCapabilities[source]¶
+_selenium.webdriver.common.desired_capabilities.DesiredCapabilities[source]
 
     
 
@@ -56,49 +56,49 @@ Note: Always use ‘.copy()’ on the DesiredCapabilities object to avoid the si
 effects of altering the Global class instance.
 
 FIREFOX _ = {'acceptInsecureCerts': True, 'browserName': 'firefox',
-'moz:debuggerAddress': True}_¶
+'moz:debuggerAddress': True}_
 
     
 
 INTERNETEXPLORER _ = {'browserName': 'internet explorer', 'platformName':
-'windows'}_¶
+'windows'}_
 
     
 
-EDGE _ = {'browserName': 'MicrosoftEdge'}_¶
+EDGE _ = {'browserName': 'MicrosoftEdge'}_
 
     
 
-CHROME _ = {'browserName': 'chrome'}_¶
+CHROME _ = {'browserName': 'chrome'}_
 
     
 
-SAFARI _ = {'browserName': 'safari', 'platformName': 'mac'}_¶
+SAFARI _ = {'browserName': 'safari', 'platformName': 'mac'}_
 
     
 
-HTMLUNIT _ = {'browserName': 'htmlunit', 'platform': 'ANY', 'version': ''}_¶
+HTMLUNIT _ = {'browserName': 'htmlunit', 'platform': 'ANY', 'version': ''}_
 
     
 
 HTMLUNITWITHJS _ = {'browserName': 'htmlunit', 'javascriptEnabled': True,
-'platform': 'ANY', 'version': 'firefox'}_¶
+'platform': 'ANY', 'version': 'firefox'}_
 
     
 
-IPHONE _ = {'browserName': 'iPhone', 'platform': 'mac', 'version': ''}_¶
+IPHONE _ = {'browserName': 'iPhone', 'platform': 'mac', 'version': ''}_
 
     
 
-IPAD _ = {'browserName': 'iPad', 'platform': 'mac', 'version': ''}_¶
+IPAD _ = {'browserName': 'iPad', 'platform': 'mac', 'version': ''}_
 
     
 
-WEBKITGTK _ = {'browserName': 'MiniBrowser'}_¶
+WEBKITGTK _ = {'browserName': 'MiniBrowser'}_
 
     
 
-WPEWEBKIT _ = {'browserName': 'MiniBrowser'}_¶
+WPEWEBKIT _ = {'browserName': 'MiniBrowser'}_
 
     
 

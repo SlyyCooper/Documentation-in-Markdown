@@ -1,7 +1,7 @@
 ## Table of Contents
 
     - [Navigation](#navigation)
-- [selenium.webdriver.common.action_chains¶](#seleniumwebdrivercommonaction_chains)
+- [selenium.webdriver.common.action_chains](#seleniumwebdrivercommonaction_chains)
     - [Table of Contents](#table-of-contents)
     - [This Page](#this-page)
     - [Quick search](#quick-search)
@@ -14,7 +14,7 @@
   * Selenium 4.25.0 documentation »
   * selenium.webdriver.common.action_chains
 
-# selenium.webdriver.common.action_chains¶
+# selenium.webdriver.common.action_chains
 
 The ActionChains implementation.
 
@@ -23,7 +23,7 @@ Classes
 `ActionChains`(driver[, duration, devices]) | ActionChains are a way to automate low level interactions such as mouse movements, mouse button actions, key press, and context menu interactions.  
 ---|---  
   
-_class _selenium.webdriver.common.action_chains.ActionChains(_driver : WebDriver_, _duration : int = 250_, _devices : list[AnyDevice] | None = None_)[source]¶
+_class _selenium.webdriver.common.action_chains.ActionChains(_driver : WebDriver_, _duration : int = 250_, _devices : list[AnyDevice] | None = None_)[source]
     
 
 ActionChains are a way to automate low level interactions such as mouse
@@ -75,19 +75,19 @@ Args:
 
   * duration: override the default 250 msecs of DEFAULT_MOVE_DURATION in PointerInput
 
-perform() -> None[source]¶
+perform() -> None[source]
 
     
 
 Performs all stored actions.
 
-reset_actions() -> None[source]¶
+reset_actions() -> None[source]
 
     
 
 Clears actions that are already stored locally and on the remote end.
 
-click(_on_element : WebElement | None = None_) -> ActionChains[source]¶
+click(_on_element : WebElement | None = None_) -> ActionChains[source]
     
 
 Clicks an element.
@@ -98,7 +98,7 @@ Args:
 
   * on_element: The element to click. If None, clicks on current mouse position.
 
-click_and_hold(_on_element : WebElement | None = None_) -> ActionChains[source]¶
+click_and_hold(_on_element : WebElement | None = None_) -> ActionChains[source]
     
 
 Holds down the left mouse button on an element.
@@ -109,7 +109,7 @@ Args:
 
   * on_element: The element to mouse down. If None, clicks on current mouse position.
 
-context_click(_on_element : WebElement | None = None_) -> ActionChains[source]¶
+context_click(_on_element : WebElement | None = None_) -> ActionChains[source]
     
 
 Performs a context-click (right click) on an element.
@@ -120,7 +120,7 @@ Args:
 
   * on_element: The element to context-click. If None, clicks on current mouse position.
 
-double_click(_on_element : WebElement | None = None_) -> ActionChains[source]¶
+double_click(_on_element : WebElement | None = None_) -> ActionChains[source]
     
 
 Double-clicks an element.
@@ -132,7 +132,7 @@ Args:
   * on_element: The element to double-click. If None, clicks on current mouse position.
 
 drag_and_drop(_source : WebElement_, _target : WebElement_) ->
-ActionChains[source]¶
+ActionChains[source]
 
     
 
@@ -148,7 +148,7 @@ Args:
   * target: The element to mouse up.
 
 drag_and_drop_by_offset(_source : WebElement_, _xoffset : int_, _yoffset :
-int_) -> ActionChains[source]¶
+int_) -> ActionChains[source]
 
     
 
@@ -165,7 +165,7 @@ Args:
 
   * yoffset: Y offset to move to.
 
-key_down(_value : str_, _element : WebElement | None = None_) -> ActionChains[source]¶
+key_down(_value : str_, _element : WebElement | None = None_) -> ActionChains[source]
     
 
 Sends a key press only, without releasing it. Should only be used with
@@ -186,7 +186,7 @@ Example, pressing ctrl+c:
     ActionChains(driver).key_down(Keys.CONTROL).send_keys('c').key_up(Keys.CONTROL).perform()
     
 
-key_up(_value : str_, _element : WebElement | None = None_) -> ActionChains[source]¶
+key_up(_value : str_, _element : WebElement | None = None_) -> ActionChains[source]
     
 
 Releases a modifier key.
@@ -206,7 +206,7 @@ Example, pressing ctrl+c:
     ActionChains(driver).key_down(Keys.CONTROL).send_keys('c').key_up(Keys.CONTROL).perform()
     
 
-move_by_offset(_xoffset : int_, _yoffset : int_) -> ActionChains[source]¶
+move_by_offset(_xoffset : int_, _yoffset : int_) -> ActionChains[source]
 
     
 
@@ -220,7 +220,7 @@ Args:
 
   * yoffset: Y offset to move to, as a positive or negative integer.
 
-move_to_element(_to_element : WebElement_) -> ActionChains[source]¶
+move_to_element(_to_element : WebElement_) -> ActionChains[source]
 
     
 
@@ -233,7 +233,7 @@ Args:
   * to_element: The WebElement to move to.
 
 move_to_element_with_offset(_to_element : WebElement_, _xoffset : int_,
-_yoffset : int_) -> ActionChains[source]¶
+_yoffset : int_) -> ActionChains[source]
 
     
 
@@ -250,12 +250,12 @@ Args:
 
   * yoffset: Y offset to move to, as a positive or negative integer.
 
-pause(_seconds : float | int_) -> ActionChains[source]¶
+pause(_seconds : float | int_) -> ActionChains[source]
     
 
 Pause all inputs for the specified duration in seconds.
 
-release(_on_element : WebElement | None = None_) -> ActionChains[source]¶
+release(_on_element : WebElement | None = None_) -> ActionChains[source]
     
 
 Releasing a held mouse button on an element.
@@ -266,7 +266,7 @@ Args:
 
   * on_element: The element to mouse up. If None, releases on current mouse position.
 
-send_keys(_* keys_to_send: str_) -> ActionChains[source]¶
+send_keys(_* keys_to_send: str_) -> ActionChains[source]
 
     
 
@@ -279,7 +279,7 @@ Args:
   * keys_to_send: The keys to send. Modifier keys constants can be found in the ‘Keys’ class.
 
 send_keys_to_element(_element : WebElement_, _* keys_to_send: str_) ->
-ActionChains[source]¶
+ActionChains[source]
 
     
 
@@ -293,7 +293,7 @@ Args:
 
   * keys_to_send: The keys to send. Modifier keys constants can be found in the ‘Keys’ class.
 
-scroll_to_element(_element : WebElement_) -> ActionChains[source]¶
+scroll_to_element(_element : WebElement_) -> ActionChains[source]
 
     
 
@@ -306,7 +306,7 @@ Args:
 
   * element: Which element to scroll into the viewport.
 
-scroll_by_amount(_delta_x : int_, _delta_y : int_) -> ActionChains[source]¶
+scroll_by_amount(_delta_x : int_, _delta_y : int_) -> ActionChains[source]
 
     
 
@@ -322,7 +322,7 @@ Args:
   * delta_y: Distance along Y axis to scroll using the wheel. A negative value scrolls up.
 
 scroll_from_origin(_scroll_origin : ScrollOrigin_, _delta_x : int_, _delta_y :
-int_) -> ActionChains[source]¶
+int_) -> ActionChains[source]
 
     
 

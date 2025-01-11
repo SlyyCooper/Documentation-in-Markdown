@@ -1,27 +1,27 @@
 ## Table of Contents
 
     - [Navigation](#navigation)
-- [selenium.webdriver.common.proxy¶](#seleniumwebdrivercommonproxy)
-  - [Usage¶](#usage)
-  - [Parameter¶](#parameter)
-  - [Usage¶](#usage)
-  - [Parameters¶](#parameters)
-  - [Usage¶](#usage)
-  - [Parameters¶](#parameters)
-  - [Usage¶](#usage)
-  - [Parameters¶](#parameters)
-  - [Usage¶](#usage)
-  - [Parameter¶](#parameter)
-  - [Usage¶](#usage)
-  - [Parameters¶](#parameters)
-  - [Usage¶](#usage)
-  - [Parameter¶](#parameter)
-  - [Usage¶](#usage)
-  - [Parameter¶](#parameter)
-  - [Usage¶](#usage)
-  - [Parameter¶](#parameter)
-  - [Usage¶](#usage)
-  - [Parameter¶](#parameter)
+- [selenium.webdriver.common.proxy](#seleniumwebdrivercommonproxy)
+  - [Usage](#usage)
+  - [Parameter](#parameter)
+  - [Usage](#usage)
+  - [Parameters](#parameters)
+  - [Usage](#usage)
+  - [Parameters](#parameters)
+  - [Usage](#usage)
+  - [Parameters](#parameters)
+  - [Usage](#usage)
+  - [Parameter](#parameter)
+  - [Usage](#usage)
+  - [Parameters](#parameters)
+  - [Usage](#usage)
+  - [Parameter](#parameter)
+  - [Usage](#usage)
+  - [Parameter](#parameter)
+  - [Usage](#usage)
+  - [Parameter](#parameter)
+  - [Usage](#usage)
+  - [Parameter](#parameter)
     - [Table of Contents](#table-of-contents)
     - [This Page](#this-page)
     - [Quick search](#quick-search)
@@ -34,7 +34,7 @@
   * Selenium 4.25.0 documentation »
   * selenium.webdriver.common.proxy
 
-# selenium.webdriver.common.proxy¶
+# selenium.webdriver.common.proxy
 
 The Proxy implementation.
 
@@ -45,17 +45,17 @@ Classes
 `ProxyType`() | Set of possible types of proxy.  
 `ProxyTypeFactory`() | Factory for proxy types.  
   
-_class _selenium.webdriver.common.proxy.ProxyTypeFactory[source]¶
+_class _selenium.webdriver.common.proxy.ProxyTypeFactory[source]
 
     
 
 Factory for proxy types.
 
-_static _make(_ff_value_ , _string_)[source]¶
+_static _make(_ff_value_ , _string_)[source]
 
     
 
-_class _selenium.webdriver.common.proxy.ProxyType[source]¶
+_class _selenium.webdriver.common.proxy.ProxyType[source]
 
     
 
@@ -64,39 +64,39 @@ Set of possible types of proxy.
 Each proxy type has 2 properties: ‘ff_value’ is value of Firefox profile
 preference, ‘string’ is id of proxy type.
 
-DIRECT _ = {'ff_value': 0, 'string': 'DIRECT'}_¶
+DIRECT _ = {'ff_value': 0, 'string': 'DIRECT'}_
 
     
 
-MANUAL _ = {'ff_value': 1, 'string': 'MANUAL'}_¶
+MANUAL _ = {'ff_value': 1, 'string': 'MANUAL'}_
 
     
 
-PAC _ = {'ff_value': 2, 'string': 'PAC'}_¶
+PAC _ = {'ff_value': 2, 'string': 'PAC'}_
 
     
 
-RESERVED_1 _ = {'ff_value': 3, 'string': 'RESERVED1'}_¶
+RESERVED_1 _ = {'ff_value': 3, 'string': 'RESERVED1'}_
 
     
 
-AUTODETECT _ = {'ff_value': 4, 'string': 'AUTODETECT'}_¶
+AUTODETECT _ = {'ff_value': 4, 'string': 'AUTODETECT'}_
 
     
 
-SYSTEM _ = {'ff_value': 5, 'string': 'SYSTEM'}_¶
+SYSTEM _ = {'ff_value': 5, 'string': 'SYSTEM'}_
 
     
 
-UNSPECIFIED _ = {'ff_value': 6, 'string': 'UNSPECIFIED'}_¶
+UNSPECIFIED _ = {'ff_value': 6, 'string': 'UNSPECIFIED'}_
 
     
 
-_classmethod _load(_value_)[source]¶
+_classmethod _load(_value_)[source]
 
     
 
-_class _selenium.webdriver.common.proxy.Proxy(_raw =None_)[source]¶
+_class _selenium.webdriver.common.proxy.Proxy(_raw =None_)[source]
 
     
 
@@ -110,53 +110,53 @@ Args:
 
   * raw: raw proxy data. If None, default class values are used.
 
-proxyType _ = {'ff_value': 6, 'string': 'UNSPECIFIED'}_¶
+proxyType _ = {'ff_value': 6, 'string': 'UNSPECIFIED'}_
 
     
 
-autodetect _ = False_¶
+autodetect _ = False_
 
     
 
-ftpProxy _ = ''_¶
+ftpProxy _ = ''_
 
     
 
-httpProxy _ = ''_¶
+httpProxy _ = ''_
 
     
 
-noProxy _ = ''_¶
+noProxy _ = ''_
 
     
 
-proxyAutoconfigUrl _ = ''_¶
+proxyAutoconfigUrl _ = ''_
 
     
 
-socksProxy _ = ''_¶
+socksProxy _ = ''_
 
     
 
-socksUsername _ = ''_¶
+socksUsername _ = ''_
 
     
 
-socksPassword _ = ''_¶
+socksPassword _ = ''_
 
     
 
-socksVersion _ = None_¶
+socksVersion _ = None_
 
     
 
-ssl_proxy¶
+ssl_proxy
 
     
 
 Gets and Sets ssl_proxy
 
-## Usage¶
+## Usage
 
   * Get
     
@@ -166,17 +166,17 @@ Gets and Sets ssl_proxy
     
     * self.ssl_proxy = value
 
-## Parameter¶
+## Parameter
 
 value: str
 
-ftp_proxy¶
+ftp_proxy
 
     
 
 Gets and Sets ftp_proxy
 
-## Usage¶
+## Usage
 
   * Get
     
@@ -186,17 +186,17 @@ Gets and Sets ftp_proxy
     
     * self.ftp_proxy = value
 
-## Parameters¶
+## Parameters
 
 value: str
 
-http_proxy¶
+http_proxy
 
     
 
 Gets and Sets http_proxy
 
-## Usage¶
+## Usage
 
   * Get
     
@@ -206,17 +206,17 @@ Gets and Sets http_proxy
     
     * self.http_proxy = value
 
-## Parameters¶
+## Parameters
 
 value: str
 
-no_proxy¶
+no_proxy
 
     
 
 Gets and Sets no_proxy
 
-## Usage¶
+## Usage
 
   * Get
     
@@ -226,17 +226,17 @@ Gets and Sets no_proxy
     
     * self.no_proxy = value
 
-## Parameters¶
+## Parameters
 
 value: str
 
-proxy_autoconfig_url¶
+proxy_autoconfig_url
 
     
 
 Gets and Sets proxy_autoconfig_url
 
-## Usage¶
+## Usage
 
   * Get
     
@@ -246,21 +246,21 @@ Gets and Sets proxy_autoconfig_url
     
     * self.proxy_autoconfig_url = value
 
-## Parameter¶
+## Parameter
 
 value: str
 
-sslProxy _ = ''_¶
+sslProxy _ = ''_
 
     
 
-auto_detect¶
+auto_detect
 
     
 
 Gets and Sets auto_detect
 
-## Usage¶
+## Usage
 
   * Get
     
@@ -270,17 +270,17 @@ Gets and Sets auto_detect
     
     * self.auto_detect = value
 
-## Parameters¶
+## Parameters
 
 value: str
 
-socks_proxy¶
+socks_proxy
 
     
 
 Gets and Sets socks_proxy
 
-## Usage¶
+## Usage
 
   * Get
     
@@ -290,17 +290,17 @@ Gets and Sets socks_proxy
     
     * self.socks_proxy = value
 
-## Parameter¶
+## Parameter
 
 value: str
 
-socks_username¶
+socks_username
 
     
 
 Gets and Sets socks_password
 
-## Usage¶
+## Usage
 
   * Get
     
@@ -310,17 +310,17 @@ Gets and Sets socks_password
     
     * self.socks_password = value
 
-## Parameter¶
+## Parameter
 
 value: str
 
-socks_password¶
+socks_password
 
     
 
 Gets and Sets socks_password
 
-## Usage¶
+## Usage
 
   * Get
     
@@ -330,17 +330,17 @@ Gets and Sets socks_password
     
     * self.socks_password = value
 
-## Parameter¶
+## Parameter
 
 value: str
 
-socks_version¶
+socks_version
 
     
 
 Gets and Sets socks_version
 
-## Usage¶
+## Usage
 
   * Get
     
@@ -350,17 +350,17 @@ Gets and Sets socks_version
     
     * self.socks_version = value
 
-## Parameter¶
+## Parameter
 
 value: str
 
-_property _proxy_type¶
+_property _proxy_type
 
     
 
 Returns proxy type as ProxyType.
 
-to_capabilities()[source]¶
+to_capabilities()[source]
 
     
 

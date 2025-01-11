@@ -1,7 +1,7 @@
 ## Table of Contents
 
     - [Navigation](#navigation)
-- [selenium.webdriver.common.keys¶](#seleniumwebdrivercommonkeys)
+- [selenium.webdriver.common.keys](#seleniumwebdrivercommonkeys)
     - [Table of Contents](#table-of-contents)
     - [This Page](#this-page)
     - [Quick search](#quick-search)
@@ -14,7 +14,7 @@
   * Selenium 4.25.0 documentation »
   * selenium.webdriver.common.keys
 
-# selenium.webdriver.common.keys¶
+# selenium.webdriver.common.keys
 
 The Keys implementation.
 
@@ -23,269 +23,269 @@ Classes
 `Keys`() | Set of special keys codes.  
 ---|---  
   
-_class _selenium.webdriver.common.keys.Keys[source]¶
+_class _selenium.webdriver.common.keys.Keys[source]
 
     
 
 Set of special keys codes.
 
-NULL _ = '\ue000'_¶
+NULL _ = '\ue000'_
 
     
 
-CANCEL _ = '\ue001'_¶
+CANCEL _ = '\ue001'_
 
     
 
-HELP _ = '\ue002'_¶
+HELP _ = '\ue002'_
 
     
 
-BACKSPACE _ = '\ue003'_¶
+BACKSPACE _ = '\ue003'_
 
     
 
-BACK_SPACE _ = '\ue003'_¶
+BACK_SPACE _ = '\ue003'_
 
     
 
-TAB _ = '\ue004'_¶
+TAB _ = '\ue004'_
 
     
 
-CLEAR _ = '\ue005'_¶
+CLEAR _ = '\ue005'_
 
     
 
-RETURN _ = '\ue006'_¶
+RETURN _ = '\ue006'_
 
     
 
-ENTER _ = '\ue007'_¶
+ENTER _ = '\ue007'_
 
     
 
-SHIFT _ = '\ue008'_¶
+SHIFT _ = '\ue008'_
 
     
 
-LEFT_SHIFT _ = '\ue008'_¶
+LEFT_SHIFT _ = '\ue008'_
 
     
 
-CONTROL _ = '\ue009'_¶
+CONTROL _ = '\ue009'_
 
     
 
-LEFT_CONTROL _ = '\ue009'_¶
+LEFT_CONTROL _ = '\ue009'_
 
     
 
-ALT _ = '\ue00a'_¶
+ALT _ = '\ue00a'_
 
     
 
-LEFT_ALT _ = '\ue00a'_¶
+LEFT_ALT _ = '\ue00a'_
 
     
 
-PAUSE _ = '\ue00b'_¶
+PAUSE _ = '\ue00b'_
 
     
 
-ESCAPE _ = '\ue00c'_¶
+ESCAPE _ = '\ue00c'_
 
     
 
-SPACE _ = '\ue00d'_¶
+SPACE _ = '\ue00d'_
 
     
 
-PAGE_UP _ = '\ue00e'_¶
+PAGE_UP _ = '\ue00e'_
 
     
 
-PAGE_DOWN _ = '\ue00f'_¶
+PAGE_DOWN _ = '\ue00f'_
 
     
 
-END _ = '\ue010'_¶
+END _ = '\ue010'_
 
     
 
-HOME _ = '\ue011'_¶
+HOME _ = '\ue011'_
 
     
 
-LEFT _ = '\ue012'_¶
+LEFT _ = '\ue012'_
 
     
 
-ARROW_LEFT _ = '\ue012'_¶
+ARROW_LEFT _ = '\ue012'_
 
     
 
-UP _ = '\ue013'_¶
+UP _ = '\ue013'_
 
     
 
-ARROW_UP _ = '\ue013'_¶
+ARROW_UP _ = '\ue013'_
 
     
 
-RIGHT _ = '\ue014'_¶
+RIGHT _ = '\ue014'_
 
     
 
-ARROW_RIGHT _ = '\ue014'_¶
+ARROW_RIGHT _ = '\ue014'_
 
     
 
-DOWN _ = '\ue015'_¶
+DOWN _ = '\ue015'_
 
     
 
-ARROW_DOWN _ = '\ue015'_¶
+ARROW_DOWN _ = '\ue015'_
 
     
 
-INSERT _ = '\ue016'_¶
+INSERT _ = '\ue016'_
 
     
 
-DELETE _ = '\ue017'_¶
+DELETE _ = '\ue017'_
 
     
 
-SEMICOLON _ = '\ue018'_¶
+SEMICOLON _ = '\ue018'_
 
     
 
-EQUALS _ = '\ue019'_¶
+EQUALS _ = '\ue019'_
 
     
 
-NUMPAD0 _ = '\ue01a'_¶
+NUMPAD0 _ = '\ue01a'_
 
     
 
-NUMPAD1 _ = '\ue01b'_¶
+NUMPAD1 _ = '\ue01b'_
 
     
 
-NUMPAD2 _ = '\ue01c'_¶
+NUMPAD2 _ = '\ue01c'_
 
     
 
-NUMPAD3 _ = '\ue01d'_¶
+NUMPAD3 _ = '\ue01d'_
 
     
 
-NUMPAD4 _ = '\ue01e'_¶
+NUMPAD4 _ = '\ue01e'_
 
     
 
-NUMPAD5 _ = '\ue01f'_¶
+NUMPAD5 _ = '\ue01f'_
 
     
 
-NUMPAD6 _ = '\ue020'_¶
+NUMPAD6 _ = '\ue020'_
 
     
 
-NUMPAD7 _ = '\ue021'_¶
+NUMPAD7 _ = '\ue021'_
 
     
 
-NUMPAD8 _ = '\ue022'_¶
+NUMPAD8 _ = '\ue022'_
 
     
 
-NUMPAD9 _ = '\ue023'_¶
+NUMPAD9 _ = '\ue023'_
 
     
 
-MULTIPLY _ = '\ue024'_¶
+MULTIPLY _ = '\ue024'_
 
     
 
-ADD _ = '\ue025'_¶
+ADD _ = '\ue025'_
 
     
 
-SEPARATOR _ = '\ue026'_¶
+SEPARATOR _ = '\ue026'_
 
     
 
-SUBTRACT _ = '\ue027'_¶
+SUBTRACT _ = '\ue027'_
 
     
 
-DECIMAL _ = '\ue028'_¶
+DECIMAL _ = '\ue028'_
 
     
 
-DIVIDE _ = '\ue029'_¶
+DIVIDE _ = '\ue029'_
 
     
 
-F1 _ = '\ue031'_¶
+F1 _ = '\ue031'_
 
     
 
-F2 _ = '\ue032'_¶
+F2 _ = '\ue032'_
 
     
 
-F3 _ = '\ue033'_¶
+F3 _ = '\ue033'_
 
     
 
-F4 _ = '\ue034'_¶
+F4 _ = '\ue034'_
 
     
 
-F5 _ = '\ue035'_¶
+F5 _ = '\ue035'_
 
     
 
-F6 _ = '\ue036'_¶
+F6 _ = '\ue036'_
 
     
 
-F7 _ = '\ue037'_¶
+F7 _ = '\ue037'_
 
     
 
-F8 _ = '\ue038'_¶
+F8 _ = '\ue038'_
 
     
 
-F9 _ = '\ue039'_¶
+F9 _ = '\ue039'_
 
     
 
-F10 _ = '\ue03a'_¶
+F10 _ = '\ue03a'_
 
     
 
-F11 _ = '\ue03b'_¶
+F11 _ = '\ue03b'_
 
     
 
-F12 _ = '\ue03c'_¶
+F12 _ = '\ue03c'_
 
     
 
-META _ = '\ue03d'_¶
+META _ = '\ue03d'_
 
     
 
-COMMAND _ = '\ue03d'_¶
+COMMAND _ = '\ue03d'_
 
     
 
-ZENKAKU_HANKAKU _ = '\ue040'_¶
+ZENKAKU_HANKAKU _ = '\ue040'_
 
     
 

@@ -1,7 +1,7 @@
 ## Table of Contents
 
     - [Navigation](#navigation)
-- [selenium.webdriver.common.actions.key_actions¶](#seleniumwebdrivercommonactionskey_actions)
+- [selenium.webdriver.common.actions.key_actions](#seleniumwebdrivercommonactionskey_actions)
     - [Table of Contents](#table-of-contents)
     - [This Page](#this-page)
     - [Quick search](#quick-search)
@@ -14,32 +14,32 @@
   * Selenium 4.25.0 documentation »
   * selenium.webdriver.common.actions.key_actions
 
-# selenium.webdriver.common.actions.key_actions¶
+# selenium.webdriver.common.actions.key_actions
 
 Classes
 
 `KeyActions`([source]) |   
 ---|---  
   
-_class _selenium.webdriver.common.actions.key_actions.KeyActions(_source : KeyInput | PointerInput | WheelInput | None = None_)[source]¶
+_class _selenium.webdriver.common.actions.key_actions.KeyActions(_source : KeyInput | PointerInput | WheelInput | None = None_)[source]
     
 
-key_down(_letter : str_) -> KeyActions[source]¶
-
-    
-
-key_up(_letter : str_) -> KeyActions[source]¶
+key_down(_letter : str_) -> KeyActions[source]
 
     
 
-pause(_duration : int = 0_) -> KeyActions[source]¶
+key_up(_letter : str_) -> KeyActions[source]
 
     
 
-send_keys(_text : str | list_) -> KeyActions[source]¶
+pause(_duration : int = 0_) -> KeyActions[source]
+
     
 
-PAUSE _ = 'pause'_¶
+send_keys(_text : str | list_) -> KeyActions[source]
+    
+
+PAUSE _ = 'pause'_
 
     
 

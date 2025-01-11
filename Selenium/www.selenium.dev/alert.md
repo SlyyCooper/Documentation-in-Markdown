@@ -1,7 +1,7 @@
 ## Table of Contents
 
     - [Navigation](#navigation)
-- [selenium.webdriver.common.alert¶](#seleniumwebdrivercommonalert)
+- [selenium.webdriver.common.alert](#seleniumwebdrivercommonalert)
     - [Table of Contents](#table-of-contents)
     - [This Page](#this-page)
     - [Quick search](#quick-search)
@@ -14,7 +14,7 @@
   * Selenium 4.25.0 documentation »
   * selenium.webdriver.common.alert
 
-# selenium.webdriver.common.alert¶
+# selenium.webdriver.common.alert
 
 The Alert implementation.
 
@@ -23,7 +23,7 @@ Classes
 `Alert`(driver) | Allows to work with alerts.  
 ---|---  
   
-_class _selenium.webdriver.common.alert.Alert(_driver_)[source]¶
+_class _selenium.webdriver.common.alert.Alert(_driver_)[source]
 
     
 
@@ -65,19 +65,19 @@ Args:
 
   * driver: The WebDriver instance which performs user actions.
 
-_property _text _: str_¶
+_property _text _: str_
 
     
 
 Gets the text of the Alert.
 
-dismiss() -> None[source]¶
+dismiss() -> None[source]
 
     
 
 Dismisses the alert available.
 
-accept() -> None[source]¶
+accept() -> None[source]
 
     
 
@@ -91,7 +91,7 @@ Usage:
     Alert(driver).accept() # Confirm a alert dialog.
     
 
-send_keys(_keysToSend : str_) -> None[source]¶
+send_keys(_keysToSend : str_) -> None[source]
 
     
 

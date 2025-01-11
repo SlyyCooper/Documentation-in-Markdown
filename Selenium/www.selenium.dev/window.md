@@ -1,7 +1,7 @@
 ## Table of Contents
 
     - [Navigation](#navigation)
-- [selenium.webdriver.common.window¶](#seleniumwebdrivercommonwindow)
+- [selenium.webdriver.common.window](#seleniumwebdrivercommonwindow)
     - [Table of Contents](#table-of-contents)
     - [This Page](#this-page)
     - [Quick search](#quick-search)
@@ -14,7 +14,7 @@
   * Selenium 4.25.0 documentation »
   * selenium.webdriver.common.window
 
-# selenium.webdriver.common.window¶
+# selenium.webdriver.common.window
 
 The WindowTypes implementation.
 
@@ -23,17 +23,17 @@ Classes
 `WindowTypes`() | Set of supported window types.  
 ---|---  
   
-_class _selenium.webdriver.common.window.WindowTypes[source]¶
+_class _selenium.webdriver.common.window.WindowTypes[source]
 
     
 
 Set of supported window types.
 
-TAB _ = 'tab'_¶
+TAB _ = 'tab'_
 
     
 
-WINDOW _ = 'window'_¶
+WINDOW _ = 'window'_
 
     
 

@@ -1,7 +1,7 @@
 ## Table of Contents
 
     - [Navigation](#navigation)
-- [selenium.webdriver.common.bidi.cdp¶](#seleniumwebdrivercommonbidicdp)
+- [selenium.webdriver.common.bidi.cdp](#seleniumwebdrivercommonbidicdp)
     - [Table of Contents](#table-of-contents)
     - [This Page](#this-page)
     - [Quick search](#quick-search)
@@ -14,7 +14,7 @@
   * Selenium 4.25.0 documentation »
   * selenium.webdriver.common.bidi.cdp
 
-# selenium.webdriver.common.bidi.cdp¶
+# selenium.webdriver.common.bidi.cdp
 
 Functions
 
@@ -44,14 +44,14 @@ Exceptions
 `CdpConnectionClosed`(reason) | Raised when a public method is called on a closed CDP connection.  
 `InternalError` | This exception is only raised when there is faulty logic in TrioCDP or the integration with PyCDP.  
   
-selenium.webdriver.common.bidi.cdp.import_devtools(_ver_)[source]¶
+selenium.webdriver.common.bidi.cdp.import_devtools(_ver_)[source]
 
     
 
 Attempt to load the current latest available devtools into the module cache
 for use later.
 
-selenium.webdriver.common.bidi.cdp.get_connection_context(_fn_name_)[source]¶
+selenium.webdriver.common.bidi.cdp.get_connection_context(_fn_name_)[source]
 
     
 
@@ -60,7 +60,7 @@ Look up the current connection.
 If there is no current connection, raise a `RuntimeError` with a helpful
 message.
 
-selenium.webdriver.common.bidi.cdp.get_session_context(_fn_name_)[source]¶
+selenium.webdriver.common.bidi.cdp.get_session_context(_fn_name_)[source]
 
     
 
@@ -68,21 +68,21 @@ Look up the current session.
 
 If there is no current session, raise a `RuntimeError` with a helpful message.
 
-selenium.webdriver.common.bidi.cdp.connection_context(_connection_)[source]¶
+selenium.webdriver.common.bidi.cdp.connection_context(_connection_)[source]
 
     
 
 This context manager installs `connection` as the session context for the
 current Trio task.
 
-selenium.webdriver.common.bidi.cdp.session_context(_session_)[source]¶
+selenium.webdriver.common.bidi.cdp.session_context(_session_)[source]
 
     
 
 This context manager installs `session` as the session context for the current
 Trio task.
 
-selenium.webdriver.common.bidi.cdp.set_global_connection(_connection_)[source]¶
+selenium.webdriver.common.bidi.cdp.set_global_connection(_connection_)[source]
 
     
 
@@ -92,7 +92,7 @@ connection for all tasks.
 This is generally not recommended, except it may be necessary in certain use
 cases such as running inside Jupyter notebook.
 
-selenium.webdriver.common.bidi.cdp.set_global_session(_session_)[source]¶
+selenium.webdriver.common.bidi.cdp.set_global_session(_session_)[source]
 
     
 
@@ -102,25 +102,25 @@ session for all tasks.
 This is generally not recommended, except it may be necessary in certain use
 cases such as running inside Jupyter notebook.
 
-_exception _selenium.webdriver.common.bidi.cdp.BrowserError(_obj_)[source]¶
+_exception _selenium.webdriver.common.bidi.cdp.BrowserError(_obj_)[source]
 
     
 
 This exception is raised when the browser’s response to a command indicates
 that an error occurred.
 
-args¶
+args
 
     
 
-with_traceback()¶
+with_traceback()
 
     
 
 Exception.with_traceback(tb) – set self.__traceback__ to tb and return self.
 
 _exception
-_selenium.webdriver.common.bidi.cdp.CdpConnectionClosed(_reason_)[source]¶
+_selenium.webdriver.common.bidi.cdp.CdpConnectionClosed(_reason_)[source]
 
     
 
@@ -134,34 +134,34 @@ Parameters:
 
 **reason** (_wsproto.frame_protocol.CloseReason_) –
 
-args¶
+args
 
     
 
-with_traceback()¶
+with_traceback()
 
     
 
 Exception.with_traceback(tb) – set self.__traceback__ to tb and return self.
 
-_exception _selenium.webdriver.common.bidi.cdp.InternalError[source]¶
+_exception _selenium.webdriver.common.bidi.cdp.InternalError[source]
 
     
 
 This exception is only raised when there is faulty logic in TrioCDP or the
 integration with PyCDP.
 
-args¶
+args
 
     
 
-with_traceback()¶
+with_traceback()
 
     
 
 Exception.with_traceback(tb) – set self.__traceback__ to tb and return self.
 
-_class _selenium.webdriver.common.bidi.cdp.CmEventProxy(_value : Any | None = None_)[source]¶
+_class _selenium.webdriver.common.bidi.cdp.CmEventProxy(_value : Any | None = None_)[source]
     
 
 A proxy object returned by `CdpBase.wait_for()`()`.
@@ -169,16 +169,16 @@ A proxy object returned by `CdpBase.wait_for()`()`.
 After the context manager executes, this proxy object will have a value set
 that contains the returned event.
 
-value _: Any_ _ = None_¶
+value _: Any_ _ = None_
 
     
 
 _class _selenium.webdriver.common.bidi.cdp.CdpBase(_ws_ , _session_id_ ,
-_target_id_)[source]¶
+_target_id_)[source]
 
     
 
-_async _execute(_cmd : Generator[dict, T, Any]_) -> T[source]¶
+_async _execute(_cmd : Generator[dict, T, Any]_) -> T[source]
 
     
 
@@ -196,7 +196,7 @@ Returns:
 
 a CDP result
 
-listen(_* event_types_, _buffer_size =10_)[source]¶
+listen(_* event_types_, _buffer_size =10_)[source]
 
     
 
@@ -204,7 +204,7 @@ Return an async iterator that iterates over events matching the indicated
 types.
 
 wait_for(_event_type : Type[T]_, _buffer_size =10_) ->
-AsyncGenerator[CmEventProxy, None][source]¶
+AsyncGenerator[CmEventProxy, None][source]
 
     
 
@@ -214,7 +214,7 @@ This is an async context manager, so you should open it inside an async with
 block. The block will not exit until the indicated event is received.
 
 _class _selenium.webdriver.common.bidi.cdp.CdpSession(_ws_ , _session_id_ ,
-_target_id_)[source]¶
+_target_id_)[source]
 
     
 
@@ -235,7 +235,7 @@ Parameters:
 
   * **target_id** (_devtools.target.TargetID_) – 
 
-dom_enable()[source]¶
+dom_enable()[source]
 
     
 
@@ -245,7 +245,7 @@ A context manager that executes `dom.enable()` when it enters and then calls
 This keeps track of concurrent callers and only disables DOM events when all
 callers have exited.
 
-page_enable()[source]¶
+page_enable()[source]
 
     
 
@@ -255,7 +255,7 @@ A context manager that executes `page.enable()` when it enters and then calls
 This keeps track of concurrent callers and only disables page events when all
 callers have exited.
 
-_async _execute(_cmd : Generator[dict, T, Any]_) -> T¶
+_async _execute(_cmd : Generator[dict, T, Any]_) -> T
 
     
 
@@ -273,7 +273,7 @@ Returns:
 
 a CDP result
 
-listen(_* event_types_, _buffer_size =10_)¶
+listen(_* event_types_, _buffer_size =10_)
 
     
 
@@ -281,7 +281,7 @@ Return an async iterator that iterates over events matching the indicated
 types.
 
 wait_for(_event_type : Type[T]_, _buffer_size =10_) ->
-AsyncGenerator[CmEventProxy, None]¶
+AsyncGenerator[CmEventProxy, None]
 
     
 
@@ -290,7 +290,7 @@ Wait for an event of the given type and return it.
 This is an async context manager, so you should open it inside an async with
 block. The block will not exit until the indicated event is received.
 
-_class _selenium.webdriver.common.bidi.cdp.CdpConnection(_ws_)[source]¶
+_class _selenium.webdriver.common.bidi.cdp.CdpConnection(_ws_)[source]
 
     
 
@@ -311,7 +311,7 @@ Parameters:
 
 **ws** (_trio_websocket.WebSocketConnection_) –
 
-_async _aclose()[source]¶
+_async _aclose()[source]
 
     
 
@@ -322,7 +322,7 @@ next message from the WebSocket. All of the public APIs (`execute()`,
 `listen()`, etc.) will raise `CdpConnectionClosed` after the CDP connection is
 closed. It is safe to call this multiple times.
 
-open_session(_target_id_) -> AsyncIterator[CdpSession][source]¶
+open_session(_target_id_) -> AsyncIterator[CdpSession][source]
 
     
 
@@ -332,13 +332,13 @@ CDP APIs.
 For example, inside a session context, you can call `await dom.get_document()`
 and it will execute on the current session automatically.
 
-_async _connect_session(_target_id_) -> CdpSession[source]¶
+_async _connect_session(_target_id_) -> CdpSession[source]
 
     
 
 Returns a new `CdpSession` connected to the specified target.
 
-_async _execute(_cmd : Generator[dict, T, Any]_) -> T¶
+_async _execute(_cmd : Generator[dict, T, Any]_) -> T
 
     
 
@@ -356,7 +356,7 @@ Returns:
 
 a CDP result
 
-listen(_* event_types_, _buffer_size =10_)¶
+listen(_* event_types_, _buffer_size =10_)
 
     
 
@@ -364,7 +364,7 @@ Return an async iterator that iterates over events matching the indicated
 types.
 
 wait_for(_event_type : Type[T]_, _buffer_size =10_) ->
-AsyncGenerator[CmEventProxy, None]¶
+AsyncGenerator[CmEventProxy, None]
 
     
 
@@ -374,7 +374,7 @@ This is an async context manager, so you should open it inside an async with
 block. The block will not exit until the indicated event is received.
 
 selenium.webdriver.common.bidi.cdp.open_cdp(_url_) ->
-AsyncIterator[CdpConnection][source]¶
+AsyncIterator[CdpConnection][source]
 
     
 
@@ -388,7 +388,7 @@ this connection automatically. If you want to use multiple connections
 concurrently, it is recommended to open each on in a separate task.
 
 _async _selenium.webdriver.common.bidi.cdp.connect_cdp(_nursery_ , _url_) ->
-CdpConnection[source]¶
+CdpConnection[source]
 
     
 

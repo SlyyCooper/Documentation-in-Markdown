@@ -1,7 +1,7 @@
 ## Table of Contents
 
     - [Navigation](#navigation)
-- [selenium.webdriver.common.log¶](#seleniumwebdrivercommonlog)
+- [selenium.webdriver.common.log](#seleniumwebdrivercommonlog)
     - [Table of Contents](#table-of-contents)
     - [This Page](#this-page)
     - [Quick search](#quick-search)
@@ -14,7 +14,7 @@
   * Selenium 4.25.0 documentation »
   * selenium.webdriver.common.log
 
-# selenium.webdriver.common.log¶
+# selenium.webdriver.common.log
 
 Functions
 
@@ -26,11 +26,11 @@ Classes
 `Log`(driver, bidi_session) | This class allows access to logging APIs that use the new WebDriver Bidi protocol.  
 ---|---  
   
-selenium.webdriver.common.log.import_cdp()[source]¶
+selenium.webdriver.common.log.import_cdp()[source]
 
     
 
-_class _selenium.webdriver.common.log.Log(_driver_ , _bidi_session_)[source]¶
+_class _selenium.webdriver.common.log.Log(_driver_ , _bidi_session_)[source]
 
     
 
@@ -40,7 +40,7 @@ protocol.
 This class is not to be used directly and should be used from the webdriver
 base classes.
 
-mutation_events() -> AsyncGenerator[Dict[str, Any], None][source]¶
+mutation_events() -> AsyncGenerator[Dict[str, Any], None][source]
 
     
 
@@ -61,7 +61,7 @@ Usage:
      assert event["old_value"] == "display:none;"
     
 
-add_js_error_listener() -> AsyncGenerator[Dict[str, Any], None][source]¶
+add_js_error_listener() -> AsyncGenerator[Dict[str, Any], None][source]
 
     
 
@@ -79,7 +79,7 @@ Usage:
     assert error.exception_details.stack_trace.call_frames[0].function_name == "onmouseover"
     
 
-add_listener(_event_type_) -> AsyncGenerator[Dict[str, Any], None][source]¶
+add_listener(_event_type_) -> AsyncGenerator[Dict[str, Any], None][source]
 
     
 

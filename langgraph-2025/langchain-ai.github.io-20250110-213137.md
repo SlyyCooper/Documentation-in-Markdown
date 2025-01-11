@@ -104,7 +104,7 @@ Table of contents
   2. Tutorials 
   3. Quick Start 
 
-# 🚀 LangGraph Quick Start¶
+# 🚀 LangGraph Quick Start
 
 In this tutorial, we will build a support chatbot in LangGraph that can:
 
@@ -118,7 +118,7 @@ We'll start with a **basic chatbot** and progressively add more sophisticated
 capabilities, introducing key LangGraph concepts along the way. Let’s dive in!
 🌟
 
-## Setup¶
+## Setup
 
 First, install the required packages and configure your environment:
 
@@ -152,7 +152,7 @@ your LangGraph projects. LangSmith lets you use trace data to debug, test, and
 monitor your LLM apps built with LangGraph — read more about how to get
 started here.
 
-## Part 1: Build a Basic Chatbot¶
+## Part 1: Build a Basic Chatbot
 
 We'll first create a simple chatbot using LangGraph. This chatbot will respond
 directly to user messages. Though simple, it will illustrate the core concepts
@@ -361,13 +361,13 @@ Full Code
 
 API Reference: ChatAnthropic | StateGraph | add_messages
 
-## Part 2: 🛠️ Enhancing the Chatbot with Tools¶
+## Part 2: 🛠️ Enhancing the Chatbot with Tools
 
 To handle queries our chatbot can't answer "from memory", we'll integrate a
 web search tool. Our bot can use this tool to find relevant information and
 provide better responses.
 
-#### Requirements¶
+#### Requirements
 
 Before we start, make sure you have the necessary packages installed and API
 keys set up:
@@ -704,7 +704,7 @@ Full Code
 
 API Reference: ChatAnthropic | TavilySearchResults | BaseMessage | StateGraph | add_messages | ToolNode | tools_condition
 
-## Part 3: Adding Memory to the Chatbot¶
+## Part 3: Adding Memory to the Chatbot
 
 Our chatbot can now use tools to answer user questions, but it doesn't
 remember the context of previous interactions. This limits its ability to have
@@ -990,7 +990,7 @@ Full Code
 
 API Reference: ChatAnthropic | TavilySearchResults | BaseMessage | MemorySaver | StateGraph | add_messages | ToolNode
 
-## Part 4: Human-in-the-loop¶
+## Part 4: Human-in-the-loop
 
 Agents can be unreliable and may need human input to successfully accomplish
 tasks. Similarly, for some actions, you may want to require human approval
@@ -1250,7 +1250,7 @@ Full Code
 
 API Reference: ChatAnthropic | TavilySearchResults | BaseMessage | MemorySaver | StateGraph | add_messages | ToolNode | tools_condition
 
-## Part 5: Manually Updating the State¶
+## Part 5: Manually Updating the State
 
 In the previous section, we showed how to interrupt a graph so that a human
 could inspect its actions. This lets the human `read` the state, but if they
@@ -1471,7 +1471,7 @@ are acting as the `chatbot` and responding with an AIMessage that doesn't
 contain `tool_calls`, the graph knows that it has entered a finished state
 (`next` is empty).
 
-#### What if you want to **overwrite** existing messages?¶
+#### What if you want to **overwrite** existing messages?
 
 The `add_messages` function we used to annotate our graph's `State` above
 controls how updates are made to the `messages` key. This function looks at
@@ -1677,7 +1677,7 @@ snippets to remember are to add `.compile(..., interrupt_before=[...])` (or
 reaches a node. Then you can use `update_state` to modify the checkpoint and
 control how the graph should proceed.
 
-## Part 6: Customizing State¶
+## Part 6: Customizing State
 
 So far, we've relied on a simple state (it's just a list of messages!). You
 can go far with this simple state, but if you want to define complex behavior
@@ -2131,7 +2131,7 @@ Full Code
 
 API Reference: ChatAnthropic | TavilySearchResults | BaseMessage | MemorySaver | StateGraph | add_messages | ToolNode | tools_condition
 
-## Part 7: Time Travel¶
+## Part 7: Time Travel
 
 In a typical chat bot workflow, the user interacts with the bot 1 or more
 times to accomplish a task. In the previous sections, we saw how to add memory
@@ -2543,24 +2543,24 @@ our search engine tool.
 LangGraph. Being able to rewind and explore alternative paths opens up a world
 of possibilities for debugging, experimentation, and interactive applications.
 
-## Next Steps¶
+## Next Steps
 
 Take your journey further by exploring deployment and advanced features:
 
-### Server Quickstart¶
+### Server Quickstart
 
   * **LangGraph Server Quickstart** : Launch a LangGraph server locally and interact with it using the REST API and LangGraph Studio Web UI.
 
-### LangGraph Cloud¶
+### LangGraph Cloud
 
   * **LangGraph Cloud QuickStart** : Deploy your LangGraph app using LangGraph Cloud.
 
-### LangGraph Framework¶
+### LangGraph Framework
 
   * **LangGraph Concepts** : Learn the foundational concepts of LangGraph. 
   * **LangGraph How-to Guides** : Guides for common tasks with LangGraph.
 
-### LangGraph Platform¶
+### LangGraph Platform
 
 Expand your knowledge with these resources:
 

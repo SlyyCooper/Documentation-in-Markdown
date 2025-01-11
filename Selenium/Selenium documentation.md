@@ -47,7 +47,7 @@ Now create your own documentation based on this documentation that does not refe
 ## Table of Contents
 
     - [Navigation](#navigation)
-- [selenium.webdriver.common.bidi.session¶](#seleniumwebdrivercommonbidisession)
+- [selenium.webdriver.common.bidi.session](#seleniumwebdrivercommonbidisession)
     - [Table of Contents](#table-of-contents)
     - [This Page](#this-page)
     - [Quick search](#quick-search)
@@ -68,12 +68,12 @@ Functions
 `session_unsubscribe`(*events[, browsing_contexts]) |   
   
 selenium.webdriver.common.bidi.session.session_subscribe(_* events_,
-_browsing_contexts =[]_)[source]¶
+_browsing_contexts =[]_)[source]
 
     
 
 selenium.webdriver.common.bidi.session.session_unsubscribe(_* events_,
-_browsing_contexts =[]_)[source]¶
+_browsing_contexts =[]_)[source]
 
     
 
@@ -103,7 +103,7 @@ _browsing_contexts =[]_)[source]¶
 ## Table of Contents
 
     - [Navigation](#navigation)
-- [selenium.webdriver.common.actions.interaction¶](#seleniumwebdrivercommonactionsinteraction)
+- [selenium.webdriver.common.actions.interaction](#seleniumwebdrivercommonactionsinteraction)
     - [Table of Contents](#table-of-contents)
     - [This Page](#this-page)
     - [Quick search](#quick-search)
@@ -124,23 +124,23 @@ Classes
 `Pause`(source[, duration]) |   
   
 _class _selenium.webdriver.common.actions.interaction.Interaction(_source :
-str_)[source]¶
+str_)[source]
 
     
 
-PAUSE _ = 'pause'_¶
+PAUSE _ = 'pause'_
 
     
 
 _class _selenium.webdriver.common.actions.interaction.Pause(_source_ ,
-_duration : float = 0_)[source]¶
+_duration : float = 0_)[source]
 
     
 
-encode() -> Dict[str, str | int][source]¶
+encode() -> Dict[str, str | int][source]
     
 
-PAUSE _ = 'pause'_¶
+PAUSE _ = 'pause'_
 
     
 
@@ -173,7 +173,7 @@ PAUSE _ = 'pause'_¶
 ## Table of Contents
 
     - [Navigation](#navigation)
-- [selenium.webdriver.common.action_chains¶](#seleniumwebdrivercommonaction_chains)
+- [selenium.webdriver.common.action_chains](#seleniumwebdrivercommonaction_chains)
     - [Table of Contents](#table-of-contents)
     - [This Page](#this-page)
     - [Quick search](#quick-search)
@@ -194,7 +194,7 @@ Classes
 `ActionChains`(driver[, duration, devices]) | ActionChains are a way to automate low level interactions such as mouse movements, mouse button actions, key press, and context menu interactions.  
 ---|---  
   
-_class _selenium.webdriver.common.action_chains.ActionChains(_driver : WebDriver_, _duration : int = 250_, _devices : list[AnyDevice] | None = None_)[source]¶
+_class _selenium.webdriver.common.action_chains.ActionChains(_driver : WebDriver_, _duration : int = 250_, _devices : list[AnyDevice] | None = None_)[source]
     
 
 ActionChains are a way to automate low level interactions such as mouse
@@ -246,19 +246,19 @@ Args:
 
   * duration: override the default 250 msecs of DEFAULT_MOVE_DURATION in PointerInput
 
-perform() -> None[source]¶
+perform() -> None[source]
 
     
 
 Performs all stored actions.
 
-reset_actions() -> None[source]¶
+reset_actions() -> None[source]
 
     
 
 Clears actions that are already stored locally and on the remote end.
 
-click(_on_element : WebElement | None = None_) -> ActionChains[source]¶
+click(_on_element : WebElement | None = None_) -> ActionChains[source]
     
 
 Clicks an element.
@@ -269,7 +269,7 @@ Args:
 
   * on_element: The element to click. If None, clicks on current mouse position.
 
-click_and_hold(_on_element : WebElement | None = None_) -> ActionChains[source]¶
+click_and_hold(_on_element : WebElement | None = None_) -> ActionChains[source]
     
 
 Holds down the left mouse button on an element.
@@ -280,7 +280,7 @@ Args:
 
   * on_element: The element to mouse down. If None, clicks on current mouse position.
 
-context_click(_on_element : WebElement | None = None_) -> ActionChains[source]¶
+context_click(_on_element : WebElement | None = None_) -> ActionChains[source]
     
 
 Performs a context-click (right click) on an element.
@@ -291,7 +291,7 @@ Args:
 
   * on_element: The element to context-click. If None, clicks on current mouse position.
 
-double_click(_on_element : WebElement | None = None_) -> ActionChains[source]¶
+double_click(_on_element : WebElement | None = None_) -> ActionChains[source]
     
 
 Double-clicks an element.
@@ -303,7 +303,7 @@ Args:
   * on_element: The element to double-click. If None, clicks on current mouse position.
 
 drag_and_drop(_source : WebElement_, _target : WebElement_) ->
-ActionChains[source]¶
+ActionChains[source]
 
     
 
@@ -319,7 +319,7 @@ Args:
   * target: The element to mouse up.
 
 drag_and_drop_by_offset(_source : WebElement_, _xoffset : int_, _yoffset :
-int_) -> ActionChains[source]¶
+int_) -> ActionChains[source]
 
     
 
@@ -336,7 +336,7 @@ Args:
 
   * yoffset: Y offset to move to.
 
-key_down(_value : str_, _element : WebElement | None = None_) -> ActionChains[source]¶
+key_down(_value : str_, _element : WebElement | None = None_) -> ActionChains[source]
     
 
 Sends a key press only, without releasing it. Should only be used with
@@ -357,7 +357,7 @@ Example, pressing ctrl+c:
     ActionChains(driver).key_down(Keys.CONTROL).send_keys('c').key_up(Keys.CONTROL).perform()
     
 
-key_up(_value : str_, _element : WebElement | None = None_) -> ActionChains[source]¶
+key_up(_value : str_, _element : WebElement | None = None_) -> ActionChains[source]
     
 
 Releases a modifier key.
@@ -377,7 +377,7 @@ Example, pressing ctrl+c:
     ActionChains(driver).key_down(Keys.CONTROL).send_keys('c').key_up(Keys.CONTROL).perform()
     
 
-move_by_offset(_xoffset : int_, _yoffset : int_) -> ActionChains[source]¶
+move_by_offset(_xoffset : int_, _yoffset : int_) -> ActionChains[source]
 
     
 
@@ -391,7 +391,7 @@ Args:
 
   * yoffset: Y offset to move to, as a positive or negative integer.
 
-move_to_element(_to_element : WebElement_) -> ActionChains[source]¶
+move_to_element(_to_element : WebElement_) -> ActionChains[source]
 
     
 
@@ -404,7 +404,7 @@ Args:
   * to_element: The WebElement to move to.
 
 move_to_element_with_offset(_to_element : WebElement_, _xoffset : int_,
-_yoffset : int_) -> ActionChains[source]¶
+_yoffset : int_) -> ActionChains[source]
 
     
 
@@ -421,12 +421,12 @@ Args:
 
   * yoffset: Y offset to move to, as a positive or negative integer.
 
-pause(_seconds : float | int_) -> ActionChains[source]¶
+pause(_seconds : float | int_) -> ActionChains[source]
     
 
 Pause all inputs for the specified duration in seconds.
 
-release(_on_element : WebElement | None = None_) -> ActionChains[source]¶
+release(_on_element : WebElement | None = None_) -> ActionChains[source]
     
 
 Releasing a held mouse button on an element.
@@ -437,7 +437,7 @@ Args:
 
   * on_element: The element to mouse up. If None, releases on current mouse position.
 
-send_keys(_* keys_to_send: str_) -> ActionChains[source]¶
+send_keys(_* keys_to_send: str_) -> ActionChains[source]
 
     
 
@@ -450,7 +450,7 @@ Args:
   * keys_to_send: The keys to send. Modifier keys constants can be found in the ‘Keys’ class.
 
 send_keys_to_element(_element : WebElement_, _* keys_to_send: str_) ->
-ActionChains[source]¶
+ActionChains[source]
 
     
 
@@ -464,7 +464,7 @@ Args:
 
   * keys_to_send: The keys to send. Modifier keys constants can be found in the ‘Keys’ class.
 
-scroll_to_element(_element : WebElement_) -> ActionChains[source]¶
+scroll_to_element(_element : WebElement_) -> ActionChains[source]
 
     
 
@@ -477,7 +477,7 @@ Args:
 
   * element: Which element to scroll into the viewport.
 
-scroll_by_amount(_delta_x : int_, _delta_y : int_) -> ActionChains[source]¶
+scroll_by_amount(_delta_x : int_, _delta_y : int_) -> ActionChains[source]
 
     
 
@@ -493,7 +493,7 @@ Args:
   * delta_y: Distance along Y axis to scroll using the wheel. A negative value scrolls up.
 
 scroll_from_origin(_scroll_origin : ScrollOrigin_, _delta_x : int_, _delta_y :
-int_) -> ActionChains[source]¶
+int_) -> ActionChains[source]
 
     
 
@@ -566,7 +566,7 @@ viewport.
 ## Table of Contents
 
     - [Navigation](#navigation)
-- [selenium.webdriver.common.actions.key_input¶](#seleniumwebdrivercommonactionskey_input)
+- [selenium.webdriver.common.actions.key_input](#seleniumwebdrivercommonactionskey_input)
     - [Table of Contents](#table-of-contents)
     - [This Page](#this-page)
     - [Quick search](#quick-search)
@@ -587,44 +587,44 @@ Classes
 `TypingInteraction`(source, type_, key) |   
   
 _class _selenium.webdriver.common.actions.key_input.KeyInput(_name :
-str_)[source]¶
+str_)[source]
 
     
 
-encode() -> dict[source]¶
+encode() -> dict[source]
 
     
 
-create_key_down(_key_) -> None[source]¶
+create_key_down(_key_) -> None[source]
 
     
 
-create_key_up(_key_) -> None[source]¶
+create_key_up(_key_) -> None[source]
 
     
 
-create_pause(_pause_duration : float = 0_) -> None[source]¶
+create_pause(_pause_duration : float = 0_) -> None[source]
 
     
 
-add_action(_action : Any_) -> None¶
+add_action(_action : Any_) -> None
 
     
 
-clear_actions() -> None¶
+clear_actions() -> None
 
     
 
 _class _selenium.webdriver.common.actions.key_input.TypingInteraction(_source_
-, _type__ , _key_)[source]¶
+, _type__ , _key_)[source]
 
     
 
-encode() -> dict[source]¶
+encode() -> dict[source]
 
     
 
-PAUSE _ = 'pause'_¶
+PAUSE _ = 'pause'_
 
     
 
@@ -662,7 +662,7 @@ PAUSE _ = 'pause'_¶
 ## Table of Contents
 
     - [Navigation](#navigation)
-- [selenium.webdriver.common.utils¶](#seleniumwebdrivercommonutils)
+- [selenium.webdriver.common.utils](#seleniumwebdrivercommonutils)
     - [Table of Contents](#table-of-contents)
     - [This Page](#this-page)
     - [Quick search](#quick-search)
@@ -688,13 +688,13 @@ Functions
 `join_host_port`(host, port) | Joins a hostname and port together.  
 `keys_to_typing`(value) | Processes the values that will be typed in the element.  
   
-selenium.webdriver.common.utils.free_port() -> int[source]¶
+selenium.webdriver.common.utils.free_port() -> int[source]
 
     
 
 Determines a free port using sockets.
 
-selenium.webdriver.common.utils.find_connectable_ip(_host : str | bytes | bytearray | None_, _port : int | None = None_) -> str | None[source]¶
+selenium.webdriver.common.utils.find_connectable_ip(_host : str | bytes | bytearray | None_, _port : int | None = None_) -> str | None[source]
     
 
 Resolve a hostname to an IP, preferring IPv4 addresses.
@@ -723,7 +723,7 @@ returned. Otherwise, if any IPv6 address is found, one is returned. If
 neither, then None is returned.
 
 selenium.webdriver.common.utils.join_host_port(_host : str_, _port : int_) ->
-str[source]¶
+str[source]
 
     
 
@@ -740,7 +740,7 @@ Args:
 
   * port - An integer port.
 
-selenium.webdriver.common.utils.is_connectable(_port : int_, _host : str | None = 'localhost'_) -> bool[source]¶
+selenium.webdriver.common.utils.is_connectable(_port : int_, _host : str | None = 'localhost'_) -> bool[source]
     
 
 Tries to connect to the server at port to see if it is running.
@@ -751,7 +751,7 @@ Args:
 
   * port - The port to connect.
 
-selenium.webdriver.common.utils.is_url_connectable(_port : int | str_) -> bool[source]¶
+selenium.webdriver.common.utils.is_url_connectable(_port : int | str_) -> bool[source]
     
 
 Tries to connect to the HTTP server at /status path and specified port to see
@@ -763,7 +763,7 @@ Args:
 
   * port - The port to connect.
 
-selenium.webdriver.common.utils.keys_to_typing(_value : Iterable[str | int | float]_) -> List[str][source]¶
+selenium.webdriver.common.utils.keys_to_typing(_value : Iterable[str | int | float]_) -> List[str][source]
     
 
 Processes the values that will be typed in the element.
@@ -798,7 +798,7 @@ Processes the values that will be typed in the element.
 ## Table of Contents
 
     - [Navigation](#navigation)
-- [selenium.webdriver.common.actions.pointer_input¶](#seleniumwebdrivercommonactionspointer_input)
+- [selenium.webdriver.common.actions.pointer_input](#seleniumwebdrivercommonactionspointer_input)
     - [Table of Contents](#table-of-contents)
     - [This Page](#this-page)
     - [Quick search](#quick-search)
@@ -818,41 +818,41 @@ Classes
 ---|---  
   
 _class _selenium.webdriver.common.actions.pointer_input.PointerInput(_kind_ ,
-_name_)[source]¶
+_name_)[source]
 
     
 
-DEFAULT_MOVE_DURATION _ = 250_¶
+DEFAULT_MOVE_DURATION _ = 250_
 
     
 
-create_pointer_move(_duration =250_, _x : float = 0_, _y : float = 0_, _origin : WebElement | None = None_, _** kwargs_)[source]¶
+create_pointer_move(_duration =250_, _x : float = 0_, _y : float = 0_, _origin : WebElement | None = None_, _** kwargs_)[source]
     
 
-create_pointer_down(_** kwargs_)[source]¶
-
-    
-
-create_pointer_up(_button_)[source]¶
+create_pointer_down(_** kwargs_)[source]
 
     
 
-create_pointer_cancel()[source]¶
+create_pointer_up(_button_)[source]
 
     
 
-create_pause(_pause_duration : int | float = 0_) -> None[source]¶
-    
-
-encode()[source]¶
+create_pointer_cancel()[source]
 
     
 
-add_action(_action : Any_) -> None¶
+create_pause(_pause_duration : int | float = 0_) -> None[source]
+    
+
+encode()[source]
 
     
 
-clear_actions() -> None¶
+add_action(_action : Any_) -> None
+
+    
+
+clear_actions() -> None
 
     
 
@@ -890,7 +890,7 @@ clear_actions() -> None¶
 ## Table of Contents
 
     - [Navigation](#navigation)
-- [selenium.webdriver.common.virtual_authenticator¶](#seleniumwebdrivercommonvirtual_authenticator)
+- [selenium.webdriver.common.virtual_authenticator](#seleniumwebdrivercommonvirtual_authenticator)
     - [Table of Contents](#table-of-contents)
     - [This Page](#this-page)
     - [Quick search](#quick-search)
@@ -919,40 +919,40 @@ Classes
 `VirtualAuthenticatorOptions`([protocol, ...]) | Constructor.  
   
 _class
-_selenium.webdriver.common.virtual_authenticator.Protocol(_value_)[source]¶
+_selenium.webdriver.common.virtual_authenticator.Protocol(_value_)[source]
 
     
 
 Protocol to communicate with the authenticator.
 
-CTAP2 _: str_ _ = 'ctap2'_¶
+CTAP2 _: str_ _ = 'ctap2'_
 
     
 
-U2F _: str_ _ = 'ctap1/u2f'_¶
+U2F _: str_ _ = 'ctap1/u2f'_
 
     
 
 _class
-_selenium.webdriver.common.virtual_authenticator.Transport(_value_)[source]¶
+_selenium.webdriver.common.virtual_authenticator.Transport(_value_)[source]
 
     
 
 Transport method to communicate with the authenticator.
 
-BLE _: str_ _ = 'ble'_¶
+BLE _: str_ _ = 'ble'_
 
     
 
-USB _: str_ _ = 'usb'_¶
+USB _: str_ _ = 'usb'_
 
     
 
-NFC _: str_ _ = 'nfc'_¶
+NFC _: str_ _ = 'nfc'_
 
     
 
-INTERNAL _: str_ _ = 'internal'_¶
+INTERNAL _: str_ _ = 'internal'_
 
     
 
@@ -960,7 +960,7 @@ _class
 _selenium.webdriver.common.virtual_authenticator.VirtualAuthenticatorOptions(_protocol
 : str = Protocol.CTAP2_, _transport : str = Transport.USB_, _has_resident_key
 : bool = False_, _has_user_verification : bool = False_, _is_user_consenting :
-bool = True_, _is_user_verified : bool = False_)[source]¶
+bool = True_, _is_user_verified : bool = False_)[source]
 
     
 
@@ -968,46 +968,46 @@ Constructor.
 
 Initialize VirtualAuthenticatorOptions object.
 
-_class _Protocol(_value_)¶
+_class _Protocol(_value_)
 
     
 
 Protocol to communicate with the authenticator.
 
-CTAP2 _: str_ _ = 'ctap2'_¶
+CTAP2 _: str_ _ = 'ctap2'_
 
     
 
-U2F _: str_ _ = 'ctap1/u2f'_¶
+U2F _: str_ _ = 'ctap1/u2f'_
 
     
 
-_class _Transport(_value_)¶
+_class _Transport(_value_)
 
     
 
 Transport method to communicate with the authenticator.
 
-BLE _: str_ _ = 'ble'_¶
+BLE _: str_ _ = 'ble'_
 
     
 
-USB _: str_ _ = 'usb'_¶
+USB _: str_ _ = 'usb'_
 
     
 
-NFC _: str_ _ = 'nfc'_¶
+NFC _: str_ _ = 'nfc'_
 
     
 
-INTERNAL _: str_ _ = 'internal'_¶
+INTERNAL _: str_ _ = 'internal'_
 
     
 
-to_dict() -> Dict[str, str | bool][source]¶
+to_dict() -> Dict[str, str | bool][source]
     
 
-_class _selenium.webdriver.common.virtual_authenticator.Credential(_credential_id : bytes_, _is_resident_credential : bool_, _rp_id : str_, _user_handle : bytes | None_, _private_key : bytes_, _sign_count : int_)[source]¶
+_class _selenium.webdriver.common.virtual_authenticator.Credential(_credential_id : bytes_, _is_resident_credential : bool_, _rp_id : str_, _user_handle : bytes | None_, _private_key : bytes_, _sign_count : int_)[source]
     
 
 Constructor. A credential stored in a virtual authenticator.
@@ -1025,31 +1025,31 @@ userHandle associated to the credential. Must be Base64 encoded string. Can be
 None. private_key (bytes): Base64 encoded PKCS#8 private key. sign_count
 (int): intital value for a signature counter.
 
-_property _id _: str_¶
+_property _id _: str_
 
     
 
-_property _is_resident_credential _: bool_¶
+_property _is_resident_credential _: bool_
 
     
 
-_property _rp_id _: str_¶
+_property _rp_id _: str_
 
     
 
-_property _user_handle _: str | None_¶
+_property _user_handle _: str | None_
     
 
-_property _private_key _: str_¶
+_property _private_key _: str_
 
     
 
-_property _sign_count _: int_¶
+_property _sign_count _: int_
 
     
 
 _classmethod _create_non_resident_credential(_id : bytes_, _rp_id : str_,
-_private_key : bytes_, _sign_count : int_) -> Credential[source]¶
+_private_key : bytes_, _sign_count : int_) -> Credential[source]
 
     
 
@@ -1073,7 +1073,7 @@ Returns:
 
   * Credential: A non-resident credential.
 
-_classmethod _create_resident_credential(_id : bytes_, _rp_id : str_, _user_handle : bytes | None_, _private_key : bytes_, _sign_count : int_) -> Credential[source]¶
+_classmethod _create_resident_credential(_id : bytes_, _rp_id : str_, _user_handle : bytes | None_, _private_key : bytes_, _sign_count : int_) -> Credential[source]
     
 
 Creates a resident (i.e. stateful) credential.
@@ -1098,21 +1098,21 @@ Returns:
 
   * Credential: A resident credential.
 
-to_dict() -> Dict[str, Any][source]¶
+to_dict() -> Dict[str, Any][source]
 
     
 
-_classmethod _from_dict(_data : Dict[str, Any]_) -> Credential[source]¶
+_classmethod _from_dict(_data : Dict[str, Any]_) -> Credential[source]
 
     
 
-selenium.webdriver.common.virtual_authenticator.required_chromium_based_browser(_func_)[source]¶
+selenium.webdriver.common.virtual_authenticator.required_chromium_based_browser(_func_)[source]
 
     
 
 A decorator to ensure that the client used is a chromium based browser.
 
-selenium.webdriver.common.virtual_authenticator.required_virtual_authenticator(_func_)[source]¶
+selenium.webdriver.common.virtual_authenticator.required_virtual_authenticator(_func_)[source]
 
     
 
@@ -1174,7 +1174,7 @@ authenticator.
 ## Table of Contents
 
     - [Navigation](#navigation)
-- [selenium.webdriver.common.actions.action_builder¶](#seleniumwebdrivercommonactionsaction_builder)
+- [selenium.webdriver.common.actions.action_builder](#seleniumwebdrivercommonactionsaction_builder)
     - [Table of Contents](#table-of-contents)
     - [This Page](#this-page)
     - [Quick search](#quick-search)
@@ -1193,49 +1193,49 @@ Classes
 `ActionBuilder`(driver[, mouse, wheel, ...]) |   
 ---|---  
   
-_class _selenium.webdriver.common.actions.action_builder.ActionBuilder(_driver_ , _mouse : PointerInput | None = None_, _wheel : WheelInput | None = None_, _keyboard : KeyInput | None = None_, _duration : int = 250_)[source]¶
+_class _selenium.webdriver.common.actions.action_builder.ActionBuilder(_driver_ , _mouse : PointerInput | None = None_, _wheel : WheelInput | None = None_, _keyboard : KeyInput | None = None_, _duration : int = 250_)[source]
     
 
-get_device_with(_name : str_) -> WheelInput | PointerInput | KeyInput | None[source]¶
+get_device_with(_name : str_) -> WheelInput | PointerInput | KeyInput | None[source]
     
 
-_property _pointer_inputs _: List[PointerInput]_¶
-
-    
-
-_property _key_inputs _: List[KeyInput]_¶
+_property _pointer_inputs _: List[PointerInput]_
 
     
 
-_property _key_action _: KeyActions_¶
+_property _key_inputs _: List[KeyInput]_
 
     
 
-_property _pointer_action _: PointerActions_¶
+_property _key_action _: KeyActions_
 
     
 
-_property _wheel_action _: WheelActions_¶
+_property _pointer_action _: PointerActions_
 
     
 
-add_key_input(_name : str_) -> KeyInput[source]¶
+_property _wheel_action _: WheelActions_
 
     
 
-add_pointer_input(_kind : str_, _name : str_) -> PointerInput[source]¶
+add_key_input(_name : str_) -> KeyInput[source]
 
     
 
-add_wheel_input(_name : str_) -> WheelInput[source]¶
+add_pointer_input(_kind : str_, _name : str_) -> PointerInput[source]
 
     
 
-perform() -> None[source]¶
+add_wheel_input(_name : str_) -> WheelInput[source]
 
     
 
-clear_actions() -> None[source]¶
+perform() -> None[source]
+
+    
+
+clear_actions() -> None[source]
 
     
 
@@ -1277,7 +1277,7 @@ Clears actions that are already stored on the remote end.
 ## Table of Contents
 
     - [Navigation](#navigation)
-- [selenium.webdriver.common.bidi.cdp¶](#seleniumwebdrivercommonbidicdp)
+- [selenium.webdriver.common.bidi.cdp](#seleniumwebdrivercommonbidicdp)
     - [Table of Contents](#table-of-contents)
     - [This Page](#this-page)
     - [Quick search](#quick-search)
@@ -1319,14 +1319,14 @@ Exceptions
 `CdpConnectionClosed`(reason) | Raised when a public method is called on a closed CDP connection.  
 `InternalError` | This exception is only raised when there is faulty logic in TrioCDP or the integration with PyCDP.  
   
-selenium.webdriver.common.bidi.cdp.import_devtools(_ver_)[source]¶
+selenium.webdriver.common.bidi.cdp.import_devtools(_ver_)[source]
 
     
 
 Attempt to load the current latest available devtools into the module cache
 for use later.
 
-selenium.webdriver.common.bidi.cdp.get_connection_context(_fn_name_)[source]¶
+selenium.webdriver.common.bidi.cdp.get_connection_context(_fn_name_)[source]
 
     
 
@@ -1335,7 +1335,7 @@ Look up the current connection.
 If there is no current connection, raise a `RuntimeError` with a helpful
 message.
 
-selenium.webdriver.common.bidi.cdp.get_session_context(_fn_name_)[source]¶
+selenium.webdriver.common.bidi.cdp.get_session_context(_fn_name_)[source]
 
     
 
@@ -1343,21 +1343,21 @@ Look up the current session.
 
 If there is no current session, raise a `RuntimeError` with a helpful message.
 
-selenium.webdriver.common.bidi.cdp.connection_context(_connection_)[source]¶
+selenium.webdriver.common.bidi.cdp.connection_context(_connection_)[source]
 
     
 
 This context manager installs `connection` as the session context for the
 current Trio task.
 
-selenium.webdriver.common.bidi.cdp.session_context(_session_)[source]¶
+selenium.webdriver.common.bidi.cdp.session_context(_session_)[source]
 
     
 
 This context manager installs `session` as the session context for the current
 Trio task.
 
-selenium.webdriver.common.bidi.cdp.set_global_connection(_connection_)[source]¶
+selenium.webdriver.common.bidi.cdp.set_global_connection(_connection_)[source]
 
     
 
@@ -1367,7 +1367,7 @@ connection for all tasks.
 This is generally not recommended, except it may be necessary in certain use
 cases such as running inside Jupyter notebook.
 
-selenium.webdriver.common.bidi.cdp.set_global_session(_session_)[source]¶
+selenium.webdriver.common.bidi.cdp.set_global_session(_session_)[source]
 
     
 
@@ -1377,25 +1377,25 @@ session for all tasks.
 This is generally not recommended, except it may be necessary in certain use
 cases such as running inside Jupyter notebook.
 
-_exception _selenium.webdriver.common.bidi.cdp.BrowserError(_obj_)[source]¶
+_exception _selenium.webdriver.common.bidi.cdp.BrowserError(_obj_)[source]
 
     
 
 This exception is raised when the browser’s response to a command indicates
 that an error occurred.
 
-args¶
+args
 
     
 
-with_traceback()¶
+with_traceback()
 
     
 
 Exception.with_traceback(tb) – set self.__traceback__ to tb and return self.
 
 _exception
-_selenium.webdriver.common.bidi.cdp.CdpConnectionClosed(_reason_)[source]¶
+_selenium.webdriver.common.bidi.cdp.CdpConnectionClosed(_reason_)[source]
 
     
 
@@ -1409,34 +1409,34 @@ Parameters:
 
 **reason** (_wsproto.frame_protocol.CloseReason_) –
 
-args¶
+args
 
     
 
-with_traceback()¶
+with_traceback()
 
     
 
 Exception.with_traceback(tb) – set self.__traceback__ to tb and return self.
 
-_exception _selenium.webdriver.common.bidi.cdp.InternalError[source]¶
+_exception _selenium.webdriver.common.bidi.cdp.InternalError[source]
 
     
 
 This exception is only raised when there is faulty logic in TrioCDP or the
 integration with PyCDP.
 
-args¶
+args
 
     
 
-with_traceback()¶
+with_traceback()
 
     
 
 Exception.with_traceback(tb) – set self.__traceback__ to tb and return self.
 
-_class _selenium.webdriver.common.bidi.cdp.CmEventProxy(_value : Any | None = None_)[source]¶
+_class _selenium.webdriver.common.bidi.cdp.CmEventProxy(_value : Any | None = None_)[source]
     
 
 A proxy object returned by `CdpBase.wait_for()`()`.
@@ -1444,16 +1444,16 @@ A proxy object returned by `CdpBase.wait_for()`()`.
 After the context manager executes, this proxy object will have a value set
 that contains the returned event.
 
-value _: Any_ _ = None_¶
+value _: Any_ _ = None_
 
     
 
 _class _selenium.webdriver.common.bidi.cdp.CdpBase(_ws_ , _session_id_ ,
-_target_id_)[source]¶
+_target_id_)[source]
 
     
 
-_async _execute(_cmd : Generator[dict, T, Any]_) -> T[source]¶
+_async _execute(_cmd : Generator[dict, T, Any]_) -> T[source]
 
     
 
@@ -1471,7 +1471,7 @@ Returns:
 
 a CDP result
 
-listen(_* event_types_, _buffer_size =10_)[source]¶
+listen(_* event_types_, _buffer_size =10_)[source]
 
     
 
@@ -1479,7 +1479,7 @@ Return an async iterator that iterates over events matching the indicated
 types.
 
 wait_for(_event_type : Type[T]_, _buffer_size =10_) ->
-AsyncGenerator[CmEventProxy, None][source]¶
+AsyncGenerator[CmEventProxy, None][source]
 
     
 
@@ -1489,7 +1489,7 @@ This is an async context manager, so you should open it inside an async with
 block. The block will not exit until the indicated event is received.
 
 _class _selenium.webdriver.common.bidi.cdp.CdpSession(_ws_ , _session_id_ ,
-_target_id_)[source]¶
+_target_id_)[source]
 
     
 
@@ -1510,7 +1510,7 @@ Parameters:
 
   * **target_id** (_devtools.target.TargetID_) – 
 
-dom_enable()[source]¶
+dom_enable()[source]
 
     
 
@@ -1520,7 +1520,7 @@ A context manager that executes `dom.enable()` when it enters and then calls
 This keeps track of concurrent callers and only disables DOM events when all
 callers have exited.
 
-page_enable()[source]¶
+page_enable()[source]
 
     
 
@@ -1530,7 +1530,7 @@ A context manager that executes `page.enable()` when it enters and then calls
 This keeps track of concurrent callers and only disables page events when all
 callers have exited.
 
-_async _execute(_cmd : Generator[dict, T, Any]_) -> T¶
+_async _execute(_cmd : Generator[dict, T, Any]_) -> T
 
     
 
@@ -1548,7 +1548,7 @@ Returns:
 
 a CDP result
 
-listen(_* event_types_, _buffer_size =10_)¶
+listen(_* event_types_, _buffer_size =10_)
 
     
 
@@ -1556,7 +1556,7 @@ Return an async iterator that iterates over events matching the indicated
 types.
 
 wait_for(_event_type : Type[T]_, _buffer_size =10_) ->
-AsyncGenerator[CmEventProxy, None]¶
+AsyncGenerator[CmEventProxy, None]
 
     
 
@@ -1565,7 +1565,7 @@ Wait for an event of the given type and return it.
 This is an async context manager, so you should open it inside an async with
 block. The block will not exit until the indicated event is received.
 
-_class _selenium.webdriver.common.bidi.cdp.CdpConnection(_ws_)[source]¶
+_class _selenium.webdriver.common.bidi.cdp.CdpConnection(_ws_)[source]
 
     
 
@@ -1586,7 +1586,7 @@ Parameters:
 
 **ws** (_trio_websocket.WebSocketConnection_) –
 
-_async _aclose()[source]¶
+_async _aclose()[source]
 
     
 
@@ -1597,7 +1597,7 @@ next message from the WebSocket. All of the public APIs (`execute()`,
 `listen()`, etc.) will raise `CdpConnectionClosed` after the CDP connection is
 closed. It is safe to call this multiple times.
 
-open_session(_target_id_) -> AsyncIterator[CdpSession][source]¶
+open_session(_target_id_) -> AsyncIterator[CdpSession][source]
 
     
 
@@ -1607,13 +1607,13 @@ CDP APIs.
 For example, inside a session context, you can call `await dom.get_document()`
 and it will execute on the current session automatically.
 
-_async _connect_session(_target_id_) -> CdpSession[source]¶
+_async _connect_session(_target_id_) -> CdpSession[source]
 
     
 
 Returns a new `CdpSession` connected to the specified target.
 
-_async _execute(_cmd : Generator[dict, T, Any]_) -> T¶
+_async _execute(_cmd : Generator[dict, T, Any]_) -> T
 
     
 
@@ -1631,7 +1631,7 @@ Returns:
 
 a CDP result
 
-listen(_* event_types_, _buffer_size =10_)¶
+listen(_* event_types_, _buffer_size =10_)
 
     
 
@@ -1639,7 +1639,7 @@ Return an async iterator that iterates over events matching the indicated
 types.
 
 wait_for(_event_type : Type[T]_, _buffer_size =10_) ->
-AsyncGenerator[CmEventProxy, None]¶
+AsyncGenerator[CmEventProxy, None]
 
     
 
@@ -1649,7 +1649,7 @@ This is an async context manager, so you should open it inside an async with
 block. The block will not exit until the indicated event is received.
 
 selenium.webdriver.common.bidi.cdp.open_cdp(_url_) ->
-AsyncIterator[CdpConnection][source]¶
+AsyncIterator[CdpConnection][source]
 
     
 
@@ -1663,7 +1663,7 @@ this connection automatically. If you want to use multiple connections
 concurrently, it is recommended to open each on in a separate task.
 
 _async _selenium.webdriver.common.bidi.cdp.connect_cdp(_nursery_ , _url_) ->
-CdpConnection[source]¶
+CdpConnection[source]
 
     
 
@@ -1740,7 +1740,7 @@ of a notebook.
 ## Table of Contents
 
     - [Navigation](#navigation)
-- [selenium.webdriver.common.alert¶](#seleniumwebdrivercommonalert)
+- [selenium.webdriver.common.alert](#seleniumwebdrivercommonalert)
     - [Table of Contents](#table-of-contents)
     - [This Page](#this-page)
     - [Quick search](#quick-search)
@@ -1761,7 +1761,7 @@ Classes
 `Alert`(driver) | Allows to work with alerts.  
 ---|---  
   
-_class _selenium.webdriver.common.alert.Alert(_driver_)[source]¶
+_class _selenium.webdriver.common.alert.Alert(_driver_)[source]
 
     
 
@@ -1803,19 +1803,19 @@ Args:
 
   * driver: The WebDriver instance which performs user actions.
 
-_property _text _: str_¶
+_property _text _: str_
 
     
 
 Gets the text of the Alert.
 
-dismiss() -> None[source]¶
+dismiss() -> None[source]
 
     
 
 Dismisses the alert available.
 
-accept() -> None[source]¶
+accept() -> None[source]
 
     
 
@@ -1829,7 +1829,7 @@ Usage:
     Alert(driver).accept() # Confirm a alert dialog.
     
 
-send_keys(_keysToSend : str_) -> None[source]¶
+send_keys(_keysToSend : str_) -> None[source]
 
     
 
@@ -1870,7 +1870,7 @@ Args:
 ## Table of Contents
 
     - [Navigation](#navigation)
-- [selenium.webdriver.common.driver_finder¶](#seleniumwebdrivercommondriver_finder)
+- [selenium.webdriver.common.driver_finder](#seleniumwebdrivercommondriver_finder)
     - [Table of Contents](#table-of-contents)
     - [This Page](#this-page)
     - [Quick search](#quick-search)
@@ -1890,7 +1890,7 @@ Classes
 ---|---  
   
 _class _selenium.webdriver.common.driver_finder.DriverFinder(_service :
-Service_, _options : BaseOptions_)[source]¶
+Service_, _options : BaseOptions_)[source]
 
     
 
@@ -1905,11 +1905,11 @@ Parameters:
 
   * **options** – instance of the browser options class.
 
-get_browser_path() -> str[source]¶
+get_browser_path() -> str[source]
 
     
 
-get_driver_path() -> str[source]¶
+get_driver_path() -> str[source]
 
     
 
@@ -1940,7 +1940,7 @@ get_driver_path() -> str[source]¶
 ## Table of Contents
 
     - [Navigation](#navigation)
-- [selenium.webdriver.common.bidi.console¶](#seleniumwebdrivercommonbidiconsole)
+- [selenium.webdriver.common.bidi.console](#seleniumwebdrivercommonbidiconsole)
     - [Table of Contents](#table-of-contents)
     - [This Page](#this-page)
     - [Quick search](#quick-search)
@@ -1959,21 +1959,21 @@ Classes
 `Console`(value) | An enumeration.  
 ---|---  
   
-_class _selenium.webdriver.common.bidi.console.Console(_value_)[source]¶
+_class _selenium.webdriver.common.bidi.console.Console(_value_)[source]
 
     
 
 An enumeration.
 
-ALL _ = 'all'_¶
+ALL _ = 'all'_
 
     
 
-LOG _ = 'log'_¶
+LOG _ = 'log'_
 
     
 
-ERROR _ = 'error'_¶
+ERROR _ = 'error'_
 
     
 
@@ -2005,7 +2005,7 @@ ERROR _ = 'error'_¶
 ## Table of Contents
 
     - [Navigation](#navigation)
-- [selenium.webdriver.common.actions.wheel_actions¶](#seleniumwebdrivercommonactionswheel_actions)
+- [selenium.webdriver.common.actions.wheel_actions](#seleniumwebdrivercommonactionswheel_actions)
     - [Table of Contents](#table-of-contents)
     - [This Page](#this-page)
     - [Quick search](#quick-search)
@@ -2024,19 +2024,19 @@ Classes
 `WheelActions`([source]) |   
 ---|---  
   
-_class _selenium.webdriver.common.actions.wheel_actions.WheelActions(_source : WheelInput | None = None_)[source]¶
+_class _selenium.webdriver.common.actions.wheel_actions.WheelActions(_source : WheelInput | None = None_)[source]
     
 
-pause(_duration : float = 0_)[source]¶
+pause(_duration : float = 0_)[source]
 
     
 
 scroll(_x =0_, _y =0_, _delta_x =0_, _delta_y =0_, _duration =0_, _origin
-='viewport'_)[source]¶
+='viewport'_)[source]
 
     
 
-PAUSE _ = 'pause'_¶
+PAUSE _ = 'pause'_
 
     
 
@@ -2068,7 +2068,7 @@ PAUSE _ = 'pause'_¶
 ## Table of Contents
 
     - [Navigation](#navigation)
-- [selenium.webdriver.common.desired_capabilities¶](#seleniumwebdrivercommondesired_capabilities)
+- [selenium.webdriver.common.desired_capabilities](#seleniumwebdrivercommondesired_capabilities)
     - [Table of Contents](#table-of-contents)
     - [This Page](#this-page)
     - [Quick search](#quick-search)
@@ -2090,7 +2090,7 @@ Classes
 ---|---  
   
 _class
-_selenium.webdriver.common.desired_capabilities.DesiredCapabilities[source]¶
+_selenium.webdriver.common.desired_capabilities.DesiredCapabilities[source]
 
     
 
@@ -2120,49 +2120,49 @@ Note: Always use ‘.copy()’ on the DesiredCapabilities object to avoid the si
 effects of altering the Global class instance.
 
 FIREFOX _ = {'acceptInsecureCerts': True, 'browserName': 'firefox',
-'moz:debuggerAddress': True}_¶
+'moz:debuggerAddress': True}_
 
     
 
 INTERNETEXPLORER _ = {'browserName': 'internet explorer', 'platformName':
-'windows'}_¶
+'windows'}_
 
     
 
-EDGE _ = {'browserName': 'MicrosoftEdge'}_¶
+EDGE _ = {'browserName': 'MicrosoftEdge'}_
 
     
 
-CHROME _ = {'browserName': 'chrome'}_¶
+CHROME _ = {'browserName': 'chrome'}_
 
     
 
-SAFARI _ = {'browserName': 'safari', 'platformName': 'mac'}_¶
+SAFARI _ = {'browserName': 'safari', 'platformName': 'mac'}_
 
     
 
-HTMLUNIT _ = {'browserName': 'htmlunit', 'platform': 'ANY', 'version': ''}_¶
+HTMLUNIT _ = {'browserName': 'htmlunit', 'platform': 'ANY', 'version': ''}_
 
     
 
 HTMLUNITWITHJS _ = {'browserName': 'htmlunit', 'javascriptEnabled': True,
-'platform': 'ANY', 'version': 'firefox'}_¶
+'platform': 'ANY', 'version': 'firefox'}_
 
     
 
-IPHONE _ = {'browserName': 'iPhone', 'platform': 'mac', 'version': ''}_¶
+IPHONE _ = {'browserName': 'iPhone', 'platform': 'mac', 'version': ''}_
 
     
 
-IPAD _ = {'browserName': 'iPad', 'platform': 'mac', 'version': ''}_¶
+IPAD _ = {'browserName': 'iPad', 'platform': 'mac', 'version': ''}_
 
     
 
-WEBKITGTK _ = {'browserName': 'MiniBrowser'}_¶
+WEBKITGTK _ = {'browserName': 'MiniBrowser'}_
 
     
 
-WPEWEBKIT _ = {'browserName': 'MiniBrowser'}_¶
+WPEWEBKIT _ = {'browserName': 'MiniBrowser'}_
 
     
 
@@ -2202,7 +2202,7 @@ WPEWEBKIT _ = {'browserName': 'MiniBrowser'}_¶
 ## Table of Contents
 
     - [Navigation](#navigation)
-- [selenium.webdriver.common.by¶](#seleniumwebdrivercommonby)
+- [selenium.webdriver.common.by](#seleniumwebdrivercommonby)
     - [Table of Contents](#table-of-contents)
     - [This Page](#this-page)
     - [Quick search](#quick-search)
@@ -2223,41 +2223,41 @@ Classes
 `By`() | Set of supported locator strategies.  
 ---|---  
   
-_class _selenium.webdriver.common.by.By[source]¶
+_class _selenium.webdriver.common.by.By[source]
 
     
 
 Set of supported locator strategies.
 
-ID _ = 'id'_¶
+ID _ = 'id'_
 
     
 
-XPATH _ = 'xpath'_¶
+XPATH _ = 'xpath'_
 
     
 
-LINK_TEXT _ = 'link text'_¶
+LINK_TEXT _ = 'link text'_
 
     
 
-PARTIAL_LINK_TEXT _ = 'partial link text'_¶
+PARTIAL_LINK_TEXT _ = 'partial link text'_
 
     
 
-NAME _ = 'name'_¶
+NAME _ = 'name'_
 
     
 
-TAG_NAME _ = 'tag name'_¶
+TAG_NAME _ = 'tag name'_
 
     
 
-CLASS_NAME _ = 'class name'_¶
+CLASS_NAME _ = 'class name'_
 
     
 
-CSS_SELECTOR _ = 'css selector'_¶
+CSS_SELECTOR _ = 'css selector'_
 
     
 
@@ -2294,7 +2294,7 @@ CSS_SELECTOR _ = 'css selector'_¶
 ## Table of Contents
 
     - [Navigation](#navigation)
-- [selenium.webdriver.common.actions.mouse_button¶](#seleniumwebdrivercommonactionsmouse_button)
+- [selenium.webdriver.common.actions.mouse_button](#seleniumwebdrivercommonactionsmouse_button)
     - [Table of Contents](#table-of-contents)
     - [This Page](#this-page)
     - [Quick search](#quick-search)
@@ -2313,27 +2313,27 @@ Classes
 `MouseButton`() |   
 ---|---  
   
-_class _selenium.webdriver.common.actions.mouse_button.MouseButton[source]¶
+_class _selenium.webdriver.common.actions.mouse_button.MouseButton[source]
 
     
 
-LEFT _ = 0_¶
+LEFT _ = 0_
 
     
 
-MIDDLE _ = 1_¶
+MIDDLE _ = 1_
 
     
 
-RIGHT _ = 2_¶
+RIGHT _ = 2_
 
     
 
-BACK _ = 3_¶
+BACK _ = 3_
 
     
 
-FORWARD _ = 4_¶
+FORWARD _ = 4_
 
     
 
@@ -2367,7 +2367,7 @@ FORWARD _ = 4_¶
 ## Table of Contents
 
     - [Navigation](#navigation)
-- [selenium.webdriver.common.log¶](#seleniumwebdrivercommonlog)
+- [selenium.webdriver.common.log](#seleniumwebdrivercommonlog)
     - [Table of Contents](#table-of-contents)
     - [This Page](#this-page)
     - [Quick search](#quick-search)
@@ -2391,11 +2391,11 @@ Classes
 `Log`(driver, bidi_session) | This class allows access to logging APIs that use the new WebDriver Bidi protocol.  
 ---|---  
   
-selenium.webdriver.common.log.import_cdp()[source]¶
+selenium.webdriver.common.log.import_cdp()[source]
 
     
 
-_class _selenium.webdriver.common.log.Log(_driver_ , _bidi_session_)[source]¶
+_class _selenium.webdriver.common.log.Log(_driver_ , _bidi_session_)[source]
 
     
 
@@ -2405,7 +2405,7 @@ protocol.
 This class is not to be used directly and should be used from the webdriver
 base classes.
 
-mutation_events() -> AsyncGenerator[Dict[str, Any], None][source]¶
+mutation_events() -> AsyncGenerator[Dict[str, Any], None][source]
 
     
 
@@ -2426,7 +2426,7 @@ Usage:
      assert event["old_value"] == "display:none;"
     
 
-add_js_error_listener() -> AsyncGenerator[Dict[str, Any], None][source]¶
+add_js_error_listener() -> AsyncGenerator[Dict[str, Any], None][source]
 
     
 
@@ -2444,7 +2444,7 @@ Usage:
     assert error.exception_details.stack_trace.call_frames[0].function_name == "onmouseover"
     
 
-add_listener(_event_type_) -> AsyncGenerator[Dict[str, Any], None][source]¶
+add_listener(_event_type_) -> AsyncGenerator[Dict[str, Any], None][source]
 
     
 
@@ -2495,7 +2495,7 @@ Usage:
 ## Table of Contents
 
     - [Navigation](#navigation)
-- [selenium.webdriver.common.bidi.script¶](#seleniumwebdrivercommonbidiscript)
+- [selenium.webdriver.common.bidi.script](#seleniumwebdrivercommonbidiscript)
     - [Table of Contents](#table-of-contents)
     - [This Page](#this-page)
     - [Quick search](#quick-search)
@@ -2517,99 +2517,99 @@ Classes
 `LogEntryAdded`() |   
 `Script`(conn) |   
   
-_class _selenium.webdriver.common.bidi.script.Script(_conn_)[source]¶
+_class _selenium.webdriver.common.bidi.script.Script(_conn_)[source]
 
     
 
-add_console_message_handler(_handler_)[source]¶
+add_console_message_handler(_handler_)[source]
 
     
 
-add_javascript_error_handler(_handler_)[source]¶
+add_javascript_error_handler(_handler_)[source]
 
     
 
-remove_console_message_handler(_id_)[source]¶
+remove_console_message_handler(_id_)[source]
 
     
 
-remove_javascript_error_handler(_id_)¶
+remove_javascript_error_handler(_id_)
 
     
 
-_class _selenium.webdriver.common.bidi.script.LogEntryAdded[source]¶
+_class _selenium.webdriver.common.bidi.script.LogEntryAdded[source]
 
     
 
-event_class _ = 'log.entryAdded'_¶
+event_class _ = 'log.entryAdded'_
 
     
 
-_classmethod _from_json(_json_)[source]¶
+_classmethod _from_json(_json_)[source]
 
     
 
 _class _selenium.webdriver.common.bidi.script.ConsoleLogEntry(_level : str_,
 _text : str_, _timestamp : str_, _method : str_, _args : List[dict]_, _type_ :
-str_)[source]¶
+str_)[source]
 
     
 
-level _: str_¶
+level _: str_
 
     
 
-text _: str_¶
+text _: str_
 
     
 
-timestamp _: str_¶
+timestamp _: str_
 
     
 
-method _: str_¶
+method _: str_
 
     
 
-args _: List[dict]_¶
+args _: List[dict]_
 
     
 
-type__: str_¶
+type__: str_
 
     
 
-_classmethod _from_json(_json_)[source]¶
+_classmethod _from_json(_json_)[source]
 
     
 
 _class _selenium.webdriver.common.bidi.script.JavaScriptLogEntry(_level :
 str_, _text : str_, _timestamp : str_, _stacktrace : dict_, _type_ :
-str_)[source]¶
+str_)[source]
 
     
 
-level _: str_¶
+level _: str_
 
     
 
-text _: str_¶
+text _: str_
 
     
 
-timestamp _: str_¶
+timestamp _: str_
 
     
 
-stacktrace _: dict_¶
+stacktrace _: dict_
 
     
 
-type__: str_¶
+type__: str_
 
     
 
-_classmethod _from_json(_json_)[source]¶
+_classmethod _from_json(_json_)[source]
 
     
 
@@ -2660,7 +2660,7 @@ _classmethod _from_json(_json_)[source]¶
 ## Table of Contents
 
     - [Navigation](#navigation)
-- [selenium.webdriver.common.window¶](#seleniumwebdrivercommonwindow)
+- [selenium.webdriver.common.window](#seleniumwebdrivercommonwindow)
     - [Table of Contents](#table-of-contents)
     - [This Page](#this-page)
     - [Quick search](#quick-search)
@@ -2681,17 +2681,17 @@ Classes
 `WindowTypes`() | Set of supported window types.  
 ---|---  
   
-_class _selenium.webdriver.common.window.WindowTypes[source]¶
+_class _selenium.webdriver.common.window.WindowTypes[source]
 
     
 
 Set of supported window types.
 
-TAB _ = 'tab'_¶
+TAB _ = 'tab'_
 
     
 
-WINDOW _ = 'window'_¶
+WINDOW _ = 'window'_
 
     
 
@@ -2722,7 +2722,7 @@ WINDOW _ = 'window'_¶
 ## Table of Contents
 
     - [Navigation](#navigation)
-- [selenium.webdriver.common.actions.key_actions¶](#seleniumwebdrivercommonactionskey_actions)
+- [selenium.webdriver.common.actions.key_actions](#seleniumwebdrivercommonactionskey_actions)
     - [Table of Contents](#table-of-contents)
     - [This Page](#this-page)
     - [Quick search](#quick-search)
@@ -2741,25 +2741,25 @@ Classes
 `KeyActions`([source]) |   
 ---|---  
   
-_class _selenium.webdriver.common.actions.key_actions.KeyActions(_source : KeyInput | PointerInput | WheelInput | None = None_)[source]¶
+_class _selenium.webdriver.common.actions.key_actions.KeyActions(_source : KeyInput | PointerInput | WheelInput | None = None_)[source]
     
 
-key_down(_letter : str_) -> KeyActions[source]¶
-
-    
-
-key_up(_letter : str_) -> KeyActions[source]¶
+key_down(_letter : str_) -> KeyActions[source]
 
     
 
-pause(_duration : int = 0_) -> KeyActions[source]¶
+key_up(_letter : str_) -> KeyActions[source]
 
     
 
-send_keys(_text : str | list_) -> KeyActions[source]¶
+pause(_duration : int = 0_) -> KeyActions[source]
+
     
 
-PAUSE _ = 'pause'_¶
+send_keys(_text : str | list_) -> KeyActions[source]
+    
+
+PAUSE _ = 'pause'_
 
     
 
@@ -2793,79 +2793,79 @@ PAUSE _ = 'pause'_¶
 ## Table of Contents
 
     - [Navigation](#navigation)
-- [selenium.webdriver.common.options¶](#seleniumwebdrivercommonoptions)
-  - [Usage¶](#usage)
-  - [Parameters¶](#parameters)
-  - [Returns¶](#returns)
-  - [Usage¶](#usage)
-  - [Parameters¶](#parameters)
-  - [Returns¶](#returns)
-  - [Usage¶](#usage)
-  - [Parameters¶](#parameters)
-  - [Returns¶](#returns)
-  - [Usage¶](#usage)
-  - [Parameters¶](#parameters)
-  - [Returns¶](#returns)
-  - [Usage¶](#usage)
-  - [Parameters¶](#parameters)
-  - [Returns¶](#returns)
-  - [Usage¶](#usage)
-  - [Parameters¶](#parameters)
-  - [Returns¶](#returns)
-  - [Usage¶](#usage)
-  - [Parameters¶](#parameters)
-  - [Returns¶](#returns)
-  - [Usage¶](#usage)
-  - [Parameters¶](#parameters)
-  - [Returns¶](#returns)
-  - [Usage¶](#usage)
-  - [Parameters¶](#parameters)
-  - [Returns¶](#returns)
-  - [Usage¶](#usage)
-  - [Parameters¶](#parameters)
-  - [Returns¶](#returns)
-  - [Usage¶](#usage)
-  - [Parameters¶](#parameters)
-  - [Returns¶](#returns)
-  - [Usage¶](#usage)
-  - [Parameters¶](#parameters)
-  - [Returns¶](#returns)
-  - [Usage¶](#usage)
-  - [Parameters¶](#parameters)
-  - [Returns¶](#returns)
-  - [Usage¶](#usage)
-  - [Parameters¶](#parameters)
-  - [Returns¶](#returns)
-  - [Usage¶](#usage)
-  - [Parameters¶](#parameters)
-  - [Returns¶](#returns)
-  - [Usage¶](#usage)
-  - [Parameters¶](#parameters)
-  - [Returns¶](#returns)
-  - [Usage¶](#usage)
-  - [Parameters¶](#parameters)
-  - [Returns¶](#returns)
-  - [Usage¶](#usage)
-  - [Parameters¶](#parameters)
-  - [Returns¶](#returns)
-  - [Usage¶](#usage)
-  - [Parameters¶](#parameters)
-  - [Returns¶](#returns)
-  - [Usage¶](#usage)
-  - [Parameters¶](#parameters)
-  - [Returns¶](#returns)
-  - [Usage¶](#usage)
-  - [Parameters¶](#parameters)
-  - [Returns¶](#returns)
-  - [Usage¶](#usage)
-  - [Parameters¶](#parameters)
-  - [Returns¶](#returns)
-  - [Usage¶](#usage)
-  - [Parameters¶](#parameters)
-  - [Returns¶](#returns)
-  - [Usage¶](#usage)
-  - [Parameters¶](#parameters)
-  - [Returns¶](#returns)
+- [selenium.webdriver.common.options](#seleniumwebdrivercommonoptions)
+  - [Usage](#usage)
+  - [Parameters](#parameters)
+  - [Returns](#returns)
+  - [Usage](#usage)
+  - [Parameters](#parameters)
+  - [Returns](#returns)
+  - [Usage](#usage)
+  - [Parameters](#parameters)
+  - [Returns](#returns)
+  - [Usage](#usage)
+  - [Parameters](#parameters)
+  - [Returns](#returns)
+  - [Usage](#usage)
+  - [Parameters](#parameters)
+  - [Returns](#returns)
+  - [Usage](#usage)
+  - [Parameters](#parameters)
+  - [Returns](#returns)
+  - [Usage](#usage)
+  - [Parameters](#parameters)
+  - [Returns](#returns)
+  - [Usage](#usage)
+  - [Parameters](#parameters)
+  - [Returns](#returns)
+  - [Usage](#usage)
+  - [Parameters](#parameters)
+  - [Returns](#returns)
+  - [Usage](#usage)
+  - [Parameters](#parameters)
+  - [Returns](#returns)
+  - [Usage](#usage)
+  - [Parameters](#parameters)
+  - [Returns](#returns)
+  - [Usage](#usage)
+  - [Parameters](#parameters)
+  - [Returns](#returns)
+  - [Usage](#usage)
+  - [Parameters](#parameters)
+  - [Returns](#returns)
+  - [Usage](#usage)
+  - [Parameters](#parameters)
+  - [Returns](#returns)
+  - [Usage](#usage)
+  - [Parameters](#parameters)
+  - [Returns](#returns)
+  - [Usage](#usage)
+  - [Parameters](#parameters)
+  - [Returns](#returns)
+  - [Usage](#usage)
+  - [Parameters](#parameters)
+  - [Returns](#returns)
+  - [Usage](#usage)
+  - [Parameters](#parameters)
+  - [Returns](#returns)
+  - [Usage](#usage)
+  - [Parameters](#parameters)
+  - [Returns](#returns)
+  - [Usage](#usage)
+  - [Parameters](#parameters)
+  - [Returns](#returns)
+  - [Usage](#usage)
+  - [Parameters](#parameters)
+  - [Returns](#returns)
+  - [Usage](#usage)
+  - [Parameters](#parameters)
+  - [Returns](#returns)
+  - [Usage](#usage)
+  - [Parameters](#parameters)
+  - [Returns](#returns)
+  - [Usage](#usage)
+  - [Parameters](#parameters)
+  - [Returns](#returns)
     - [Table of Contents](#table-of-contents)
     - [This Page](#this-page)
     - [Quick search](#quick-search)
@@ -2886,7 +2886,7 @@ Classes
 `BaseOptions`() | Base class for individual browser options.  
 `PageLoadStrategy`(value) | Enum of possible page load strategies.  
   
-_class _selenium.webdriver.common.options.PageLoadStrategy(_value_)[source]¶
+_class _selenium.webdriver.common.options.PageLoadStrategy(_value_)[source]
 
     
 
@@ -2905,31 +2905,31 @@ Selenium support following strategies:
 Docs:
 https://www.selenium.dev/documentation/webdriver/drivers/options/#pageloadstrategy.
 
-normal _ = 'normal'_¶
+normal _ = 'normal'_
 
     
 
-eager _ = 'eager'_¶
+eager _ = 'eager'_
 
     
 
-none _ = 'none'_¶
+none _ = 'none'_
 
     
 
-_class _selenium.webdriver.common.options.BaseOptions[source]¶
+_class _selenium.webdriver.common.options.BaseOptions[source]
 
     
 
 Base class for individual browser options.
 
-browser_version¶
+browser_version
 
     
 
 Gets and Sets the version of the browser.
 
-## Usage¶
+## Usage
 
   * Get
     
@@ -2939,11 +2939,11 @@ Gets and Sets the version of the browser.
     
     * self.browser_version = value
 
-## Parameters¶
+## Parameters
 
 value: str
 
-## Returns¶
+## Returns
 
   * Get
     
@@ -2953,13 +2953,13 @@ value: str
     
     * None
 
-platform_name¶
+platform_name
 
     
 
 Gets and Sets name of the platform.
 
-## Usage¶
+## Usage
 
   * Get
     
@@ -2969,11 +2969,11 @@ Gets and Sets name of the platform.
     
     * self.platform_name = value
 
-## Parameters¶
+## Parameters
 
 value: str
 
-## Returns¶
+## Returns
 
   * Get
     
@@ -2983,13 +2983,13 @@ value: str
     
     * None
 
-accept_insecure_certs¶
+accept_insecure_certs
 
     
 
 Gets and Set whether the session accepts insecure certificates.
 
-## Usage¶
+## Usage
 
   * Get
     
@@ -2999,11 +2999,11 @@ Gets and Set whether the session accepts insecure certificates.
     
     * self.accept_insecure_certs = value
 
-## Parameters¶
+## Parameters
 
 value: bool
 
-## Returns¶
+## Returns
 
   * Get
     
@@ -3013,13 +3013,13 @@ value: bool
     
     * None
 
-strict_file_interactability¶
+strict_file_interactability
 
     
 
 Gets and Sets whether session is about file interactability.
 
-## Usage¶
+## Usage
 
   * Get
     
@@ -3029,11 +3029,11 @@ Gets and Sets whether session is about file interactability.
     
     * self.strict_file_interactability = value
 
-## Parameters¶
+## Parameters
 
 value: bool
 
-## Returns¶
+## Returns
 
   * Get
     
@@ -3043,13 +3043,13 @@ value: bool
     
     * None
 
-set_window_rect¶
+set_window_rect
 
     
 
 Gets and Sets window size and position.
 
-## Usage¶
+## Usage
 
   * Get
     
@@ -3059,11 +3059,11 @@ Gets and Sets window size and position.
     
     * self.set_window_rect = value
 
-## Parameters¶
+## Parameters
 
 value: bool
 
-## Returns¶
+## Returns
 
   * Get
     
@@ -3073,13 +3073,13 @@ value: bool
     
     * None
 
-enable_bidi¶
+enable_bidi
 
     
 
 Gets and Set whether the session has WebDriverBiDi enabled.
 
-## Usage¶
+## Usage
 
   * Get
     
@@ -3089,11 +3089,11 @@ Gets and Set whether the session has WebDriverBiDi enabled.
     
     * self.enable_bidi = value
 
-## Parameters¶
+## Parameters
 
 value: bool
 
-## Returns¶
+## Returns
 
   * Get
     
@@ -3103,13 +3103,13 @@ value: bool
     
     * None
 
-page_load_strategy¶
+page_load_strategy
 
     
 
 :Gets and Sets page load strategy, the default is “normal”.
 
-## Usage¶
+## Usage
 
   * Get
     
@@ -3119,11 +3119,11 @@ page_load_strategy¶
     
     * self.page_load_strategy = value
 
-## Parameters¶
+## Parameters
 
 value: str
 
-## Returns¶
+## Returns
 
   * Get
     
@@ -3133,13 +3133,13 @@ value: str
     
     * None
 
-unhandled_prompt_behavior¶
+unhandled_prompt_behavior
 
     
 
 :Gets and Sets unhandled prompt behavior, the default is “dismiss and notify”.
 
-## Usage¶
+## Usage
 
   * Get
     
@@ -3149,11 +3149,11 @@ unhandled_prompt_behavior¶
     
     * self.unhandled_prompt_behavior = value
 
-## Parameters¶
+## Parameters
 
 value: str
 
-## Returns¶
+## Returns
 
   * Get
     
@@ -3163,14 +3163,14 @@ value: str
     
     * None
 
-timeouts¶
+timeouts
 
     
 
 :Gets and Sets implicit timeout, pageLoad timeout and script timeout if set
 (in milliseconds)
 
-## Usage¶
+## Usage
 
   * Get
     
@@ -3180,11 +3180,11 @@ timeouts¶
     
     * self.timeouts = value
 
-## Parameters¶
+## Parameters
 
 value: dict
 
-## Returns¶
+## Returns
 
   * Get
     
@@ -3194,13 +3194,13 @@ value: dict
     
     * None
 
-proxy¶
+proxy
 
     
 
 Sets and Gets Proxy.
 
-## Usage¶
+## Usage
 
   * Get
     
@@ -3210,11 +3210,11 @@ Sets and Gets Proxy.
     
     * self.proxy = value
 
-## Parameters¶
+## Parameters
 
 value: Proxy
 
-## Returns¶
+## Returns
 
   * Get
     
@@ -3224,13 +3224,13 @@ value: Proxy
     
     * None
 
-enable_downloads¶
+enable_downloads
 
     
 
 Gets and Sets whether session can download files.
 
-## Usage¶
+## Usage
 
   * Get
     
@@ -3240,11 +3240,11 @@ Gets and Sets whether session can download files.
     
     * self.enable_downloads = value
 
-## Parameters¶
+## Parameters
 
 value: bool
 
-## Returns¶
+## Returns
 
   * Get
     
@@ -3254,13 +3254,13 @@ value: bool
     
     * None
 
-web_socket_url¶
+web_socket_url
 
     
 
 Gets and Sets WebSocket URL.
 
-## Usage¶
+## Usage
 
   * Get
     
@@ -3270,11 +3270,11 @@ Gets and Sets WebSocket URL.
     
     * self.web_socket_url = value
 
-## Parameters¶
+## Parameters
 
 value: bool
 
-## Returns¶
+## Returns
 
   * Get
     
@@ -3284,17 +3284,17 @@ value: bool
     
     * None
 
-_property _capabilities¶
+_property _capabilities
 
     
 
-set_capability(_name_ , _value_) -> None[source]¶
+set_capability(_name_ , _value_) -> None[source]
 
     
 
 Sets a capability.
 
-enable_mobile(_android_package : str | None = None_, _android_activity : str | None = None_, _device_serial : str | None = None_) -> None[source]¶
+enable_mobile(_android_package : str | None = None_, _android_activity : str | None = None_, _device_serial : str | None = None_) -> None[source]
     
 
 Enables mobile browser use for browsers that support it.
@@ -3305,34 +3305,34 @@ Args:
 
 android_activity: The name of the android package to start
 
-_abstract _to_capabilities()[source]¶
+_abstract _to_capabilities()[source]
 
     
 
 Convert options into capabilities dictionary.
 
-_abstract property _default_capabilities¶
+_abstract property _default_capabilities
 
     
 
 Return minimal capabilities necessary as a dictionary.
 
-ignore_local_proxy_environment_variables() -> None[source]¶
+ignore_local_proxy_environment_variables() -> None[source]
 
     
 
 By calling this you will ignore HTTP_PROXY and HTTPS_PROXY from being picked
 up and used.
 
-_class _selenium.webdriver.common.options.ArgOptions[source]¶
+_class _selenium.webdriver.common.options.ArgOptions[source]
 
     
 
-_property _capabilities¶
+_property _capabilities
 
     
 
-enable_mobile(_android_package : str | None = None_, _android_activity : str | None = None_, _device_serial : str | None = None_) -> None¶
+enable_mobile(_android_package : str | None = None_, _android_activity : str | None = None_, _device_serial : str | None = None_) -> None
     
 
 Enables mobile browser use for browsers that support it.
@@ -3343,19 +3343,19 @@ Args:
 
 android_activity: The name of the android package to start
 
-set_capability(_name_ , _value_) -> None¶
+set_capability(_name_ , _value_) -> None
 
     
 
 Sets a capability.
 
-browser_version¶
+browser_version
 
     
 
 Gets and Sets the version of the browser.
 
-## Usage¶
+## Usage
 
   * Get
     
@@ -3365,11 +3365,11 @@ Gets and Sets the version of the browser.
     
     * self.browser_version = value
 
-## Parameters¶
+## Parameters
 
 value: str
 
-## Returns¶
+## Returns
 
   * Get
     
@@ -3379,13 +3379,13 @@ value: str
     
     * None
 
-platform_name¶
+platform_name
 
     
 
 Gets and Sets name of the platform.
 
-## Usage¶
+## Usage
 
   * Get
     
@@ -3395,11 +3395,11 @@ Gets and Sets name of the platform.
     
     * self.platform_name = value
 
-## Parameters¶
+## Parameters
 
 value: str
 
-## Returns¶
+## Returns
 
   * Get
     
@@ -3409,13 +3409,13 @@ value: str
     
     * None
 
-accept_insecure_certs¶
+accept_insecure_certs
 
     
 
 Gets and Set whether the session accepts insecure certificates.
 
-## Usage¶
+## Usage
 
   * Get
     
@@ -3425,11 +3425,11 @@ Gets and Set whether the session accepts insecure certificates.
     
     * self.accept_insecure_certs = value
 
-## Parameters¶
+## Parameters
 
 value: bool
 
-## Returns¶
+## Returns
 
   * Get
     
@@ -3439,13 +3439,13 @@ value: bool
     
     * None
 
-strict_file_interactability¶
+strict_file_interactability
 
     
 
 Gets and Sets whether session is about file interactability.
 
-## Usage¶
+## Usage
 
   * Get
     
@@ -3455,11 +3455,11 @@ Gets and Sets whether session is about file interactability.
     
     * self.strict_file_interactability = value
 
-## Parameters¶
+## Parameters
 
 value: bool
 
-## Returns¶
+## Returns
 
   * Get
     
@@ -3469,13 +3469,13 @@ value: bool
     
     * None
 
-set_window_rect¶
+set_window_rect
 
     
 
 Gets and Sets window size and position.
 
-## Usage¶
+## Usage
 
   * Get
     
@@ -3485,11 +3485,11 @@ Gets and Sets window size and position.
     
     * self.set_window_rect = value
 
-## Parameters¶
+## Parameters
 
 value: bool
 
-## Returns¶
+## Returns
 
   * Get
     
@@ -3499,13 +3499,13 @@ value: bool
     
     * None
 
-enable_bidi¶
+enable_bidi
 
     
 
 Gets and Set whether the session has WebDriverBiDi enabled.
 
-## Usage¶
+## Usage
 
   * Get
     
@@ -3515,11 +3515,11 @@ Gets and Set whether the session has WebDriverBiDi enabled.
     
     * self.enable_bidi = value
 
-## Parameters¶
+## Parameters
 
 value: bool
 
-## Returns¶
+## Returns
 
   * Get
     
@@ -3529,13 +3529,13 @@ value: bool
     
     * None
 
-web_socket_url¶
+web_socket_url
 
     
 
 Gets and Sets WebSocket URL.
 
-## Usage¶
+## Usage
 
   * Get
     
@@ -3545,11 +3545,11 @@ Gets and Sets WebSocket URL.
     
     * self.web_socket_url = value
 
-## Parameters¶
+## Parameters
 
 value: bool
 
-## Returns¶
+## Returns
 
   * Get
     
@@ -3559,13 +3559,13 @@ value: bool
     
     * None
 
-page_load_strategy¶
+page_load_strategy
 
     
 
 :Gets and Sets page load strategy, the default is “normal”.
 
-## Usage¶
+## Usage
 
   * Get
     
@@ -3575,11 +3575,11 @@ page_load_strategy¶
     
     * self.page_load_strategy = value
 
-## Parameters¶
+## Parameters
 
 value: str
 
-## Returns¶
+## Returns
 
   * Get
     
@@ -3589,13 +3589,13 @@ value: str
     
     * None
 
-unhandled_prompt_behavior¶
+unhandled_prompt_behavior
 
     
 
 :Gets and Sets unhandled prompt behavior, the default is “dismiss and notify”.
 
-## Usage¶
+## Usage
 
   * Get
     
@@ -3605,11 +3605,11 @@ unhandled_prompt_behavior¶
     
     * self.unhandled_prompt_behavior = value
 
-## Parameters¶
+## Parameters
 
 value: str
 
-## Returns¶
+## Returns
 
   * Get
     
@@ -3619,14 +3619,14 @@ value: str
     
     * None
 
-timeouts¶
+timeouts
 
     
 
 :Gets and Sets implicit timeout, pageLoad timeout and script timeout if set
 (in milliseconds)
 
-## Usage¶
+## Usage
 
   * Get
     
@@ -3636,11 +3636,11 @@ timeouts¶
     
     * self.timeouts = value
 
-## Parameters¶
+## Parameters
 
 value: dict
 
-## Returns¶
+## Returns
 
   * Get
     
@@ -3650,13 +3650,13 @@ value: dict
     
     * None
 
-proxy¶
+proxy
 
     
 
 Sets and Gets Proxy.
 
-## Usage¶
+## Usage
 
   * Get
     
@@ -3666,11 +3666,11 @@ Sets and Gets Proxy.
     
     * self.proxy = value
 
-## Parameters¶
+## Parameters
 
 value: Proxy
 
-## Returns¶
+## Returns
 
   * Get
     
@@ -3680,13 +3680,13 @@ value: Proxy
     
     * None
 
-enable_downloads¶
+enable_downloads
 
     
 
 Gets and Sets whether session can download files.
 
-## Usage¶
+## Usage
 
   * Get
     
@@ -3696,11 +3696,11 @@ Gets and Sets whether session can download files.
     
     * self.enable_downloads = value
 
-## Parameters¶
+## Parameters
 
 value: bool
 
-## Returns¶
+## Returns
 
   * Get
     
@@ -3710,11 +3710,11 @@ value: bool
     
     * None
 
-BINARY_LOCATION_ERROR _ = 'Binary Location Must be a String'_¶
+BINARY_LOCATION_ERROR _ = 'Binary Location Must be a String'_
 
     
 
-_property _arguments¶
+_property _arguments
 
     
 
@@ -3724,7 +3724,7 @@ Returns:
 
 A list of arguments needed for the browser.
 
-add_argument(_argument_) -> None[source]¶
+add_argument(_argument_) -> None[source]
 
     
 
@@ -3736,20 +3736,20 @@ Args:
 
   * Sets the arguments
 
-ignore_local_proxy_environment_variables() -> None[source]¶
+ignore_local_proxy_environment_variables() -> None[source]
 
     
 
 By calling this you will ignore HTTP_PROXY and HTTPS_PROXY from being picked
 up and used.
 
-to_capabilities()[source]¶
+to_capabilities()[source]
 
     
 
 Convert options into capabilities dictionary.
 
-_property _default_capabilities¶
+_property _default_capabilities
 
     
 
@@ -3824,7 +3824,7 @@ Return minimal capabilities necessary as a dictionary.
 ## Table of Contents
 
     - [Navigation](#navigation)
-- [selenium.webdriver.common.actions.wheel_input¶](#seleniumwebdrivercommonactionswheel_input)
+- [selenium.webdriver.common.actions.wheel_input](#seleniumwebdrivercommonactionswheel_input)
     - [Table of Contents](#table-of-contents)
     - [This Page](#this-page)
     - [Quick search](#quick-search)
@@ -3844,52 +3844,52 @@ Classes
 ---|---  
 `WheelInput`(name) |   
   
-_class _selenium.webdriver.common.actions.wheel_input.ScrollOrigin(_origin : str | WebElement_, _x_offset : int_, _y_offset : int_)[source]¶
+_class _selenium.webdriver.common.actions.wheel_input.ScrollOrigin(_origin : str | WebElement_, _x_offset : int_, _y_offset : int_)[source]
     
 
 _classmethod _from_element(_element : WebElement_, _x_offset : int = 0_,
-_y_offset : int = 0_)[source]¶
+_y_offset : int = 0_)[source]
 
     
 
 _classmethod _from_viewport(_x_offset : int = 0_, _y_offset : int =
-0_)[source]¶
+0_)[source]
 
     
 
-_property _origin _: str | WebElement_¶
+_property _origin _: str | WebElement_
     
 
-_property _x_offset _: int_¶
+_property _x_offset _: int_
 
     
 
-_property _y_offset _: int_¶
+_property _y_offset _: int_
 
     
 
 _class
-_selenium.webdriver.common.actions.wheel_input.WheelInput(_name_)[source]¶
+_selenium.webdriver.common.actions.wheel_input.WheelInput(_name_)[source]
 
     
 
-encode() -> dict[source]¶
+encode() -> dict[source]
 
     
 
 create_scroll(_x : int_, _y : int_, _delta_x : int_, _delta_y : int_,
-_duration : int_, _origin_) -> None[source]¶
+_duration : int_, _origin_) -> None[source]
 
     
 
-create_pause(_pause_duration : int | float = 0_) -> None[source]¶
+create_pause(_pause_duration : int | float = 0_) -> None[source]
     
 
-add_action(_action : Any_) -> None¶
+add_action(_action : Any_) -> None
 
     
 
-clear_actions() -> None¶
+clear_actions() -> None
 
     
 
@@ -3929,7 +3929,7 @@ clear_actions() -> None¶
 ## Table of Contents
 
     - [Navigation](#navigation)
-- [selenium.webdriver.common.service¶](#seleniumwebdrivercommonservice)
+- [selenium.webdriver.common.service](#seleniumwebdrivercommonservice)
     - [Table of Contents](#table-of-contents)
     - [This Page](#this-page)
     - [Quick search](#quick-search)
@@ -3948,7 +3948,7 @@ Classes
 `Service`([executable_path, port, log_output, env]) | The abstract base class for all service objects.  
 ---|---  
   
-_class _selenium.webdriver.common.service.Service(_executable_path : str | None = None_, _port : int = 0_, _log_output : int | str | IO[Any] | None = None_, _env : Mapping[Any, Any] | None = None_, _** kwargs_)[source]¶
+_class _selenium.webdriver.common.service.Service(_executable_path : str | None = None_, _port : int = 0_, _log_output : int | str | IO[Any] | None = None_, _env : Mapping[Any, Any] | None = None_, _** kwargs_)[source]
     
 
 The abstract base class for all service objects. Services typically launch a
@@ -3967,23 +3967,23 @@ Parameters:
 
   * **env** – (Optional) Mapping of environment variables for the new process, defaults to os.environ.
 
-_property _service_url _: str_¶
+_property _service_url _: str_
 
     
 
 Gets the url of the Service.
 
-_abstract _command_line_args() -> List[str][source]¶
+_abstract _command_line_args() -> List[str][source]
 
     
 
 A List of program arguments (excluding the executable).
 
-_property _path _: str_¶
+_property _path _: str_
 
     
 
-start() -> None[source]¶
+start() -> None[source]
 
     
 
@@ -3995,27 +3995,27 @@ Exceptions:
 
   * WebDriverException : Raised either when it can’t start the service or when it can’t connect to the service
 
-assert_process_still_running() -> None[source]¶
+assert_process_still_running() -> None[source]
 
     
 
 Check if the underlying process is still running.
 
-is_connectable() -> bool[source]¶
+is_connectable() -> bool[source]
 
     
 
 Establishes a socket connection to determine if the service running on the
 port is accessible.
 
-send_remote_shutdown_command() -> None[source]¶
+send_remote_shutdown_command() -> None[source]
 
     
 
 Dispatch an HTTP request to the shutdown endpoint for the service in an
 attempt to stop it.
 
-stop() -> None[source]¶
+stop() -> None[source]
 
     
 
@@ -4054,7 +4054,7 @@ Stops the service.
 ## Table of Contents
 
     - [Navigation](#navigation)
-- [selenium.webdriver.common.keys¶](#seleniumwebdrivercommonkeys)
+- [selenium.webdriver.common.keys](#seleniumwebdrivercommonkeys)
     - [Table of Contents](#table-of-contents)
     - [This Page](#this-page)
     - [Quick search](#quick-search)
@@ -4075,269 +4075,269 @@ Classes
 `Keys`() | Set of special keys codes.  
 ---|---  
   
-_class _selenium.webdriver.common.keys.Keys[source]¶
+_class _selenium.webdriver.common.keys.Keys[source]
 
     
 
 Set of special keys codes.
 
-NULL _ = '\ue000'_¶
+NULL _ = '\ue000'_
 
     
 
-CANCEL _ = '\ue001'_¶
+CANCEL _ = '\ue001'_
 
     
 
-HELP _ = '\ue002'_¶
+HELP _ = '\ue002'_
 
     
 
-BACKSPACE _ = '\ue003'_¶
+BACKSPACE _ = '\ue003'_
 
     
 
-BACK_SPACE _ = '\ue003'_¶
+BACK_SPACE _ = '\ue003'_
 
     
 
-TAB _ = '\ue004'_¶
+TAB _ = '\ue004'_
 
     
 
-CLEAR _ = '\ue005'_¶
+CLEAR _ = '\ue005'_
 
     
 
-RETURN _ = '\ue006'_¶
+RETURN _ = '\ue006'_
 
     
 
-ENTER _ = '\ue007'_¶
+ENTER _ = '\ue007'_
 
     
 
-SHIFT _ = '\ue008'_¶
+SHIFT _ = '\ue008'_
 
     
 
-LEFT_SHIFT _ = '\ue008'_¶
+LEFT_SHIFT _ = '\ue008'_
 
     
 
-CONTROL _ = '\ue009'_¶
+CONTROL _ = '\ue009'_
 
     
 
-LEFT_CONTROL _ = '\ue009'_¶
+LEFT_CONTROL _ = '\ue009'_
 
     
 
-ALT _ = '\ue00a'_¶
+ALT _ = '\ue00a'_
 
     
 
-LEFT_ALT _ = '\ue00a'_¶
+LEFT_ALT _ = '\ue00a'_
 
     
 
-PAUSE _ = '\ue00b'_¶
+PAUSE _ = '\ue00b'_
 
     
 
-ESCAPE _ = '\ue00c'_¶
+ESCAPE _ = '\ue00c'_
 
     
 
-SPACE _ = '\ue00d'_¶
+SPACE _ = '\ue00d'_
 
     
 
-PAGE_UP _ = '\ue00e'_¶
+PAGE_UP _ = '\ue00e'_
 
     
 
-PAGE_DOWN _ = '\ue00f'_¶
+PAGE_DOWN _ = '\ue00f'_
 
     
 
-END _ = '\ue010'_¶
+END _ = '\ue010'_
 
     
 
-HOME _ = '\ue011'_¶
+HOME _ = '\ue011'_
 
     
 
-LEFT _ = '\ue012'_¶
+LEFT _ = '\ue012'_
 
     
 
-ARROW_LEFT _ = '\ue012'_¶
+ARROW_LEFT _ = '\ue012'_
 
     
 
-UP _ = '\ue013'_¶
+UP _ = '\ue013'_
 
     
 
-ARROW_UP _ = '\ue013'_¶
+ARROW_UP _ = '\ue013'_
 
     
 
-RIGHT _ = '\ue014'_¶
+RIGHT _ = '\ue014'_
 
     
 
-ARROW_RIGHT _ = '\ue014'_¶
+ARROW_RIGHT _ = '\ue014'_
 
     
 
-DOWN _ = '\ue015'_¶
+DOWN _ = '\ue015'_
 
     
 
-ARROW_DOWN _ = '\ue015'_¶
+ARROW_DOWN _ = '\ue015'_
 
     
 
-INSERT _ = '\ue016'_¶
+INSERT _ = '\ue016'_
 
     
 
-DELETE _ = '\ue017'_¶
+DELETE _ = '\ue017'_
 
     
 
-SEMICOLON _ = '\ue018'_¶
+SEMICOLON _ = '\ue018'_
 
     
 
-EQUALS _ = '\ue019'_¶
+EQUALS _ = '\ue019'_
 
     
 
-NUMPAD0 _ = '\ue01a'_¶
+NUMPAD0 _ = '\ue01a'_
 
     
 
-NUMPAD1 _ = '\ue01b'_¶
+NUMPAD1 _ = '\ue01b'_
 
     
 
-NUMPAD2 _ = '\ue01c'_¶
+NUMPAD2 _ = '\ue01c'_
 
     
 
-NUMPAD3 _ = '\ue01d'_¶
+NUMPAD3 _ = '\ue01d'_
 
     
 
-NUMPAD4 _ = '\ue01e'_¶
+NUMPAD4 _ = '\ue01e'_
 
     
 
-NUMPAD5 _ = '\ue01f'_¶
+NUMPAD5 _ = '\ue01f'_
 
     
 
-NUMPAD6 _ = '\ue020'_¶
+NUMPAD6 _ = '\ue020'_
 
     
 
-NUMPAD7 _ = '\ue021'_¶
+NUMPAD7 _ = '\ue021'_
 
     
 
-NUMPAD8 _ = '\ue022'_¶
+NUMPAD8 _ = '\ue022'_
 
     
 
-NUMPAD9 _ = '\ue023'_¶
+NUMPAD9 _ = '\ue023'_
 
     
 
-MULTIPLY _ = '\ue024'_¶
+MULTIPLY _ = '\ue024'_
 
     
 
-ADD _ = '\ue025'_¶
+ADD _ = '\ue025'_
 
     
 
-SEPARATOR _ = '\ue026'_¶
+SEPARATOR _ = '\ue026'_
 
     
 
-SUBTRACT _ = '\ue027'_¶
+SUBTRACT _ = '\ue027'_
 
     
 
-DECIMAL _ = '\ue028'_¶
+DECIMAL _ = '\ue028'_
 
     
 
-DIVIDE _ = '\ue029'_¶
+DIVIDE _ = '\ue029'_
 
     
 
-F1 _ = '\ue031'_¶
+F1 _ = '\ue031'_
 
     
 
-F2 _ = '\ue032'_¶
+F2 _ = '\ue032'_
 
     
 
-F3 _ = '\ue033'_¶
+F3 _ = '\ue033'_
 
     
 
-F4 _ = '\ue034'_¶
+F4 _ = '\ue034'_
 
     
 
-F5 _ = '\ue035'_¶
+F5 _ = '\ue035'_
 
     
 
-F6 _ = '\ue036'_¶
+F6 _ = '\ue036'_
 
     
 
-F7 _ = '\ue037'_¶
+F7 _ = '\ue037'_
 
     
 
-F8 _ = '\ue038'_¶
+F8 _ = '\ue038'_
 
     
 
-F9 _ = '\ue039'_¶
+F9 _ = '\ue039'_
 
     
 
-F10 _ = '\ue03a'_¶
+F10 _ = '\ue03a'_
 
     
 
-F11 _ = '\ue03b'_¶
+F11 _ = '\ue03b'_
 
     
 
-F12 _ = '\ue03c'_¶
+F12 _ = '\ue03c'_
 
     
 
-META _ = '\ue03d'_¶
+META _ = '\ue03d'_
 
     
 
-COMMAND _ = '\ue03d'_¶
+COMMAND _ = '\ue03d'_
 
     
 
-ZENKAKU_HANKAKU _ = '\ue040'_¶
+ZENKAKU_HANKAKU _ = '\ue040'_
 
     
 
@@ -4431,7 +4431,7 @@ ZENKAKU_HANKAKU _ = '\ue040'_¶
 ## Table of Contents
 
     - [Navigation](#navigation)
-- [selenium.webdriver.common.actions.input_device¶](#seleniumwebdrivercommonactionsinput_device)
+- [selenium.webdriver.common.actions.input_device](#seleniumwebdrivercommonactionsinput_device)
     - [Table of Contents](#table-of-contents)
     - [This Page](#this-page)
     - [Quick search](#quick-search)
@@ -4450,20 +4450,20 @@ Classes
 `InputDevice`([name]) | Describes the input device being used for the action.  
 ---|---  
   
-_class _selenium.webdriver.common.actions.input_device.InputDevice(_name : str | None = None_)[source]¶
+_class _selenium.webdriver.common.actions.input_device.InputDevice(_name : str | None = None_)[source]
     
 
 Describes the input device being used for the action.
 
-add_action(_action : Any_) -> None[source]¶
+add_action(_action : Any_) -> None[source]
 
     
 
-clear_actions() -> None[source]¶
+clear_actions() -> None[source]
 
     
 
-create_pause(_duration : float = 0_) -> None[source]¶
+create_pause(_duration : float = 0_) -> None[source]
 
     
 
@@ -4495,7 +4495,7 @@ create_pause(_duration : float = 0_) -> None[source]¶
 ## Table of Contents
 
     - [Navigation](#navigation)
-- [selenium.webdriver.common.actions.pointer_actions¶](#seleniumwebdrivercommonactionspointer_actions)
+- [selenium.webdriver.common.actions.pointer_actions](#seleniumwebdrivercommonactionspointer_actions)
     - [Table of Contents](#table-of-contents)
     - [This Page](#this-page)
     - [Quick search](#quick-search)
@@ -4514,7 +4514,7 @@ Classes
 `PointerActions`([source, duration]) | Args: - source: PointerInput instance - duration: override the default 250 msecs of DEFAULT_MOVE_DURATION in source  
 ---|---  
   
-_class _selenium.webdriver.common.actions.pointer_actions.PointerActions(_source : PointerInput | None = None_, _duration : int = 250_)[source]¶
+_class _selenium.webdriver.common.actions.pointer_actions.PointerActions(_source : PointerInput | None = None_, _duration : int = 250_)[source]
     
 
 Args: \- source: PointerInput instance \- duration: override the default 250
@@ -4522,53 +4522,53 @@ msecs of DEFAULT_MOVE_DURATION in source
 
 pointer_down(_button =0_, _width =None_, _height =None_, _pressure =None_,
 _tangential_pressure =None_, _tilt_x =None_, _tilt_y =None_, _twist =None_,
-_altitude_angle =None_, _azimuth_angle =None_)[source]¶
+_altitude_angle =None_, _azimuth_angle =None_)[source]
 
     
 
-pointer_up(_button =0_)[source]¶
+pointer_up(_button =0_)[source]
 
     
 
 move_to(_element_ , _x =0_, _y =0_, _width =None_, _height =None_, _pressure
 =None_, _tangential_pressure =None_, _tilt_x =None_, _tilt_y =None_, _twist
-=None_, _altitude_angle =None_, _azimuth_angle =None_)[source]¶
+=None_, _altitude_angle =None_, _azimuth_angle =None_)[source]
 
     
 
 move_by(_x_ , _y_ , _width =None_, _height =None_, _pressure =None_,
 _tangential_pressure =None_, _tilt_x =None_, _tilt_y =None_, _twist =None_,
-_altitude_angle =None_, _azimuth_angle =None_)[source]¶
+_altitude_angle =None_, _azimuth_angle =None_)[source]
 
     
 
 move_to_location(_x_ , _y_ , _width =None_, _height =None_, _pressure =None_,
 _tangential_pressure =None_, _tilt_x =None_, _tilt_y =None_, _twist =None_,
-_altitude_angle =None_, _azimuth_angle =None_)[source]¶
+_altitude_angle =None_, _azimuth_angle =None_)[source]
 
     
 
-click(_element : WebElement | None = None_, _button =0_)[source]¶
+click(_element : WebElement | None = None_, _button =0_)[source]
     
 
-context_click(_element : WebElement | None = None_)[source]¶
+context_click(_element : WebElement | None = None_)[source]
     
 
-click_and_hold(_element : WebElement | None = None_, _button =0_)[source]¶
+click_and_hold(_element : WebElement | None = None_, _button =0_)[source]
     
 
-release(_button =0_)[source]¶
-
-    
-
-double_click(_element : WebElement | None = None_)[source]¶
-    
-
-pause(_duration : float = 0_)[source]¶
+release(_button =0_)[source]
 
     
 
-PAUSE _ = 'pause'_¶
+double_click(_element : WebElement | None = None_)[source]
+    
+
+pause(_duration : float = 0_)[source]
+
+    
+
+PAUSE _ = 'pause'_
 
     
 
@@ -4609,13 +4609,13 @@ PAUSE _ = 'pause'_¶
 ## Table of Contents
 
     - [Navigation](#navigation)
-- [selenium.webdriver.common.timeouts¶](#seleniumwebdrivercommontimeouts)
-  - [Usage¶](#usage)
-  - [Parameters¶](#parameters)
-  - [Usage¶](#usage)
-  - [Parameters¶](#parameters)
-  - [Usage¶](#usage)
-  - [Parameters¶](#parameters)
+- [selenium.webdriver.common.timeouts](#seleniumwebdrivercommontimeouts)
+  - [Usage](#usage)
+  - [Parameters](#parameters)
+  - [Usage](#usage)
+  - [Parameters](#parameters)
+  - [Usage](#usage)
+  - [Parameters](#parameters)
     - [Table of Contents](#table-of-contents)
     - [This Page](#this-page)
     - [Quick search](#quick-search)
@@ -4635,7 +4635,7 @@ Classes
 ---|---  
   
 _class _selenium.webdriver.common.timeouts.Timeouts(_implicit_wait : float =
-0_, _page_load : float = 0_, _script : float = 0_)[source]¶
+0_, _page_load : float = 0_, _script : float = 0_)[source]
 
     
 
@@ -4662,7 +4662,7 @@ to wait for a page load to complete before throwing an error.
 
 wait for an asynchronous script to finish execution before throwing an error.
 
-implicit_wait¶
+implicit_wait
 
     
 
@@ -4670,7 +4670,7 @@ Get or set how many seconds to wait when searching for elements.
 
 This does not set the value on the remote end.
 
-## Usage¶
+## Usage
 
   * Get
     
@@ -4680,11 +4680,11 @@ This does not set the value on the remote end.
     
     * self.implicit_wait = value
 
-## Parameters¶
+## Parameters
 
 value: float
 
-page_load¶
+page_load
 
     
 
@@ -4692,7 +4692,7 @@ Get or set how many seconds to wait for the page to load.
 
 This does not set the value on the remote end.
 
-## Usage¶
+## Usage
 
   * Get
     
@@ -4702,11 +4702,11 @@ This does not set the value on the remote end.
     
     * self.page_load = value
 
-## Parameters¶
+## Parameters
 
 value: float
 
-script¶
+script
 
     
 
@@ -4715,7 +4715,7 @@ execution.
 
 This does not set the value on the remote end.
 
-## Usage¶
+## Usage
 
   * Get
     
@@ -4725,7 +4725,7 @@ This does not set the value on the remote end.
     
     * self.script = value
 
-## Parameters¶
+## Parameters
 
 value: float
 
@@ -4757,27 +4757,27 @@ value: float
 ## Table of Contents
 
     - [Navigation](#navigation)
-- [selenium.webdriver.common.proxy¶](#seleniumwebdrivercommonproxy)
-  - [Usage¶](#usage)
-  - [Parameter¶](#parameter)
-  - [Usage¶](#usage)
-  - [Parameters¶](#parameters)
-  - [Usage¶](#usage)
-  - [Parameters¶](#parameters)
-  - [Usage¶](#usage)
-  - [Parameters¶](#parameters)
-  - [Usage¶](#usage)
-  - [Parameter¶](#parameter)
-  - [Usage¶](#usage)
-  - [Parameters¶](#parameters)
-  - [Usage¶](#usage)
-  - [Parameter¶](#parameter)
-  - [Usage¶](#usage)
-  - [Parameter¶](#parameter)
-  - [Usage¶](#usage)
-  - [Parameter¶](#parameter)
-  - [Usage¶](#usage)
-  - [Parameter¶](#parameter)
+- [selenium.webdriver.common.proxy](#seleniumwebdrivercommonproxy)
+  - [Usage](#usage)
+  - [Parameter](#parameter)
+  - [Usage](#usage)
+  - [Parameters](#parameters)
+  - [Usage](#usage)
+  - [Parameters](#parameters)
+  - [Usage](#usage)
+  - [Parameters](#parameters)
+  - [Usage](#usage)
+  - [Parameter](#parameter)
+  - [Usage](#usage)
+  - [Parameters](#parameters)
+  - [Usage](#usage)
+  - [Parameter](#parameter)
+  - [Usage](#usage)
+  - [Parameter](#parameter)
+  - [Usage](#usage)
+  - [Parameter](#parameter)
+  - [Usage](#usage)
+  - [Parameter](#parameter)
     - [Table of Contents](#table-of-contents)
     - [This Page](#this-page)
     - [Quick search](#quick-search)
@@ -4800,17 +4800,17 @@ Classes
 `ProxyType`() | Set of possible types of proxy.  
 `ProxyTypeFactory`() | Factory for proxy types.  
   
-_class _selenium.webdriver.common.proxy.ProxyTypeFactory[source]¶
+_class _selenium.webdriver.common.proxy.ProxyTypeFactory[source]
 
     
 
 Factory for proxy types.
 
-_static _make(_ff_value_ , _string_)[source]¶
+_static _make(_ff_value_ , _string_)[source]
 
     
 
-_class _selenium.webdriver.common.proxy.ProxyType[source]¶
+_class _selenium.webdriver.common.proxy.ProxyType[source]
 
     
 
@@ -4819,39 +4819,39 @@ Set of possible types of proxy.
 Each proxy type has 2 properties: ‘ff_value’ is value of Firefox profile
 preference, ‘string’ is id of proxy type.
 
-DIRECT _ = {'ff_value': 0, 'string': 'DIRECT'}_¶
+DIRECT _ = {'ff_value': 0, 'string': 'DIRECT'}_
 
     
 
-MANUAL _ = {'ff_value': 1, 'string': 'MANUAL'}_¶
+MANUAL _ = {'ff_value': 1, 'string': 'MANUAL'}_
 
     
 
-PAC _ = {'ff_value': 2, 'string': 'PAC'}_¶
+PAC _ = {'ff_value': 2, 'string': 'PAC'}_
 
     
 
-RESERVED_1 _ = {'ff_value': 3, 'string': 'RESERVED1'}_¶
+RESERVED_1 _ = {'ff_value': 3, 'string': 'RESERVED1'}_
 
     
 
-AUTODETECT _ = {'ff_value': 4, 'string': 'AUTODETECT'}_¶
+AUTODETECT _ = {'ff_value': 4, 'string': 'AUTODETECT'}_
 
     
 
-SYSTEM _ = {'ff_value': 5, 'string': 'SYSTEM'}_¶
+SYSTEM _ = {'ff_value': 5, 'string': 'SYSTEM'}_
 
     
 
-UNSPECIFIED _ = {'ff_value': 6, 'string': 'UNSPECIFIED'}_¶
+UNSPECIFIED _ = {'ff_value': 6, 'string': 'UNSPECIFIED'}_
 
     
 
-_classmethod _load(_value_)[source]¶
+_classmethod _load(_value_)[source]
 
     
 
-_class _selenium.webdriver.common.proxy.Proxy(_raw =None_)[source]¶
+_class _selenium.webdriver.common.proxy.Proxy(_raw =None_)[source]
 
     
 
@@ -4865,53 +4865,53 @@ Args:
 
   * raw: raw proxy data. If None, default class values are used.
 
-proxyType _ = {'ff_value': 6, 'string': 'UNSPECIFIED'}_¶
+proxyType _ = {'ff_value': 6, 'string': 'UNSPECIFIED'}_
 
     
 
-autodetect _ = False_¶
+autodetect _ = False_
 
     
 
-ftpProxy _ = ''_¶
+ftpProxy _ = ''_
 
     
 
-httpProxy _ = ''_¶
+httpProxy _ = ''_
 
     
 
-noProxy _ = ''_¶
+noProxy _ = ''_
 
     
 
-proxyAutoconfigUrl _ = ''_¶
+proxyAutoconfigUrl _ = ''_
 
     
 
-socksProxy _ = ''_¶
+socksProxy _ = ''_
 
     
 
-socksUsername _ = ''_¶
+socksUsername _ = ''_
 
     
 
-socksPassword _ = ''_¶
+socksPassword _ = ''_
 
     
 
-socksVersion _ = None_¶
+socksVersion _ = None_
 
     
 
-ssl_proxy¶
+ssl_proxy
 
     
 
 Gets and Sets ssl_proxy
 
-## Usage¶
+## Usage
 
   * Get
     
@@ -4921,17 +4921,17 @@ Gets and Sets ssl_proxy
     
     * self.ssl_proxy = value
 
-## Parameter¶
+## Parameter
 
 value: str
 
-ftp_proxy¶
+ftp_proxy
 
     
 
 Gets and Sets ftp_proxy
 
-## Usage¶
+## Usage
 
   * Get
     
@@ -4941,17 +4941,17 @@ Gets and Sets ftp_proxy
     
     * self.ftp_proxy = value
 
-## Parameters¶
+## Parameters
 
 value: str
 
-http_proxy¶
+http_proxy
 
     
 
 Gets and Sets http_proxy
 
-## Usage¶
+## Usage
 
   * Get
     
@@ -4961,17 +4961,17 @@ Gets and Sets http_proxy
     
     * self.http_proxy = value
 
-## Parameters¶
+## Parameters
 
 value: str
 
-no_proxy¶
+no_proxy
 
     
 
 Gets and Sets no_proxy
 
-## Usage¶
+## Usage
 
   * Get
     
@@ -4981,17 +4981,17 @@ Gets and Sets no_proxy
     
     * self.no_proxy = value
 
-## Parameters¶
+## Parameters
 
 value: str
 
-proxy_autoconfig_url¶
+proxy_autoconfig_url
 
     
 
 Gets and Sets proxy_autoconfig_url
 
-## Usage¶
+## Usage
 
   * Get
     
@@ -5001,21 +5001,21 @@ Gets and Sets proxy_autoconfig_url
     
     * self.proxy_autoconfig_url = value
 
-## Parameter¶
+## Parameter
 
 value: str
 
-sslProxy _ = ''_¶
+sslProxy _ = ''_
 
     
 
-auto_detect¶
+auto_detect
 
     
 
 Gets and Sets auto_detect
 
-## Usage¶
+## Usage
 
   * Get
     
@@ -5025,17 +5025,17 @@ Gets and Sets auto_detect
     
     * self.auto_detect = value
 
-## Parameters¶
+## Parameters
 
 value: str
 
-socks_proxy¶
+socks_proxy
 
     
 
 Gets and Sets socks_proxy
 
-## Usage¶
+## Usage
 
   * Get
     
@@ -5045,17 +5045,17 @@ Gets and Sets socks_proxy
     
     * self.socks_proxy = value
 
-## Parameter¶
+## Parameter
 
 value: str
 
-socks_username¶
+socks_username
 
     
 
 Gets and Sets socks_password
 
-## Usage¶
+## Usage
 
   * Get
     
@@ -5065,17 +5065,17 @@ Gets and Sets socks_password
     
     * self.socks_password = value
 
-## Parameter¶
+## Parameter
 
 value: str
 
-socks_password¶
+socks_password
 
     
 
 Gets and Sets socks_password
 
-## Usage¶
+## Usage
 
   * Get
     
@@ -5085,17 +5085,17 @@ Gets and Sets socks_password
     
     * self.socks_password = value
 
-## Parameter¶
+## Parameter
 
 value: str
 
-socks_version¶
+socks_version
 
     
 
 Gets and Sets socks_version
 
-## Usage¶
+## Usage
 
   * Get
     
@@ -5105,17 +5105,17 @@ Gets and Sets socks_version
     
     * self.socks_version = value
 
-## Parameter¶
+## Parameter
 
 value: str
 
-_property _proxy_type¶
+_property _proxy_type
 
     
 
 Returns proxy type as ProxyType.
 
-to_capabilities()[source]¶
+to_capabilities()[source]
 
     
 
@@ -5178,40 +5178,40 @@ to_capabilities()[source]¶
 ## Table of Contents
 
     - [Navigation](#navigation)
-- [selenium.webdriver.common.print_page_options¶](#seleniumwebdrivercommonprint_page_options)
-  - [Usage¶](#usage)
-  - [Parameters¶](#parameters)
-  - [Returns¶](#returns)
-  - [Usage¶](#usage)
-  - [Parameters¶](#parameters)
-  - [Returns¶](#returns)
-  - [Usage¶](#usage)
-  - [Parameters¶](#parameters)
-  - [Returns¶](#returns)
-  - [Usage¶](#usage)
-  - [Parameters¶](#parameters)
-  - [Returns¶](#returns)
-  - [Usage¶](#usage)
-  - [Parameters¶](#parameters)
-  - [Returns¶](#returns)
-  - [Usage¶](#usage)
-  - [Parameters¶](#parameters)
-  - [Returns¶](#returns)
-  - [Usage¶](#usage)
-  - [Parameters¶](#parameters)
-  - [Returns¶](#returns)
-  - [Usage¶](#usage)
-  - [Parameters¶](#parameters)
-  - [Returns¶](#returns)
-  - [Usage¶](#usage)
-  - [Parameters¶](#parameters)
-  - [Returns¶](#returns)
-  - [Usage¶](#usage)
-  - [Parameters¶](#parameters)
-  - [Returns¶](#returns)
-  - [Usage¶](#usage)
-  - [Parameters¶](#parameters)
-  - [Returns¶](#returns)
+- [selenium.webdriver.common.print_page_options](#seleniumwebdrivercommonprint_page_options)
+  - [Usage](#usage)
+  - [Parameters](#parameters)
+  - [Returns](#returns)
+  - [Usage](#usage)
+  - [Parameters](#parameters)
+  - [Returns](#returns)
+  - [Usage](#usage)
+  - [Parameters](#parameters)
+  - [Returns](#returns)
+  - [Usage](#usage)
+  - [Parameters](#parameters)
+  - [Returns](#returns)
+  - [Usage](#usage)
+  - [Parameters](#parameters)
+  - [Returns](#returns)
+  - [Usage](#usage)
+  - [Parameters](#parameters)
+  - [Returns](#returns)
+  - [Usage](#usage)
+  - [Parameters](#parameters)
+  - [Returns](#returns)
+  - [Usage](#usage)
+  - [Parameters](#parameters)
+  - [Returns](#returns)
+  - [Usage](#usage)
+  - [Parameters](#parameters)
+  - [Returns](#returns)
+  - [Usage](#usage)
+  - [Parameters](#parameters)
+  - [Returns](#returns)
+  - [Usage](#usage)
+  - [Parameters](#parameters)
+  - [Returns](#returns)
     - [Table of Contents](#table-of-contents)
     - [This Page](#this-page)
     - [Quick search](#quick-search)
@@ -5230,17 +5230,17 @@ Classes
 `PrintOptions`() |   
 ---|---  
   
-_class _selenium.webdriver.common.print_page_options.PrintOptions[source]¶
+_class _selenium.webdriver.common.print_page_options.PrintOptions[source]
 
     
 
-page_height¶
+page_height
 
     
 
 Gets and Sets page_height:
 
-## Usage¶
+## Usage
 
   * Get
     
@@ -5250,11 +5250,11 @@ Gets and Sets page_height:
     
     * self.page_height = value
 
-## Parameters¶
+## Parameters
 
 value: float
 
-## Returns¶
+## Returns
 
   * Get
     
@@ -5264,13 +5264,13 @@ value: float
     
     * None
 
-page_width¶
+page_width
 
     
 
 Gets and Sets page_width:
 
-## Usage¶
+## Usage
 
   * Get
     
@@ -5280,11 +5280,11 @@ Gets and Sets page_width:
     
     * self.page_width = value
 
-## Parameters¶
+## Parameters
 
 value: float
 
-## Returns¶
+## Returns
 
   * Get
     
@@ -5294,13 +5294,13 @@ value: float
     
     * None
 
-margin_top¶
+margin_top
 
     
 
 Gets and Sets margin_top:
 
-## Usage¶
+## Usage
 
   * Get
     
@@ -5310,11 +5310,11 @@ Gets and Sets margin_top:
     
     * self.margin_top = value
 
-## Parameters¶
+## Parameters
 
 value: float
 
-## Returns¶
+## Returns
 
   * Get
     
@@ -5324,13 +5324,13 @@ value: float
     
     * None
 
-margin_bottom¶
+margin_bottom
 
     
 
 Gets and Sets margin_bottom:
 
-## Usage¶
+## Usage
 
   * Get
     
@@ -5340,11 +5340,11 @@ Gets and Sets margin_bottom:
     
     * self.margin_bottom = value
 
-## Parameters¶
+## Parameters
 
 value: float
 
-## Returns¶
+## Returns
 
   * Get
     
@@ -5354,13 +5354,13 @@ value: float
     
     * None
 
-margin_left¶
+margin_left
 
     
 
 Gets and Sets margin_left:
 
-## Usage¶
+## Usage
 
   * Get
     
@@ -5370,11 +5370,11 @@ Gets and Sets margin_left:
     
     * self.margin_left = value
 
-## Parameters¶
+## Parameters
 
 value: float
 
-## Returns¶
+## Returns
 
   * Get
     
@@ -5384,13 +5384,13 @@ value: float
     
     * None
 
-margin_right¶
+margin_right
 
     
 
 Gets and Sets margin_right:
 
-## Usage¶
+## Usage
 
   * Get
     
@@ -5400,11 +5400,11 @@ Gets and Sets margin_right:
     
     * self.margin_right = value
 
-## Parameters¶
+## Parameters
 
 value: float
 
-## Returns¶
+## Returns
 
   * Get
     
@@ -5414,13 +5414,13 @@ value: float
     
     * None
 
-scale¶
+scale
 
     
 
 Gets and Sets scale:
 
-## Usage¶
+## Usage
 
   * Get
     
@@ -5430,11 +5430,11 @@ Gets and Sets scale:
     
     * self.scale = value
 
-## Parameters¶
+## Parameters
 
 value: float
 
-## Returns¶
+## Returns
 
   * Get
     
@@ -5444,13 +5444,13 @@ value: float
     
     * None
 
-orientation¶
+orientation
 
     
 
 Gets and Sets orientation:
 
-## Usage¶
+## Usage
 
   * Get
     
@@ -5460,11 +5460,11 @@ Gets and Sets orientation:
     
     * self.orientation = value
 
-## Parameters¶
+## Parameters
 
 value: Orientation
 
-## Returns¶
+## Returns
 
   * Get
     
@@ -5474,13 +5474,13 @@ value: Orientation
     
     * None
 
-background¶
+background
 
     
 
 Gets and Sets background:
 
-## Usage¶
+## Usage
 
   * Get
     
@@ -5490,11 +5490,11 @@ Gets and Sets background:
     
     * self.background = value
 
-## Parameters¶
+## Parameters
 
 value: bool
 
-## Returns¶
+## Returns
 
   * Get
     
@@ -5504,13 +5504,13 @@ value: bool
     
     * None
 
-shrink_to_fit¶
+shrink_to_fit
 
     
 
 Gets and Sets shrink_to_fit:
 
-## Usage¶
+## Usage
 
   * Get
     
@@ -5520,11 +5520,11 @@ Gets and Sets shrink_to_fit:
     
     * self.shrink_to_fit = value
 
-## Parameters¶
+## Parameters
 
 value: bool
 
-## Returns¶
+## Returns
 
   * Get
     
@@ -5534,13 +5534,13 @@ value: bool
     
     * None
 
-page_ranges¶
+page_ranges
 
     
 
 Gets and Sets page_ranges:
 
-## Usage¶
+## Usage
 
   * Get
     
@@ -5550,11 +5550,11 @@ Gets and Sets page_ranges:
     
     * self.page_ranges = value
 
-## Parameters¶
+## Parameters
 
 value: ` List[str]`
 
-## Returns¶
+## Returns
 
   * Get
     
@@ -5564,7 +5564,7 @@ value: ` List[str]`
     
     * None
 
-to_dict() -> Dict[str, Any][source]¶
+to_dict() -> Dict[str, Any][source]
 
     
 
@@ -5611,7 +5611,7 @@ A hash of print options configured.
 ## Table of Contents
 
     - [Navigation](#navigation)
-- [selenium.webdriver.common.selenium_manager¶](#seleniumwebdrivercommonselenium_manager)
+- [selenium.webdriver.common.selenium_manager](#seleniumwebdrivercommonselenium_manager)
     - [Table of Contents](#table-of-contents)
     - [This Page](#this-page)
     - [Quick search](#quick-search)
@@ -5630,7 +5630,7 @@ Classes
 `SeleniumManager`() | Wrapper for getting information from the Selenium Manager binaries.  
 ---|---  
   
-_class _selenium.webdriver.common.selenium_manager.SeleniumManager[source]¶
+_class _selenium.webdriver.common.selenium_manager.SeleniumManager[source]
 
     
 
@@ -5638,7 +5638,7 @@ Wrapper for getting information from the Selenium Manager binaries.
 
 This implementation is still in beta, and may change.
 
-binary_paths(_args : List_) -> dict[source]¶
+binary_paths(_args : List_) -> dict[source]
 
     
 
@@ -5688,7 +5688,7 @@ type: reference
 ## Table of Contents
 
     - [Navigation](#navigation)
-- [selenium.webdriver.chrome.service¶](#seleniumwebdriverchromeservice)
+- [selenium.webdriver.chrome.service](#seleniumwebdriverchromeservice)
     - [Table of Contents](#table-of-contents)
     - [This Page](#this-page)
     - [Quick search](#quick-search)
@@ -5707,7 +5707,7 @@ Classes
 `Service`([executable_path, port, ...]) | A Service class that is responsible for the starting and stopping of chromedriver.  
 ---|---  
   
-_class _selenium.webdriver.chrome.service.Service(_executable_path =None_, _port : int = 0_, _service_args : List[str] | None = None_, _log_output : int | str | IO[Any] | None = None_, _env : Mapping[str, str] | None = None_, _** kwargs_)[source]¶
+_class _selenium.webdriver.chrome.service.Service(_executable_path =None_, _port : int = 0_, _service_args : List[str] | None = None_, _log_output : int | str | IO[Any] | None = None_, _env : Mapping[str, str] | None = None_, _** kwargs_)[source]
     
 
 A Service class that is responsible for the starting and stopping of
@@ -5727,43 +5727,43 @@ Parameters:
 
   * **env** – (Optional) Mapping of environment variables for the new process, defaults to os.environ.
 
-assert_process_still_running() → None[source]¶
+assert_process_still_running() → None[source]
 
     
 
 Check if the underlying process is still running.
 
-command_line_args() → List[str]¶
+command_line_args() → List[str]
 
     
 
 A List of program arguments (excluding the executable).
 
-is_connectable() → bool[source]¶
+is_connectable() → bool[source]
 
     
 
 Establishes a socket connection to determine if the service running on the
 port is accessible.
 
-_property _path _: str_¶
+_property _path _: str_
 
     
 
-send_remote_shutdown_command() → None[source]¶
+send_remote_shutdown_command() → None[source]
 
     
 
 Dispatch an HTTP request to the shutdown endpoint for the service in an
 attempt to stop it.
 
-_property _service_url _: str_¶
+_property _service_url _: str_
 
     
 
 Gets the url of the Service.
 
-start() → None[source]¶
+start() → None[source]
 
     
 
@@ -5775,7 +5775,7 @@ Exceptions:
 
   * WebDriverException : Raised either when it can’t start the service or when it can’t connect to the service
 
-stop() → None[source]¶
+stop() → None[source]
 
     
 
@@ -5819,43 +5819,43 @@ type: reference
 ## Table of Contents
 
     - [Navigation](#navigation)
-- [selenium.webdriver.chrome.options¶](#seleniumwebdriverchromeoptions)
-  - [Usage¶](#usage)
-  - [Parameters¶](#parameters)
-  - [Returns¶](#returns)
-  - [Usage¶](#usage)
-  - [Parameters¶](#parameters)
-  - [Returns¶](#returns)
-  - [Usage¶](#usage)
-  - [Parameters¶](#parameters)
-  - [Returns¶](#returns)
-  - [Usage¶](#usage)
-  - [Parameters¶](#parameters)
-  - [Returns¶](#returns)
-  - [Usage¶](#usage)
-  - [Parameters¶](#parameters)
-  - [Returns¶](#returns)
-  - [Usage¶](#usage)
-  - [Parameters¶](#parameters)
-  - [Returns¶](#returns)
-  - [Usage¶](#usage)
-  - [Parameters¶](#parameters)
-  - [Returns¶](#returns)
-  - [Usage¶](#usage)
-  - [Parameters¶](#parameters)
-  - [Returns¶](#returns)
-  - [Usage¶](#usage)
-  - [Parameters¶](#parameters)
-  - [Returns¶](#returns)
-  - [Usage¶](#usage)
-  - [Parameters¶](#parameters)
-  - [Returns¶](#returns)
-  - [Usage¶](#usage)
-  - [Parameters¶](#parameters)
-  - [Returns¶](#returns)
-  - [Usage¶](#usage)
-  - [Parameters¶](#parameters)
-  - [Returns¶](#returns)
+- [selenium.webdriver.chrome.options](#seleniumwebdriverchromeoptions)
+  - [Usage](#usage)
+  - [Parameters](#parameters)
+  - [Returns](#returns)
+  - [Usage](#usage)
+  - [Parameters](#parameters)
+  - [Returns](#returns)
+  - [Usage](#usage)
+  - [Parameters](#parameters)
+  - [Returns](#returns)
+  - [Usage](#usage)
+  - [Parameters](#parameters)
+  - [Returns](#returns)
+  - [Usage](#usage)
+  - [Parameters](#parameters)
+  - [Returns](#returns)
+  - [Usage](#usage)
+  - [Parameters](#parameters)
+  - [Returns](#returns)
+  - [Usage](#usage)
+  - [Parameters](#parameters)
+  - [Returns](#returns)
+  - [Usage](#usage)
+  - [Parameters](#parameters)
+  - [Returns](#returns)
+  - [Usage](#usage)
+  - [Parameters](#parameters)
+  - [Returns](#returns)
+  - [Usage](#usage)
+  - [Parameters](#parameters)
+  - [Returns](#returns)
+  - [Usage](#usage)
+  - [Parameters](#parameters)
+  - [Returns](#returns)
+  - [Usage](#usage)
+  - [Parameters](#parameters)
+  - [Returns](#returns)
     - [Table of Contents](#table-of-contents)
     - [This Page](#this-page)
     - [Quick search](#quick-search)
@@ -5874,17 +5874,17 @@ Classes
 `Options`() |   
 ---|---  
   
-_class _selenium.webdriver.chrome.options.Options[source]¶
+_class _selenium.webdriver.chrome.options.Options[source]
 
     
 
-_property _default_capabilities _: dict_¶
+_property _default_capabilities _: dict_
 
     
 
 Return minimal capabilities necessary as a dictionary.
 
-enable_mobile(_android_package : str | None = 'com.android.chrome'_, _android_activity : str | None = None_, _device_serial : str | None = None_) → None[source]¶
+enable_mobile(_android_package : str | None = 'com.android.chrome'_, _android_activity : str | None = None_, _device_serial : str | None = None_) → None[source]
     
 
 Enables mobile browser use for browsers that support it.
@@ -5895,15 +5895,15 @@ Args:
 
 android_activity: The name of the android package to start
 
-BINARY_LOCATION_ERROR _ = 'Binary Location Must be a String'_¶
+BINARY_LOCATION_ERROR _ = 'Binary Location Must be a String'_
 
     
 
-KEY _ = 'goog:chromeOptions'_¶
+KEY _ = 'goog:chromeOptions'_
 
     
 
-add_argument(_argument_) → None¶
+add_argument(_argument_) → None
 
     
 
@@ -5915,7 +5915,7 @@ Args:
 
   * Sets the arguments
 
-add_encoded_extension(_extension : str_) → None¶
+add_encoded_extension(_extension : str_) → None
 
     
 
@@ -5928,7 +5928,7 @@ Args:
 
   * extension: Base64 encoded string with extension data
 
-add_experimental_option(_name : str_, _value : str | int | dict | List[str]_) → None¶
+add_experimental_option(_name : str_, _value : str | int | dict | List[str]_) → None
     
 
 Adds an experimental option which is passed to chromium.
@@ -5939,7 +5939,7 @@ Args:
 
 name: The experimental option name. value: The option value.
 
-add_extension(_extension : str_) → None¶
+add_extension(_extension : str_) → None
 
     
 
@@ -5952,7 +5952,7 @@ Args:
 
   * extension: path to the *.crx file
 
-_property _arguments¶
+_property _arguments
 
     
 
@@ -5962,7 +5962,7 @@ Returns:
 
 A list of arguments needed for the browser.
 
-_property _binary_location _: str_¶
+_property _binary_location _: str_
 
     
 
@@ -5972,11 +5972,11 @@ Returns:
 
 The location of the binary, otherwise an empty string.
 
-_property _capabilities¶
+_property _capabilities
 
     
 
-_property _debugger_address _: str | None_¶
+_property _debugger_address _: str | None_
     
 
 Returns:
@@ -5985,7 +5985,7 @@ Returns:
 
 The address of the remote devtools instance.
 
-_property _experimental_options _: dict_¶
+_property _experimental_options _: dict_
 
     
 
@@ -5995,7 +5995,7 @@ Returns:
 
 A dictionary of experimental options for chromium.
 
-_property _extensions _: List[str]_¶
+_property _extensions _: List[str]_
 
     
 
@@ -6005,33 +6005,33 @@ Returns:
 
 A list of encoded extensions that will be loaded.
 
-ignore_local_proxy_environment_variables() → None¶
+ignore_local_proxy_environment_variables() → None
 
     
 
 By calling this you will ignore HTTP_PROXY and HTTPS_PROXY from being picked
 up and used.
 
-set_capability(_name_ , _value_) → None¶
+set_capability(_name_ , _value_) → None
 
     
 
 Sets a capability.
 
-to_capabilities() → dict¶
+to_capabilities() → dict
 
     
 
 Creates a capabilities with all the options that have been set :Returns: A
 dictionary with everything.
 
-browser_version¶
+browser_version
 
     
 
 Gets and Sets the version of the browser.
 
-## Usage¶
+## Usage
 
   * Get
     
@@ -6041,11 +6041,11 @@ Gets and Sets the version of the browser.
     
     * self.browser_version = value
 
-## Parameters¶
+## Parameters
 
 value: str
 
-## Returns¶
+## Returns
 
   * Get
     
@@ -6055,13 +6055,13 @@ value: str
     
     * None
 
-platform_name¶
+platform_name
 
     
 
 Gets and Sets name of the platform.
 
-## Usage¶
+## Usage
 
   * Get
     
@@ -6071,11 +6071,11 @@ Gets and Sets name of the platform.
     
     * self.platform_name = value
 
-## Parameters¶
+## Parameters
 
 value: str
 
-## Returns¶
+## Returns
 
   * Get
     
@@ -6085,13 +6085,13 @@ value: str
     
     * None
 
-accept_insecure_certs¶
+accept_insecure_certs
 
     
 
 Gets and Set whether the session accepts insecure certificates.
 
-## Usage¶
+## Usage
 
   * Get
     
@@ -6101,11 +6101,11 @@ Gets and Set whether the session accepts insecure certificates.
     
     * self.accept_insecure_certs = value
 
-## Parameters¶
+## Parameters
 
 value: bool
 
-## Returns¶
+## Returns
 
   * Get
     
@@ -6115,13 +6115,13 @@ value: bool
     
     * None
 
-strict_file_interactability¶
+strict_file_interactability
 
     
 
 Gets and Sets whether session is about file interactability.
 
-## Usage¶
+## Usage
 
   * Get
     
@@ -6131,11 +6131,11 @@ Gets and Sets whether session is about file interactability.
     
     * self.strict_file_interactability = value
 
-## Parameters¶
+## Parameters
 
 value: bool
 
-## Returns¶
+## Returns
 
   * Get
     
@@ -6145,13 +6145,13 @@ value: bool
     
     * None
 
-set_window_rect¶
+set_window_rect
 
     
 
 Gets and Sets window size and position.
 
-## Usage¶
+## Usage
 
   * Get
     
@@ -6161,11 +6161,11 @@ Gets and Sets window size and position.
     
     * self.set_window_rect = value
 
-## Parameters¶
+## Parameters
 
 value: bool
 
-## Returns¶
+## Returns
 
   * Get
     
@@ -6175,13 +6175,13 @@ value: bool
     
     * None
 
-enable_bidi¶
+enable_bidi
 
     
 
 Gets and Set whether the session has WebDriverBiDi enabled.
 
-## Usage¶
+## Usage
 
   * Get
     
@@ -6191,11 +6191,11 @@ Gets and Set whether the session has WebDriverBiDi enabled.
     
     * self.enable_bidi = value
 
-## Parameters¶
+## Parameters
 
 value: bool
 
-## Returns¶
+## Returns
 
   * Get
     
@@ -6205,13 +6205,13 @@ value: bool
     
     * None
 
-web_socket_url¶
+web_socket_url
 
     
 
 Gets and Sets WebSocket URL.
 
-## Usage¶
+## Usage
 
   * Get
     
@@ -6221,11 +6221,11 @@ Gets and Sets WebSocket URL.
     
     * self.web_socket_url = value
 
-## Parameters¶
+## Parameters
 
 value: bool
 
-## Returns¶
+## Returns
 
   * Get
     
@@ -6235,13 +6235,13 @@ value: bool
     
     * None
 
-page_load_strategy¶
+page_load_strategy
 
     
 
 :Gets and Sets page load strategy, the default is “normal”.
 
-## Usage¶
+## Usage
 
   * Get
     
@@ -6251,11 +6251,11 @@ page_load_strategy¶
     
     * self.page_load_strategy = value
 
-## Parameters¶
+## Parameters
 
 value: str
 
-## Returns¶
+## Returns
 
   * Get
     
@@ -6265,13 +6265,13 @@ value: str
     
     * None
 
-unhandled_prompt_behavior¶
+unhandled_prompt_behavior
 
     
 
 :Gets and Sets unhandled prompt behavior, the default is “dismiss and notify”.
 
-## Usage¶
+## Usage
 
   * Get
     
@@ -6281,11 +6281,11 @@ unhandled_prompt_behavior¶
     
     * self.unhandled_prompt_behavior = value
 
-## Parameters¶
+## Parameters
 
 value: str
 
-## Returns¶
+## Returns
 
   * Get
     
@@ -6295,14 +6295,14 @@ value: str
     
     * None
 
-timeouts¶
+timeouts
 
     
 
 :Gets and Sets implicit timeout, pageLoad timeout and script timeout if set
 (in milliseconds)
 
-## Usage¶
+## Usage
 
   * Get
     
@@ -6312,11 +6312,11 @@ timeouts¶
     
     * self.timeouts = value
 
-## Parameters¶
+## Parameters
 
 value: dict
 
-## Returns¶
+## Returns
 
   * Get
     
@@ -6326,13 +6326,13 @@ value: dict
     
     * None
 
-proxy¶
+proxy
 
     
 
 Sets and Gets Proxy.
 
-## Usage¶
+## Usage
 
   * Get
     
@@ -6342,11 +6342,11 @@ Sets and Gets Proxy.
     
     * self.proxy = value
 
-## Parameters¶
+## Parameters
 
 value: Proxy
 
-## Returns¶
+## Returns
 
   * Get
     
@@ -6356,13 +6356,13 @@ value: Proxy
     
     * None
 
-enable_downloads¶
+enable_downloads
 
     
 
 Gets and Sets whether session can download files.
 
-## Usage¶
+## Usage
 
   * Get
     
@@ -6372,11 +6372,11 @@ Gets and Sets whether session can download files.
     
     * self.enable_downloads = value
 
-## Parameters¶
+## Parameters
 
 value: bool
 
-## Returns¶
+## Returns
 
   * Get
     
@@ -6445,7 +6445,7 @@ type: reference
 ## Table of Contents
 
     - [Navigation](#navigation)
-- [selenium.webdriver.chrome.webdriver¶](#seleniumwebdriverchromewebdriver)
+- [selenium.webdriver.chrome.webdriver](#seleniumwebdriverchromewebdriver)
     - [Table of Contents](#table-of-contents)
     - [This Page](#this-page)
     - [Quick search](#quick-search)
@@ -6464,7 +6464,7 @@ Classes
 `WebDriver`([options, service, keep_alive]) | Controls the ChromeDriver and allows you to drive the browser.  
 ---|---  
   
-_class _selenium.webdriver.chrome.webdriver.WebDriver(_options : Options | None = None_, _service : Service | None = None_, _keep_alive : bool = True_)[source]¶
+_class _selenium.webdriver.chrome.webdriver.WebDriver(_options : Options | None = None_, _service : Service | None = None_, _keep_alive : bool = True_)[source]
     
 
 Controls the ChromeDriver and allows you to drive the browser.
@@ -6482,7 +6482,7 @@ Args:
 
   * keep_alive - Whether to configure ChromeRemoteConnection to use HTTP keep-alive.
 
-add_cookie(_cookie_dict_) → None[source]¶
+add_cookie(_cookie_dict_) → None[source]
 
     
 
@@ -6508,20 +6508,20 @@ Usage:
     driver.add_cookie({'name' : 'foo', 'value' : 'bar', 'sameSite' : 'Strict'})
     
 
-add_credential(_credential : Credential_) → None[source]¶
+add_credential(_credential : Credential_) → None[source]
 
     
 
 Injects a credential into the authenticator.
 
 add_virtual_authenticator(_options : VirtualAuthenticatorOptions_) →
-None[source]¶
+None[source]
 
     
 
 Adds a virtual authenticator with the given options.
 
-back() → None[source]¶
+back() → None[source]
 
     
 
@@ -6535,17 +6535,17 @@ Usage:
     driver.back()
     
 
-bidi_connection()[source]¶
+bidi_connection()[source]
 
     
 
-_property _capabilities _: dict_¶
+_property _capabilities _: dict_
 
     
 
 Returns the drivers current capabilities being used.
 
-close() → None[source]¶
+close() → None[source]
 
     
 
@@ -6559,13 +6559,13 @@ Usage:
     driver.close()
     
 
-create_web_element(_element_id : str_) → WebElement[source]¶
+create_web_element(_element_id : str_) → WebElement[source]
 
     
 
 Creates a web element with the specified element_id.
 
-_property _current_url _: str_¶
+_property _current_url _: str_
 
     
 
@@ -6579,7 +6579,7 @@ Usage:
     driver.current_url
     
 
-_property _current_window_handle _: str_¶
+_property _current_window_handle _: str_
 
     
 
@@ -6593,7 +6593,7 @@ Usage:
     driver.current_window_handle
     
 
-delete_all_cookies() → None[source]¶
+delete_all_cookies() → None[source]
 
     
 
@@ -6607,7 +6607,7 @@ Usage:
     driver.delete_all_cookies()
     
 
-delete_cookie(_name_) → None[source]¶
+delete_cookie(_name_) → None[source]
 
     
 
@@ -6621,19 +6621,19 @@ Usage:
     driver.delete_cookie('my_cookie')
     
 
-delete_downloadable_files() → None[source]¶
+delete_downloadable_files() → None[source]
 
     
 
 Deletes all downloadable files.
 
-delete_network_conditions() → None¶
+delete_network_conditions() → None
 
     
 
 Resets Chromium network emulation settings.
 
-download_file(_file_name : str_, _target_directory : str_) → None[source]¶
+download_file(_file_name : str_, _target_directory : str_) → None[source]
 
     
 
@@ -6642,7 +6642,7 @@ Downloads a file with the specified file name to the target directory.
 file_name: The name of the file to download. target_directory: The path to the
 directory to save the downloaded file.
 
-execute(_driver_command : str_, _params : dict | None = None_) → dict[source]¶
+execute(_driver_command : str_, _params : dict | None = None_) → dict[source]
     
 
 Sends a command to be executed by a command.CommandExecutor.
@@ -6661,7 +6661,7 @@ Returns:
 
 The command’s JSON response loaded into a dictionary object.
 
-execute_async_script(_script : str_, _* args_)[source]¶
+execute_async_script(_script : str_, _* args_)[source]
 
     
 
@@ -6685,7 +6685,7 @@ Usage:
     driver.execute_async_script(script)
     
 
-execute_cdp_cmd(_cmd : str_, _cmd_args : dict_)¶
+execute_cdp_cmd(_cmd : str_, _cmd_args : dict_)
 
     
 
@@ -6716,7 +6716,7 @@ Returns:
 A dict, empty dict {} if there is no result to return. For example to
 getResponseBody: {‘base64Encoded’: False, ‘body’: ‘response body string’}
 
-execute_script(_script_ , _* args_)[source]¶
+execute_script(_script_ , _* args_)[source]
 
     
 
@@ -6738,11 +6738,11 @@ Usage:
     driver.execute_script('return document.title;')
     
 
-_property _file_detector _: FileDetector_¶
+_property _file_detector _: FileDetector_
 
     
 
-file_detector_context(_file_detector_class_ , _* args_, _** kwargs_)[source]¶
+file_detector_context(_file_detector_class_ , _* args_, _** kwargs_)[source]
 
     
 
@@ -6774,7 +6774,7 @@ instantiation.
 
   * kwargs - Keyword arguments, passed the same way as args.
 
-find_element(_by ='id'_, _value : str | None = None_) → WebElement[source]¶
+find_element(_by ='id'_, _value : str | None = None_) → WebElement[source]
     
 
 Find an element given a By strategy and locator.
@@ -6793,7 +6793,7 @@ Return type:
 
 WebElement
 
-find_elements(_by ='id'_, _value : str | None = None_) → List[WebElement][source]¶
+find_elements(_by ='id'_, _value : str | None = None_) → List[WebElement][source]
     
 
 Find elements given a By strategy and locator.
@@ -6812,7 +6812,7 @@ Return type:
 
 list of WebElement
 
-forward() → None[source]¶
+forward() → None[source]
 
     
 
@@ -6826,19 +6826,19 @@ Usage:
     driver.forward()
     
 
-fullscreen_window() → None[source]¶
+fullscreen_window() → None[source]
 
     
 
 Invokes the window manager-specific ‘full screen’ operation.
 
-get(_url : str_) → None[source]¶
+get(_url : str_) → None[source]
 
     
 
 Loads a web page in the current browser session.
 
-get_cookie(_name_) → Dict | None[source]¶
+get_cookie(_name_) → Dict | None[source]
     
 
 Get a single cookie by name. Returns the cookie if found, None if not.
@@ -6851,7 +6851,7 @@ Usage:
     driver.get_cookie('my_cookie')
     
 
-get_cookies() → List[dict][source]¶
+get_cookies() → List[dict][source]
 
     
 
@@ -6866,20 +6866,20 @@ Usage:
     driver.get_cookies()
     
 
-get_credentials() → List[Credential][source]¶
+get_credentials() → List[Credential][source]
 
     
 
 Returns the list of credentials owned by the authenticator.
 
-get_downloadable_files() → dict[source]¶
+get_downloadable_files() → dict[source]
 
     
 
 Retrieves the downloadable files as a map of file names and their
 corresponding URLs.
 
-get_issue_message()¶
+get_issue_message()
 
     
 
@@ -6891,7 +6891,7 @@ An error message when there is any issue in a Cast
 
 session.
 
-get_log(_log_type_)[source]¶
+get_log(_log_type_)[source]
 
     
 
@@ -6914,7 +6914,7 @@ Usage:
     driver.get_log('server')
     
 
-get_network_conditions()¶
+get_network_conditions()
 
     
 
@@ -6928,11 +6928,11 @@ A dict. For example: {‘latency’: 4,
 
 ‘download_throughput’: 2, ‘upload_throughput’: 2, ‘offline’: False}
 
-get_pinned_scripts() → List[str][source]¶
+get_pinned_scripts() → List[str][source]
 
     
 
-get_screenshot_as_base64() → str[source]¶
+get_screenshot_as_base64() → str[source]
 
     
 
@@ -6947,7 +6947,7 @@ Usage:
     driver.get_screenshot_as_base64()
     
 
-get_screenshot_as_file(_filename_) → bool[source]¶
+get_screenshot_as_file(_filename_) → bool[source]
 
     
 
@@ -6968,7 +6968,7 @@ Usage:
     driver.get_screenshot_as_file('/Screenshots/foo.png')
     
 
-get_screenshot_as_png() → bytes[source]¶
+get_screenshot_as_png() → bytes[source]
 
     
 
@@ -6982,7 +6982,7 @@ Usage:
     driver.get_screenshot_as_png()
     
 
-get_sinks() → list¶
+get_sinks() → list
 
     
 
@@ -6992,7 +6992,7 @@ Returns:
 
 A list of sinks available for Cast.
 
-get_window_position(_windowHandle ='current'_) → dict[source]¶
+get_window_position(_windowHandle ='current'_) → dict[source]
 
     
 
@@ -7006,7 +7006,7 @@ Usage:
     driver.get_window_position()
     
 
-get_window_rect() → dict[source]¶
+get_window_rect() → dict[source]
 
     
 
@@ -7021,7 +7021,7 @@ Usage:
     driver.get_window_rect()
     
 
-get_window_size(_windowHandle : str = 'current'_) → dict[source]¶
+get_window_size(_windowHandle : str = 'current'_) → dict[source]
 
     
 
@@ -7035,7 +7035,7 @@ Usage:
     driver.get_window_size()
     
 
-implicitly_wait(_time_to_wait : float_) → None[source]¶
+implicitly_wait(_time_to_wait : float_) → None[source]
 
     
 
@@ -7057,13 +7057,13 @@ Usage:
     driver.implicitly_wait(30)
     
 
-launch_app(_id_)¶
+launch_app(_id_)
 
     
 
 Launches Chromium app specified by id.
 
-_property _log_types¶
+_property _log_types
 
     
 
@@ -7078,23 +7078,23 @@ Usage:
     driver.log_types
     
 
-maximize_window() → None[source]¶
+maximize_window() → None[source]
 
     
 
 Maximizes the current window that webdriver is using.
 
-minimize_window() → None[source]¶
+minimize_window() → None[source]
 
     
 
 Invokes the window manager-specific ‘minimize’ operation.
 
-_property _mobile _: Mobile_¶
+_property _mobile _: Mobile_
 
     
 
-_property _name _: str_¶
+_property _name _: str_
 
     
 
@@ -7108,7 +7108,7 @@ Usage:
     name = driver.name
     
 
-_property _orientation¶
+_property _orientation
 
     
 
@@ -7122,7 +7122,7 @@ Usage:
     orientation = driver.orientation
     
 
-_property _page_source _: str_¶
+_property _page_source _: str_
 
     
 
@@ -7136,13 +7136,13 @@ Usage:
     driver.page_source
     
 
-pin_script(_script : str_, _script_key =None_) → ScriptKey[source]¶
+pin_script(_script : str_, _script_key =None_) → ScriptKey[source]
 
     
 
 Store common javascript scripts to be executed later by a unique hashable ID.
 
-print_page(_print_options : PrintOptions | None = None_) → str[source]¶
+print_page(_print_options : PrintOptions | None = None_) → str[source]
     
 
 Takes PDF of the current page.
@@ -7150,13 +7150,13 @@ Takes PDF of the current page.
 The driver makes a best effort to return a PDF based on the provided
 parameters.
 
-quit() → None¶
+quit() → None
 
     
 
 Closes the browser and shuts down the ChromiumDriver executable.
 
-refresh() → None[source]¶
+refresh() → None[source]
 
     
 
@@ -7170,18 +7170,18 @@ Usage:
     driver.refresh()
     
 
-remove_all_credentials() → None[source]¶
+remove_all_credentials() → None[source]
 
     
 
 Removes all credentials from the authenticator.
 
-remove_credential(_credential_id : str | bytearray_) → None[source]¶
+remove_credential(_credential_id : str | bytearray_) → None[source]
     
 
 Removes a credential from the authenticator.
 
-remove_virtual_authenticator() → None[source]¶
+remove_virtual_authenticator() → None[source]
 
     
 
@@ -7190,7 +7190,7 @@ Removes a previously added virtual authenticator.
 The authenticator is no longer valid after removal, so no methods may be
 called.
 
-save_screenshot(_filename_) → bool[source]¶
+save_screenshot(_filename_) → bool[source]
 
     
 
@@ -7211,11 +7211,11 @@ Usage:
     driver.save_screenshot('/Screenshots/foo.png')
     
 
-_property _script¶
+_property _script
 
     
 
-set_network_conditions(_** network_conditions_) → None¶
+set_network_conditions(_** network_conditions_) → None
 
     
 
@@ -7241,7 +7241,7 @@ Usage:
 
 Note: ‘throughput’ can be used to set both (for download and upload).
 
-set_page_load_timeout(_time_to_wait : float_) → None[source]¶
+set_page_load_timeout(_time_to_wait : float_) → None[source]
 
     
 
@@ -7262,7 +7262,7 @@ Usage:
     driver.set_page_load_timeout(30)
     
 
-set_permissions(_name : str_, _value : str_) → None¶
+set_permissions(_name : str_, _value : str_) → None
 
     
 
@@ -7284,7 +7284,7 @@ Usage:
     driver.set_permissions('clipboard-read', 'denied')
     
 
-set_script_timeout(_time_to_wait : float_) → None[source]¶
+set_script_timeout(_time_to_wait : float_) → None[source]
 
     
 
@@ -7305,7 +7305,7 @@ Usage:
     driver.set_script_timeout(30)
     
 
-set_sink_to_use(_sink_name : str_) → dict¶
+set_sink_to_use(_sink_name : str_) → dict
 
     
 
@@ -7317,7 +7317,7 @@ Args:
 
   * sink_name: Name of the sink to use as the target.
 
-set_user_verified(_verified : bool_) → None[source]¶
+set_user_verified(_verified : bool_) → None[source]
 
     
 
@@ -7328,7 +7328,7 @@ verified: True if the authenticator will pass user verification, False
 otherwise.
 
 set_window_position(_x : float_, _y : float_, _windowHandle : str =
-'current'_) → dict[source]¶
+'current'_) → dict[source]
 
     
 
@@ -7351,7 +7351,7 @@ Usage:
     
 
 set_window_rect(_x =None_, _y =None_, _width =None_, _height =None_) →
-dict[source]¶
+dict[source]
 
     
 
@@ -7370,7 +7370,7 @@ Usage:
     
 
 set_window_size(_width_ , _height_ , _windowHandle : str = 'current'_) →
-None[source]¶
+None[source]
 
     
 
@@ -7392,7 +7392,7 @@ Usage:
     driver.set_window_size(800,600)
     
 
-start_client()[source]¶
+start_client()[source]
 
     
 
@@ -7400,7 +7400,7 @@ Called before starting a new session.
 
 This method may be overridden to define custom startup behavior.
 
-start_desktop_mirroring(_sink_name : str_) → dict¶
+start_desktop_mirroring(_sink_name : str_) → dict
 
     
 
@@ -7412,11 +7412,11 @@ Args:
 
   * sink_name: Name of the sink to use as the target.
 
-start_devtools()[source]¶
+start_devtools()[source]
 
     
 
-start_session(_capabilities : dict_) → None[source]¶
+start_session(_capabilities : dict_) → None[source]
 
     
 
@@ -7428,7 +7428,7 @@ Args:
 
   * capabilities - a capabilities dict to start the session with.
 
-start_tab_mirroring(_sink_name : str_) → dict¶
+start_tab_mirroring(_sink_name : str_) → dict
 
     
 
@@ -7440,7 +7440,7 @@ Args:
 
   * sink_name: Name of the sink to use as the target.
 
-stop_casting(_sink_name : str_) → dict¶
+stop_casting(_sink_name : str_) → dict
 
     
 
@@ -7452,7 +7452,7 @@ Args:
 
   * sink_name: Name of the sink to stop the Cast session.
 
-stop_client()[source]¶
+stop_client()[source]
 
     
 
@@ -7460,7 +7460,7 @@ Called after executing a quit command.
 
 This method may be overridden to define custom shutdown behavior.
 
-_property _switch_to _: SwitchTo_¶
+_property _switch_to _: SwitchTo_
 
     
 
@@ -7485,7 +7485,7 @@ Usage:
     driver.switch_to.window('main')
     
 
-_property _timeouts _: Timeouts_¶
+_property _timeouts _: Timeouts_
 
     
 
@@ -7505,7 +7505,7 @@ Return type:
 
 Timeout
 
-_property _title _: str_¶
+_property _title _: str_
 
     
 
@@ -7519,19 +7519,19 @@ Usage:
     title = driver.title
     
 
-unpin(_script_key : ScriptKey_) → None[source]¶
+unpin(_script_key : ScriptKey_) → None[source]
 
     
 
 Remove a pinned script from storage.
 
-_property _virtual_authenticator_id _: str_¶
+_property _virtual_authenticator_id _: str_
 
     
 
 Returns the id of the virtual authenticator.
 
-_property _window_handles _: List[str]_¶
+_property _window_handles _: List[str]_
 
     
 

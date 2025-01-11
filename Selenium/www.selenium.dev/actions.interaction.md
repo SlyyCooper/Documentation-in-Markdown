@@ -1,7 +1,7 @@
 ## Table of Contents
 
     - [Navigation](#navigation)
-- [selenium.webdriver.common.actions.interaction¶](#seleniumwebdrivercommonactionsinteraction)
+- [selenium.webdriver.common.actions.interaction](#seleniumwebdrivercommonactionsinteraction)
     - [Table of Contents](#table-of-contents)
     - [This Page](#this-page)
     - [Quick search](#quick-search)
@@ -14,7 +14,7 @@
   * Selenium 4.25.0 documentation »
   * selenium.webdriver.common.actions.interaction
 
-# selenium.webdriver.common.actions.interaction¶
+# selenium.webdriver.common.actions.interaction
 
 Classes
 
@@ -23,23 +23,23 @@ Classes
 `Pause`(source[, duration]) |   
   
 _class _selenium.webdriver.common.actions.interaction.Interaction(_source :
-str_)[source]¶
+str_)[source]
 
     
 
-PAUSE _ = 'pause'_¶
+PAUSE _ = 'pause'_
 
     
 
 _class _selenium.webdriver.common.actions.interaction.Pause(_source_ ,
-_duration : float = 0_)[source]¶
+_duration : float = 0_)[source]
 
     
 
-encode() -> Dict[str, str | int][source]¶
+encode() -> Dict[str, str | int][source]
     
 
-PAUSE _ = 'pause'_¶
+PAUSE _ = 'pause'_
 
     
 

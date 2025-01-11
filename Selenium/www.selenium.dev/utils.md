@@ -1,7 +1,7 @@
 ## Table of Contents
 
     - [Navigation](#navigation)
-- [selenium.webdriver.common.utils¶](#seleniumwebdrivercommonutils)
+- [selenium.webdriver.common.utils](#seleniumwebdrivercommonutils)
     - [Table of Contents](#table-of-contents)
     - [This Page](#this-page)
     - [Quick search](#quick-search)
@@ -14,7 +14,7 @@
   * Selenium 4.25.0 documentation »
   * selenium.webdriver.common.utils
 
-# selenium.webdriver.common.utils¶
+# selenium.webdriver.common.utils
 
 The Utils methods.
 
@@ -28,13 +28,13 @@ Functions
 `join_host_port`(host, port) | Joins a hostname and port together.  
 `keys_to_typing`(value) | Processes the values that will be typed in the element.  
   
-selenium.webdriver.common.utils.free_port() -> int[source]¶
+selenium.webdriver.common.utils.free_port() -> int[source]
 
     
 
 Determines a free port using sockets.
 
-selenium.webdriver.common.utils.find_connectable_ip(_host : str | bytes | bytearray | None_, _port : int | None = None_) -> str | None[source]¶
+selenium.webdriver.common.utils.find_connectable_ip(_host : str | bytes | bytearray | None_, _port : int | None = None_) -> str | None[source]
     
 
 Resolve a hostname to an IP, preferring IPv4 addresses.
@@ -63,7 +63,7 @@ returned. Otherwise, if any IPv6 address is found, one is returned. If
 neither, then None is returned.
 
 selenium.webdriver.common.utils.join_host_port(_host : str_, _port : int_) ->
-str[source]¶
+str[source]
 
     
 
@@ -80,7 +80,7 @@ Args:
 
   * port - An integer port.
 
-selenium.webdriver.common.utils.is_connectable(_port : int_, _host : str | None = 'localhost'_) -> bool[source]¶
+selenium.webdriver.common.utils.is_connectable(_port : int_, _host : str | None = 'localhost'_) -> bool[source]
     
 
 Tries to connect to the server at port to see if it is running.
@@ -91,7 +91,7 @@ Args:
 
   * port - The port to connect.
 
-selenium.webdriver.common.utils.is_url_connectable(_port : int | str_) -> bool[source]¶
+selenium.webdriver.common.utils.is_url_connectable(_port : int | str_) -> bool[source]
     
 
 Tries to connect to the HTTP server at /status path and specified port to see
@@ -103,7 +103,7 @@ Args:
 
   * port - The port to connect.
 
-selenium.webdriver.common.utils.keys_to_typing(_value : Iterable[str | int | float]_) -> List[str][source]¶
+selenium.webdriver.common.utils.keys_to_typing(_value : Iterable[str | int | float]_) -> List[str][source]
     
 
 Processes the values that will be typed in the element.

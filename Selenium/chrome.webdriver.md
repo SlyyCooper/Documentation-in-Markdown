@@ -6,7 +6,7 @@ type: reference
 ## Table of Contents
 
     - [Navigation](#navigation)
-- [selenium.webdriver.chrome.webdriver¶](#seleniumwebdriverchromewebdriver)
+- [selenium.webdriver.chrome.webdriver](#seleniumwebdriverchromewebdriver)
     - [Table of Contents](#table-of-contents)
     - [This Page](#this-page)
     - [Quick search](#quick-search)
@@ -19,14 +19,14 @@ type: reference
   * Selenium 4.25.0 documentation »
   * selenium.webdriver.chrome.webdriver
 
-# selenium.webdriver.chrome.webdriver¶
+# selenium.webdriver.chrome.webdriver
 
 Classes
 
 `WebDriver`([options, service, keep_alive]) | Controls the ChromeDriver and allows you to drive the browser.  
 ---|---  
   
-_class _selenium.webdriver.chrome.webdriver.WebDriver(_options : Options | None = None_, _service : Service | None = None_, _keep_alive : bool = True_)[source]¶
+_class _selenium.webdriver.chrome.webdriver.WebDriver(_options : Options | None = None_, _service : Service | None = None_, _keep_alive : bool = True_)[source]
     
 
 Controls the ChromeDriver and allows you to drive the browser.
@@ -44,7 +44,7 @@ Args:
 
   * keep_alive - Whether to configure ChromeRemoteConnection to use HTTP keep-alive.
 
-add_cookie(_cookie_dict_) → None[source]¶
+add_cookie(_cookie_dict_) → None[source]
 
     
 
@@ -70,20 +70,20 @@ Usage:
     driver.add_cookie({'name' : 'foo', 'value' : 'bar', 'sameSite' : 'Strict'})
     
 
-add_credential(_credential : Credential_) → None[source]¶
+add_credential(_credential : Credential_) → None[source]
 
     
 
 Injects a credential into the authenticator.
 
 add_virtual_authenticator(_options : VirtualAuthenticatorOptions_) →
-None[source]¶
+None[source]
 
     
 
 Adds a virtual authenticator with the given options.
 
-back() → None[source]¶
+back() → None[source]
 
     
 
@@ -97,17 +97,17 @@ Usage:
     driver.back()
     
 
-bidi_connection()[source]¶
+bidi_connection()[source]
 
     
 
-_property _capabilities _: dict_¶
+_property _capabilities _: dict_
 
     
 
 Returns the drivers current capabilities being used.
 
-close() → None[source]¶
+close() → None[source]
 
     
 
@@ -121,13 +121,13 @@ Usage:
     driver.close()
     
 
-create_web_element(_element_id : str_) → WebElement[source]¶
+create_web_element(_element_id : str_) → WebElement[source]
 
     
 
 Creates a web element with the specified element_id.
 
-_property _current_url _: str_¶
+_property _current_url _: str_
 
     
 
@@ -141,7 +141,7 @@ Usage:
     driver.current_url
     
 
-_property _current_window_handle _: str_¶
+_property _current_window_handle _: str_
 
     
 
@@ -155,7 +155,7 @@ Usage:
     driver.current_window_handle
     
 
-delete_all_cookies() → None[source]¶
+delete_all_cookies() → None[source]
 
     
 
@@ -169,7 +169,7 @@ Usage:
     driver.delete_all_cookies()
     
 
-delete_cookie(_name_) → None[source]¶
+delete_cookie(_name_) → None[source]
 
     
 
@@ -183,19 +183,19 @@ Usage:
     driver.delete_cookie('my_cookie')
     
 
-delete_downloadable_files() → None[source]¶
+delete_downloadable_files() → None[source]
 
     
 
 Deletes all downloadable files.
 
-delete_network_conditions() → None¶
+delete_network_conditions() → None
 
     
 
 Resets Chromium network emulation settings.
 
-download_file(_file_name : str_, _target_directory : str_) → None[source]¶
+download_file(_file_name : str_, _target_directory : str_) → None[source]
 
     
 
@@ -204,7 +204,7 @@ Downloads a file with the specified file name to the target directory.
 file_name: The name of the file to download. target_directory: The path to the
 directory to save the downloaded file.
 
-execute(_driver_command : str_, _params : dict | None = None_) → dict[source]¶
+execute(_driver_command : str_, _params : dict | None = None_) → dict[source]
     
 
 Sends a command to be executed by a command.CommandExecutor.
@@ -223,7 +223,7 @@ Returns:
 
 The command’s JSON response loaded into a dictionary object.
 
-execute_async_script(_script : str_, _* args_)[source]¶
+execute_async_script(_script : str_, _* args_)[source]
 
     
 
@@ -247,7 +247,7 @@ Usage:
     driver.execute_async_script(script)
     
 
-execute_cdp_cmd(_cmd : str_, _cmd_args : dict_)¶
+execute_cdp_cmd(_cmd : str_, _cmd_args : dict_)
 
     
 
@@ -278,7 +278,7 @@ Returns:
 A dict, empty dict {} if there is no result to return. For example to
 getResponseBody: {‘base64Encoded’: False, ‘body’: ‘response body string’}
 
-execute_script(_script_ , _* args_)[source]¶
+execute_script(_script_ , _* args_)[source]
 
     
 
@@ -300,11 +300,11 @@ Usage:
     driver.execute_script('return document.title;')
     
 
-_property _file_detector _: FileDetector_¶
+_property _file_detector _: FileDetector_
 
     
 
-file_detector_context(_file_detector_class_ , _* args_, _** kwargs_)[source]¶
+file_detector_context(_file_detector_class_ , _* args_, _** kwargs_)[source]
 
     
 
@@ -336,7 +336,7 @@ instantiation.
 
   * kwargs - Keyword arguments, passed the same way as args.
 
-find_element(_by ='id'_, _value : str | None = None_) → WebElement[source]¶
+find_element(_by ='id'_, _value : str | None = None_) → WebElement[source]
     
 
 Find an element given a By strategy and locator.
@@ -355,7 +355,7 @@ Return type:
 
 WebElement
 
-find_elements(_by ='id'_, _value : str | None = None_) → List[WebElement][source]¶
+find_elements(_by ='id'_, _value : str | None = None_) → List[WebElement][source]
     
 
 Find elements given a By strategy and locator.
@@ -374,7 +374,7 @@ Return type:
 
 list of WebElement
 
-forward() → None[source]¶
+forward() → None[source]
 
     
 
@@ -388,19 +388,19 @@ Usage:
     driver.forward()
     
 
-fullscreen_window() → None[source]¶
+fullscreen_window() → None[source]
 
     
 
 Invokes the window manager-specific ‘full screen’ operation.
 
-get(_url : str_) → None[source]¶
+get(_url : str_) → None[source]
 
     
 
 Loads a web page in the current browser session.
 
-get_cookie(_name_) → Dict | None[source]¶
+get_cookie(_name_) → Dict | None[source]
     
 
 Get a single cookie by name. Returns the cookie if found, None if not.
@@ -413,7 +413,7 @@ Usage:
     driver.get_cookie('my_cookie')
     
 
-get_cookies() → List[dict][source]¶
+get_cookies() → List[dict][source]
 
     
 
@@ -428,20 +428,20 @@ Usage:
     driver.get_cookies()
     
 
-get_credentials() → List[Credential][source]¶
+get_credentials() → List[Credential][source]
 
     
 
 Returns the list of credentials owned by the authenticator.
 
-get_downloadable_files() → dict[source]¶
+get_downloadable_files() → dict[source]
 
     
 
 Retrieves the downloadable files as a map of file names and their
 corresponding URLs.
 
-get_issue_message()¶
+get_issue_message()
 
     
 
@@ -453,7 +453,7 @@ An error message when there is any issue in a Cast
 
 session.
 
-get_log(_log_type_)[source]¶
+get_log(_log_type_)[source]
 
     
 
@@ -476,7 +476,7 @@ Usage:
     driver.get_log('server')
     
 
-get_network_conditions()¶
+get_network_conditions()
 
     
 
@@ -490,11 +490,11 @@ A dict. For example: {‘latency’: 4,
 
 ‘download_throughput’: 2, ‘upload_throughput’: 2, ‘offline’: False}
 
-get_pinned_scripts() → List[str][source]¶
+get_pinned_scripts() → List[str][source]
 
     
 
-get_screenshot_as_base64() → str[source]¶
+get_screenshot_as_base64() → str[source]
 
     
 
@@ -509,7 +509,7 @@ Usage:
     driver.get_screenshot_as_base64()
     
 
-get_screenshot_as_file(_filename_) → bool[source]¶
+get_screenshot_as_file(_filename_) → bool[source]
 
     
 
@@ -530,7 +530,7 @@ Usage:
     driver.get_screenshot_as_file('/Screenshots/foo.png')
     
 
-get_screenshot_as_png() → bytes[source]¶
+get_screenshot_as_png() → bytes[source]
 
     
 
@@ -544,7 +544,7 @@ Usage:
     driver.get_screenshot_as_png()
     
 
-get_sinks() → list¶
+get_sinks() → list
 
     
 
@@ -554,7 +554,7 @@ Returns:
 
 A list of sinks available for Cast.
 
-get_window_position(_windowHandle ='current'_) → dict[source]¶
+get_window_position(_windowHandle ='current'_) → dict[source]
 
     
 
@@ -568,7 +568,7 @@ Usage:
     driver.get_window_position()
     
 
-get_window_rect() → dict[source]¶
+get_window_rect() → dict[source]
 
     
 
@@ -583,7 +583,7 @@ Usage:
     driver.get_window_rect()
     
 
-get_window_size(_windowHandle : str = 'current'_) → dict[source]¶
+get_window_size(_windowHandle : str = 'current'_) → dict[source]
 
     
 
@@ -597,7 +597,7 @@ Usage:
     driver.get_window_size()
     
 
-implicitly_wait(_time_to_wait : float_) → None[source]¶
+implicitly_wait(_time_to_wait : float_) → None[source]
 
     
 
@@ -619,13 +619,13 @@ Usage:
     driver.implicitly_wait(30)
     
 
-launch_app(_id_)¶
+launch_app(_id_)
 
     
 
 Launches Chromium app specified by id.
 
-_property _log_types¶
+_property _log_types
 
     
 
@@ -640,23 +640,23 @@ Usage:
     driver.log_types
     
 
-maximize_window() → None[source]¶
+maximize_window() → None[source]
 
     
 
 Maximizes the current window that webdriver is using.
 
-minimize_window() → None[source]¶
+minimize_window() → None[source]
 
     
 
 Invokes the window manager-specific ‘minimize’ operation.
 
-_property _mobile _: Mobile_¶
+_property _mobile _: Mobile_
 
     
 
-_property _name _: str_¶
+_property _name _: str_
 
     
 
@@ -670,7 +670,7 @@ Usage:
     name = driver.name
     
 
-_property _orientation¶
+_property _orientation
 
     
 
@@ -684,7 +684,7 @@ Usage:
     orientation = driver.orientation
     
 
-_property _page_source _: str_¶
+_property _page_source _: str_
 
     
 
@@ -698,13 +698,13 @@ Usage:
     driver.page_source
     
 
-pin_script(_script : str_, _script_key =None_) → ScriptKey[source]¶
+pin_script(_script : str_, _script_key =None_) → ScriptKey[source]
 
     
 
 Store common javascript scripts to be executed later by a unique hashable ID.
 
-print_page(_print_options : PrintOptions | None = None_) → str[source]¶
+print_page(_print_options : PrintOptions | None = None_) → str[source]
     
 
 Takes PDF of the current page.
@@ -712,13 +712,13 @@ Takes PDF of the current page.
 The driver makes a best effort to return a PDF based on the provided
 parameters.
 
-quit() → None¶
+quit() → None
 
     
 
 Closes the browser and shuts down the ChromiumDriver executable.
 
-refresh() → None[source]¶
+refresh() → None[source]
 
     
 
@@ -732,18 +732,18 @@ Usage:
     driver.refresh()
     
 
-remove_all_credentials() → None[source]¶
+remove_all_credentials() → None[source]
 
     
 
 Removes all credentials from the authenticator.
 
-remove_credential(_credential_id : str | bytearray_) → None[source]¶
+remove_credential(_credential_id : str | bytearray_) → None[source]
     
 
 Removes a credential from the authenticator.
 
-remove_virtual_authenticator() → None[source]¶
+remove_virtual_authenticator() → None[source]
 
     
 
@@ -752,7 +752,7 @@ Removes a previously added virtual authenticator.
 The authenticator is no longer valid after removal, so no methods may be
 called.
 
-save_screenshot(_filename_) → bool[source]¶
+save_screenshot(_filename_) → bool[source]
 
     
 
@@ -773,11 +773,11 @@ Usage:
     driver.save_screenshot('/Screenshots/foo.png')
     
 
-_property _script¶
+_property _script
 
     
 
-set_network_conditions(_** network_conditions_) → None¶
+set_network_conditions(_** network_conditions_) → None
 
     
 
@@ -803,7 +803,7 @@ Usage:
 
 Note: ‘throughput’ can be used to set both (for download and upload).
 
-set_page_load_timeout(_time_to_wait : float_) → None[source]¶
+set_page_load_timeout(_time_to_wait : float_) → None[source]
 
     
 
@@ -824,7 +824,7 @@ Usage:
     driver.set_page_load_timeout(30)
     
 
-set_permissions(_name : str_, _value : str_) → None¶
+set_permissions(_name : str_, _value : str_) → None
 
     
 
@@ -846,7 +846,7 @@ Usage:
     driver.set_permissions('clipboard-read', 'denied')
     
 
-set_script_timeout(_time_to_wait : float_) → None[source]¶
+set_script_timeout(_time_to_wait : float_) → None[source]
 
     
 
@@ -867,7 +867,7 @@ Usage:
     driver.set_script_timeout(30)
     
 
-set_sink_to_use(_sink_name : str_) → dict¶
+set_sink_to_use(_sink_name : str_) → dict
 
     
 
@@ -879,7 +879,7 @@ Args:
 
   * sink_name: Name of the sink to use as the target.
 
-set_user_verified(_verified : bool_) → None[source]¶
+set_user_verified(_verified : bool_) → None[source]
 
     
 
@@ -890,7 +890,7 @@ verified: True if the authenticator will pass user verification, False
 otherwise.
 
 set_window_position(_x : float_, _y : float_, _windowHandle : str =
-'current'_) → dict[source]¶
+'current'_) → dict[source]
 
     
 
@@ -913,7 +913,7 @@ Usage:
     
 
 set_window_rect(_x =None_, _y =None_, _width =None_, _height =None_) →
-dict[source]¶
+dict[source]
 
     
 
@@ -932,7 +932,7 @@ Usage:
     
 
 set_window_size(_width_ , _height_ , _windowHandle : str = 'current'_) →
-None[source]¶
+None[source]
 
     
 
@@ -954,7 +954,7 @@ Usage:
     driver.set_window_size(800,600)
     
 
-start_client()[source]¶
+start_client()[source]
 
     
 
@@ -962,7 +962,7 @@ Called before starting a new session.
 
 This method may be overridden to define custom startup behavior.
 
-start_desktop_mirroring(_sink_name : str_) → dict¶
+start_desktop_mirroring(_sink_name : str_) → dict
 
     
 
@@ -974,11 +974,11 @@ Args:
 
   * sink_name: Name of the sink to use as the target.
 
-start_devtools()[source]¶
+start_devtools()[source]
 
     
 
-start_session(_capabilities : dict_) → None[source]¶
+start_session(_capabilities : dict_) → None[source]
 
     
 
@@ -990,7 +990,7 @@ Args:
 
   * capabilities - a capabilities dict to start the session with.
 
-start_tab_mirroring(_sink_name : str_) → dict¶
+start_tab_mirroring(_sink_name : str_) → dict
 
     
 
@@ -1002,7 +1002,7 @@ Args:
 
   * sink_name: Name of the sink to use as the target.
 
-stop_casting(_sink_name : str_) → dict¶
+stop_casting(_sink_name : str_) → dict
 
     
 
@@ -1014,7 +1014,7 @@ Args:
 
   * sink_name: Name of the sink to stop the Cast session.
 
-stop_client()[source]¶
+stop_client()[source]
 
     
 
@@ -1022,7 +1022,7 @@ Called after executing a quit command.
 
 This method may be overridden to define custom shutdown behavior.
 
-_property _switch_to _: SwitchTo_¶
+_property _switch_to _: SwitchTo_
 
     
 
@@ -1047,7 +1047,7 @@ Usage:
     driver.switch_to.window('main')
     
 
-_property _timeouts _: Timeouts_¶
+_property _timeouts _: Timeouts_
 
     
 
@@ -1067,7 +1067,7 @@ Return type:
 
 Timeout
 
-_property _title _: str_¶
+_property _title _: str_
 
     
 
@@ -1081,19 +1081,19 @@ Usage:
     title = driver.title
     
 
-unpin(_script_key : ScriptKey_) → None[source]¶
+unpin(_script_key : ScriptKey_) → None[source]
 
     
 
 Remove a pinned script from storage.
 
-_property _virtual_authenticator_id _: str_¶
+_property _virtual_authenticator_id _: str_
 
     
 
 Returns the id of the virtual authenticator.
 
-_property _window_handles _: List[str]_¶
+_property _window_handles _: List[str]_
 
     
 

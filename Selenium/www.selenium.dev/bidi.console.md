@@ -1,7 +1,7 @@
 ## Table of Contents
 
     - [Navigation](#navigation)
-- [selenium.webdriver.common.bidi.console¶](#seleniumwebdrivercommonbidiconsole)
+- [selenium.webdriver.common.bidi.console](#seleniumwebdrivercommonbidiconsole)
     - [Table of Contents](#table-of-contents)
     - [This Page](#this-page)
     - [Quick search](#quick-search)
@@ -14,28 +14,28 @@
   * Selenium 4.25.0 documentation »
   * selenium.webdriver.common.bidi.console
 
-# selenium.webdriver.common.bidi.console¶
+# selenium.webdriver.common.bidi.console
 
 Classes
 
 `Console`(value) | An enumeration.  
 ---|---  
   
-_class _selenium.webdriver.common.bidi.console.Console(_value_)[source]¶
+_class _selenium.webdriver.common.bidi.console.Console(_value_)[source]
 
     
 
 An enumeration.
 
-ALL _ = 'all'_¶
+ALL _ = 'all'_
 
     
 
-LOG _ = 'log'_¶
+LOG _ = 'log'_
 
     
 
-ERROR _ = 'error'_¶
+ERROR _ = 'error'_
 
     
 

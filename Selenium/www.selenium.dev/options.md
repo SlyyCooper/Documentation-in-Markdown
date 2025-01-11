@@ -1,79 +1,79 @@
 ## Table of Contents
 
     - [Navigation](#navigation)
-- [selenium.webdriver.common.options¶](#seleniumwebdrivercommonoptions)
-  - [Usage¶](#usage)
-  - [Parameters¶](#parameters)
-  - [Returns¶](#returns)
-  - [Usage¶](#usage)
-  - [Parameters¶](#parameters)
-  - [Returns¶](#returns)
-  - [Usage¶](#usage)
-  - [Parameters¶](#parameters)
-  - [Returns¶](#returns)
-  - [Usage¶](#usage)
-  - [Parameters¶](#parameters)
-  - [Returns¶](#returns)
-  - [Usage¶](#usage)
-  - [Parameters¶](#parameters)
-  - [Returns¶](#returns)
-  - [Usage¶](#usage)
-  - [Parameters¶](#parameters)
-  - [Returns¶](#returns)
-  - [Usage¶](#usage)
-  - [Parameters¶](#parameters)
-  - [Returns¶](#returns)
-  - [Usage¶](#usage)
-  - [Parameters¶](#parameters)
-  - [Returns¶](#returns)
-  - [Usage¶](#usage)
-  - [Parameters¶](#parameters)
-  - [Returns¶](#returns)
-  - [Usage¶](#usage)
-  - [Parameters¶](#parameters)
-  - [Returns¶](#returns)
-  - [Usage¶](#usage)
-  - [Parameters¶](#parameters)
-  - [Returns¶](#returns)
-  - [Usage¶](#usage)
-  - [Parameters¶](#parameters)
-  - [Returns¶](#returns)
-  - [Usage¶](#usage)
-  - [Parameters¶](#parameters)
-  - [Returns¶](#returns)
-  - [Usage¶](#usage)
-  - [Parameters¶](#parameters)
-  - [Returns¶](#returns)
-  - [Usage¶](#usage)
-  - [Parameters¶](#parameters)
-  - [Returns¶](#returns)
-  - [Usage¶](#usage)
-  - [Parameters¶](#parameters)
-  - [Returns¶](#returns)
-  - [Usage¶](#usage)
-  - [Parameters¶](#parameters)
-  - [Returns¶](#returns)
-  - [Usage¶](#usage)
-  - [Parameters¶](#parameters)
-  - [Returns¶](#returns)
-  - [Usage¶](#usage)
-  - [Parameters¶](#parameters)
-  - [Returns¶](#returns)
-  - [Usage¶](#usage)
-  - [Parameters¶](#parameters)
-  - [Returns¶](#returns)
-  - [Usage¶](#usage)
-  - [Parameters¶](#parameters)
-  - [Returns¶](#returns)
-  - [Usage¶](#usage)
-  - [Parameters¶](#parameters)
-  - [Returns¶](#returns)
-  - [Usage¶](#usage)
-  - [Parameters¶](#parameters)
-  - [Returns¶](#returns)
-  - [Usage¶](#usage)
-  - [Parameters¶](#parameters)
-  - [Returns¶](#returns)
+- [selenium.webdriver.common.options](#seleniumwebdrivercommonoptions)
+  - [Usage](#usage)
+  - [Parameters](#parameters)
+  - [Returns](#returns)
+  - [Usage](#usage)
+  - [Parameters](#parameters)
+  - [Returns](#returns)
+  - [Usage](#usage)
+  - [Parameters](#parameters)
+  - [Returns](#returns)
+  - [Usage](#usage)
+  - [Parameters](#parameters)
+  - [Returns](#returns)
+  - [Usage](#usage)
+  - [Parameters](#parameters)
+  - [Returns](#returns)
+  - [Usage](#usage)
+  - [Parameters](#parameters)
+  - [Returns](#returns)
+  - [Usage](#usage)
+  - [Parameters](#parameters)
+  - [Returns](#returns)
+  - [Usage](#usage)
+  - [Parameters](#parameters)
+  - [Returns](#returns)
+  - [Usage](#usage)
+  - [Parameters](#parameters)
+  - [Returns](#returns)
+  - [Usage](#usage)
+  - [Parameters](#parameters)
+  - [Returns](#returns)
+  - [Usage](#usage)
+  - [Parameters](#parameters)
+  - [Returns](#returns)
+  - [Usage](#usage)
+  - [Parameters](#parameters)
+  - [Returns](#returns)
+  - [Usage](#usage)
+  - [Parameters](#parameters)
+  - [Returns](#returns)
+  - [Usage](#usage)
+  - [Parameters](#parameters)
+  - [Returns](#returns)
+  - [Usage](#usage)
+  - [Parameters](#parameters)
+  - [Returns](#returns)
+  - [Usage](#usage)
+  - [Parameters](#parameters)
+  - [Returns](#returns)
+  - [Usage](#usage)
+  - [Parameters](#parameters)
+  - [Returns](#returns)
+  - [Usage](#usage)
+  - [Parameters](#parameters)
+  - [Returns](#returns)
+  - [Usage](#usage)
+  - [Parameters](#parameters)
+  - [Returns](#returns)
+  - [Usage](#usage)
+  - [Parameters](#parameters)
+  - [Returns](#returns)
+  - [Usage](#usage)
+  - [Parameters](#parameters)
+  - [Returns](#returns)
+  - [Usage](#usage)
+  - [Parameters](#parameters)
+  - [Returns](#returns)
+  - [Usage](#usage)
+  - [Parameters](#parameters)
+  - [Returns](#returns)
+  - [Usage](#usage)
+  - [Parameters](#parameters)
+  - [Returns](#returns)
     - [Table of Contents](#table-of-contents)
     - [This Page](#this-page)
     - [Quick search](#quick-search)
@@ -86,7 +86,7 @@
   * Selenium 4.25.0 documentation »
   * selenium.webdriver.common.options
 
-# selenium.webdriver.common.options¶
+# selenium.webdriver.common.options
 
 Classes
 
@@ -95,7 +95,7 @@ Classes
 `BaseOptions`() | Base class for individual browser options.  
 `PageLoadStrategy`(value) | Enum of possible page load strategies.  
   
-_class _selenium.webdriver.common.options.PageLoadStrategy(_value_)[source]¶
+_class _selenium.webdriver.common.options.PageLoadStrategy(_value_)[source]
 
     
 
@@ -114,31 +114,31 @@ Selenium support following strategies:
 Docs:
 https://www.selenium.dev/documentation/webdriver/drivers/options/#pageloadstrategy.
 
-normal _ = 'normal'_¶
+normal _ = 'normal'_
 
     
 
-eager _ = 'eager'_¶
+eager _ = 'eager'_
 
     
 
-none _ = 'none'_¶
+none _ = 'none'_
 
     
 
-_class _selenium.webdriver.common.options.BaseOptions[source]¶
+_class _selenium.webdriver.common.options.BaseOptions[source]
 
     
 
 Base class for individual browser options.
 
-browser_version¶
+browser_version
 
     
 
 Gets and Sets the version of the browser.
 
-## Usage¶
+## Usage
 
   * Get
     
@@ -148,11 +148,11 @@ Gets and Sets the version of the browser.
     
     * self.browser_version = value
 
-## Parameters¶
+## Parameters
 
 value: str
 
-## Returns¶
+## Returns
 
   * Get
     
@@ -162,13 +162,13 @@ value: str
     
     * None
 
-platform_name¶
+platform_name
 
     
 
 Gets and Sets name of the platform.
 
-## Usage¶
+## Usage
 
   * Get
     
@@ -178,11 +178,11 @@ Gets and Sets name of the platform.
     
     * self.platform_name = value
 
-## Parameters¶
+## Parameters
 
 value: str
 
-## Returns¶
+## Returns
 
   * Get
     
@@ -192,13 +192,13 @@ value: str
     
     * None
 
-accept_insecure_certs¶
+accept_insecure_certs
 
     
 
 Gets and Set whether the session accepts insecure certificates.
 
-## Usage¶
+## Usage
 
   * Get
     
@@ -208,11 +208,11 @@ Gets and Set whether the session accepts insecure certificates.
     
     * self.accept_insecure_certs = value
 
-## Parameters¶
+## Parameters
 
 value: bool
 
-## Returns¶
+## Returns
 
   * Get
     
@@ -222,13 +222,13 @@ value: bool
     
     * None
 
-strict_file_interactability¶
+strict_file_interactability
 
     
 
 Gets and Sets whether session is about file interactability.
 
-## Usage¶
+## Usage
 
   * Get
     
@@ -238,11 +238,11 @@ Gets and Sets whether session is about file interactability.
     
     * self.strict_file_interactability = value
 
-## Parameters¶
+## Parameters
 
 value: bool
 
-## Returns¶
+## Returns
 
   * Get
     
@@ -252,13 +252,13 @@ value: bool
     
     * None
 
-set_window_rect¶
+set_window_rect
 
     
 
 Gets and Sets window size and position.
 
-## Usage¶
+## Usage
 
   * Get
     
@@ -268,11 +268,11 @@ Gets and Sets window size and position.
     
     * self.set_window_rect = value
 
-## Parameters¶
+## Parameters
 
 value: bool
 
-## Returns¶
+## Returns
 
   * Get
     
@@ -282,13 +282,13 @@ value: bool
     
     * None
 
-enable_bidi¶
+enable_bidi
 
     
 
 Gets and Set whether the session has WebDriverBiDi enabled.
 
-## Usage¶
+## Usage
 
   * Get
     
@@ -298,11 +298,11 @@ Gets and Set whether the session has WebDriverBiDi enabled.
     
     * self.enable_bidi = value
 
-## Parameters¶
+## Parameters
 
 value: bool
 
-## Returns¶
+## Returns
 
   * Get
     
@@ -312,13 +312,13 @@ value: bool
     
     * None
 
-page_load_strategy¶
+page_load_strategy
 
     
 
 :Gets and Sets page load strategy, the default is “normal”.
 
-## Usage¶
+## Usage
 
   * Get
     
@@ -328,11 +328,11 @@ page_load_strategy¶
     
     * self.page_load_strategy = value
 
-## Parameters¶
+## Parameters
 
 value: str
 
-## Returns¶
+## Returns
 
   * Get
     
@@ -342,13 +342,13 @@ value: str
     
     * None
 
-unhandled_prompt_behavior¶
+unhandled_prompt_behavior
 
     
 
 :Gets and Sets unhandled prompt behavior, the default is “dismiss and notify”.
 
-## Usage¶
+## Usage
 
   * Get
     
@@ -358,11 +358,11 @@ unhandled_prompt_behavior¶
     
     * self.unhandled_prompt_behavior = value
 
-## Parameters¶
+## Parameters
 
 value: str
 
-## Returns¶
+## Returns
 
   * Get
     
@@ -372,14 +372,14 @@ value: str
     
     * None
 
-timeouts¶
+timeouts
 
     
 
 :Gets and Sets implicit timeout, pageLoad timeout and script timeout if set
 (in milliseconds)
 
-## Usage¶
+## Usage
 
   * Get
     
@@ -389,11 +389,11 @@ timeouts¶
     
     * self.timeouts = value
 
-## Parameters¶
+## Parameters
 
 value: dict
 
-## Returns¶
+## Returns
 
   * Get
     
@@ -403,13 +403,13 @@ value: dict
     
     * None
 
-proxy¶
+proxy
 
     
 
 Sets and Gets Proxy.
 
-## Usage¶
+## Usage
 
   * Get
     
@@ -419,11 +419,11 @@ Sets and Gets Proxy.
     
     * self.proxy = value
 
-## Parameters¶
+## Parameters
 
 value: Proxy
 
-## Returns¶
+## Returns
 
   * Get
     
@@ -433,13 +433,13 @@ value: Proxy
     
     * None
 
-enable_downloads¶
+enable_downloads
 
     
 
 Gets and Sets whether session can download files.
 
-## Usage¶
+## Usage
 
   * Get
     
@@ -449,11 +449,11 @@ Gets and Sets whether session can download files.
     
     * self.enable_downloads = value
 
-## Parameters¶
+## Parameters
 
 value: bool
 
-## Returns¶
+## Returns
 
   * Get
     
@@ -463,13 +463,13 @@ value: bool
     
     * None
 
-web_socket_url¶
+web_socket_url
 
     
 
 Gets and Sets WebSocket URL.
 
-## Usage¶
+## Usage
 
   * Get
     
@@ -479,11 +479,11 @@ Gets and Sets WebSocket URL.
     
     * self.web_socket_url = value
 
-## Parameters¶
+## Parameters
 
 value: bool
 
-## Returns¶
+## Returns
 
   * Get
     
@@ -493,17 +493,17 @@ value: bool
     
     * None
 
-_property _capabilities¶
+_property _capabilities
 
     
 
-set_capability(_name_ , _value_) -> None[source]¶
+set_capability(_name_ , _value_) -> None[source]
 
     
 
 Sets a capability.
 
-enable_mobile(_android_package : str | None = None_, _android_activity : str | None = None_, _device_serial : str | None = None_) -> None[source]¶
+enable_mobile(_android_package : str | None = None_, _android_activity : str | None = None_, _device_serial : str | None = None_) -> None[source]
     
 
 Enables mobile browser use for browsers that support it.
@@ -514,34 +514,34 @@ Args:
 
 android_activity: The name of the android package to start
 
-_abstract _to_capabilities()[source]¶
+_abstract _to_capabilities()[source]
 
     
 
 Convert options into capabilities dictionary.
 
-_abstract property _default_capabilities¶
+_abstract property _default_capabilities
 
     
 
 Return minimal capabilities necessary as a dictionary.
 
-ignore_local_proxy_environment_variables() -> None[source]¶
+ignore_local_proxy_environment_variables() -> None[source]
 
     
 
 By calling this you will ignore HTTP_PROXY and HTTPS_PROXY from being picked
 up and used.
 
-_class _selenium.webdriver.common.options.ArgOptions[source]¶
+_class _selenium.webdriver.common.options.ArgOptions[source]
 
     
 
-_property _capabilities¶
+_property _capabilities
 
     
 
-enable_mobile(_android_package : str | None = None_, _android_activity : str | None = None_, _device_serial : str | None = None_) -> None¶
+enable_mobile(_android_package : str | None = None_, _android_activity : str | None = None_, _device_serial : str | None = None_) -> None
     
 
 Enables mobile browser use for browsers that support it.
@@ -552,19 +552,19 @@ Args:
 
 android_activity: The name of the android package to start
 
-set_capability(_name_ , _value_) -> None¶
+set_capability(_name_ , _value_) -> None
 
     
 
 Sets a capability.
 
-browser_version¶
+browser_version
 
     
 
 Gets and Sets the version of the browser.
 
-## Usage¶
+## Usage
 
   * Get
     
@@ -574,11 +574,11 @@ Gets and Sets the version of the browser.
     
     * self.browser_version = value
 
-## Parameters¶
+## Parameters
 
 value: str
 
-## Returns¶
+## Returns
 
   * Get
     
@@ -588,13 +588,13 @@ value: str
     
     * None
 
-platform_name¶
+platform_name
 
     
 
 Gets and Sets name of the platform.
 
-## Usage¶
+## Usage
 
   * Get
     
@@ -604,11 +604,11 @@ Gets and Sets name of the platform.
     
     * self.platform_name = value
 
-## Parameters¶
+## Parameters
 
 value: str
 
-## Returns¶
+## Returns
 
   * Get
     
@@ -618,13 +618,13 @@ value: str
     
     * None
 
-accept_insecure_certs¶
+accept_insecure_certs
 
     
 
 Gets and Set whether the session accepts insecure certificates.
 
-## Usage¶
+## Usage
 
   * Get
     
@@ -634,11 +634,11 @@ Gets and Set whether the session accepts insecure certificates.
     
     * self.accept_insecure_certs = value
 
-## Parameters¶
+## Parameters
 
 value: bool
 
-## Returns¶
+## Returns
 
   * Get
     
@@ -648,13 +648,13 @@ value: bool
     
     * None
 
-strict_file_interactability¶
+strict_file_interactability
 
     
 
 Gets and Sets whether session is about file interactability.
 
-## Usage¶
+## Usage
 
   * Get
     
@@ -664,11 +664,11 @@ Gets and Sets whether session is about file interactability.
     
     * self.strict_file_interactability = value
 
-## Parameters¶
+## Parameters
 
 value: bool
 
-## Returns¶
+## Returns
 
   * Get
     
@@ -678,13 +678,13 @@ value: bool
     
     * None
 
-set_window_rect¶
+set_window_rect
 
     
 
 Gets and Sets window size and position.
 
-## Usage¶
+## Usage
 
   * Get
     
@@ -694,11 +694,11 @@ Gets and Sets window size and position.
     
     * self.set_window_rect = value
 
-## Parameters¶
+## Parameters
 
 value: bool
 
-## Returns¶
+## Returns
 
   * Get
     
@@ -708,13 +708,13 @@ value: bool
     
     * None
 
-enable_bidi¶
+enable_bidi
 
     
 
 Gets and Set whether the session has WebDriverBiDi enabled.
 
-## Usage¶
+## Usage
 
   * Get
     
@@ -724,11 +724,11 @@ Gets and Set whether the session has WebDriverBiDi enabled.
     
     * self.enable_bidi = value
 
-## Parameters¶
+## Parameters
 
 value: bool
 
-## Returns¶
+## Returns
 
   * Get
     
@@ -738,13 +738,13 @@ value: bool
     
     * None
 
-web_socket_url¶
+web_socket_url
 
     
 
 Gets and Sets WebSocket URL.
 
-## Usage¶
+## Usage
 
   * Get
     
@@ -754,11 +754,11 @@ Gets and Sets WebSocket URL.
     
     * self.web_socket_url = value
 
-## Parameters¶
+## Parameters
 
 value: bool
 
-## Returns¶
+## Returns
 
   * Get
     
@@ -768,13 +768,13 @@ value: bool
     
     * None
 
-page_load_strategy¶
+page_load_strategy
 
     
 
 :Gets and Sets page load strategy, the default is “normal”.
 
-## Usage¶
+## Usage
 
   * Get
     
@@ -784,11 +784,11 @@ page_load_strategy¶
     
     * self.page_load_strategy = value
 
-## Parameters¶
+## Parameters
 
 value: str
 
-## Returns¶
+## Returns
 
   * Get
     
@@ -798,13 +798,13 @@ value: str
     
     * None
 
-unhandled_prompt_behavior¶
+unhandled_prompt_behavior
 
     
 
 :Gets and Sets unhandled prompt behavior, the default is “dismiss and notify”.
 
-## Usage¶
+## Usage
 
   * Get
     
@@ -814,11 +814,11 @@ unhandled_prompt_behavior¶
     
     * self.unhandled_prompt_behavior = value
 
-## Parameters¶
+## Parameters
 
 value: str
 
-## Returns¶
+## Returns
 
   * Get
     
@@ -828,14 +828,14 @@ value: str
     
     * None
 
-timeouts¶
+timeouts
 
     
 
 :Gets and Sets implicit timeout, pageLoad timeout and script timeout if set
 (in milliseconds)
 
-## Usage¶
+## Usage
 
   * Get
     
@@ -845,11 +845,11 @@ timeouts¶
     
     * self.timeouts = value
 
-## Parameters¶
+## Parameters
 
 value: dict
 
-## Returns¶
+## Returns
 
   * Get
     
@@ -859,13 +859,13 @@ value: dict
     
     * None
 
-proxy¶
+proxy
 
     
 
 Sets and Gets Proxy.
 
-## Usage¶
+## Usage
 
   * Get
     
@@ -875,11 +875,11 @@ Sets and Gets Proxy.
     
     * self.proxy = value
 
-## Parameters¶
+## Parameters
 
 value: Proxy
 
-## Returns¶
+## Returns
 
   * Get
     
@@ -889,13 +889,13 @@ value: Proxy
     
     * None
 
-enable_downloads¶
+enable_downloads
 
     
 
 Gets and Sets whether session can download files.
 
-## Usage¶
+## Usage
 
   * Get
     
@@ -905,11 +905,11 @@ Gets and Sets whether session can download files.
     
     * self.enable_downloads = value
 
-## Parameters¶
+## Parameters
 
 value: bool
 
-## Returns¶
+## Returns
 
   * Get
     
@@ -919,11 +919,11 @@ value: bool
     
     * None
 
-BINARY_LOCATION_ERROR _ = 'Binary Location Must be a String'_¶
+BINARY_LOCATION_ERROR _ = 'Binary Location Must be a String'_
 
     
 
-_property _arguments¶
+_property _arguments
 
     
 
@@ -933,7 +933,7 @@ Returns:
 
 A list of arguments needed for the browser.
 
-add_argument(_argument_) -> None[source]¶
+add_argument(_argument_) -> None[source]
 
     
 
@@ -945,20 +945,20 @@ Args:
 
   * Sets the arguments
 
-ignore_local_proxy_environment_variables() -> None[source]¶
+ignore_local_proxy_environment_variables() -> None[source]
 
     
 
 By calling this you will ignore HTTP_PROXY and HTTPS_PROXY from being picked
 up and used.
 
-to_capabilities()[source]¶
+to_capabilities()[source]
 
     
 
 Convert options into capabilities dictionary.
 
-_property _default_capabilities¶
+_property _default_capabilities
 
     
 

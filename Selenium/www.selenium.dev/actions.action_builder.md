@@ -1,7 +1,7 @@
 ## Table of Contents
 
     - [Navigation](#navigation)
-- [selenium.webdriver.common.actions.action_builder¶](#seleniumwebdrivercommonactionsaction_builder)
+- [selenium.webdriver.common.actions.action_builder](#seleniumwebdrivercommonactionsaction_builder)
     - [Table of Contents](#table-of-contents)
     - [This Page](#this-page)
     - [Quick search](#quick-search)
@@ -14,56 +14,56 @@
   * Selenium 4.25.0 documentation »
   * selenium.webdriver.common.actions.action_builder
 
-# selenium.webdriver.common.actions.action_builder¶
+# selenium.webdriver.common.actions.action_builder
 
 Classes
 
 `ActionBuilder`(driver[, mouse, wheel, ...]) |   
 ---|---  
   
-_class _selenium.webdriver.common.actions.action_builder.ActionBuilder(_driver_ , _mouse : PointerInput | None = None_, _wheel : WheelInput | None = None_, _keyboard : KeyInput | None = None_, _duration : int = 250_)[source]¶
+_class _selenium.webdriver.common.actions.action_builder.ActionBuilder(_driver_ , _mouse : PointerInput | None = None_, _wheel : WheelInput | None = None_, _keyboard : KeyInput | None = None_, _duration : int = 250_)[source]
     
 
-get_device_with(_name : str_) -> WheelInput | PointerInput | KeyInput | None[source]¶
+get_device_with(_name : str_) -> WheelInput | PointerInput | KeyInput | None[source]
     
 
-_property _pointer_inputs _: List[PointerInput]_¶
-
-    
-
-_property _key_inputs _: List[KeyInput]_¶
+_property _pointer_inputs _: List[PointerInput]_
 
     
 
-_property _key_action _: KeyActions_¶
+_property _key_inputs _: List[KeyInput]_
 
     
 
-_property _pointer_action _: PointerActions_¶
+_property _key_action _: KeyActions_
 
     
 
-_property _wheel_action _: WheelActions_¶
+_property _pointer_action _: PointerActions_
 
     
 
-add_key_input(_name : str_) -> KeyInput[source]¶
+_property _wheel_action _: WheelActions_
 
     
 
-add_pointer_input(_kind : str_, _name : str_) -> PointerInput[source]¶
+add_key_input(_name : str_) -> KeyInput[source]
 
     
 
-add_wheel_input(_name : str_) -> WheelInput[source]¶
+add_pointer_input(_kind : str_, _name : str_) -> PointerInput[source]
 
     
 
-perform() -> None[source]¶
+add_wheel_input(_name : str_) -> WheelInput[source]
 
     
 
-clear_actions() -> None[source]¶
+perform() -> None[source]
+
+    
+
+clear_actions() -> None[source]
 
     
 

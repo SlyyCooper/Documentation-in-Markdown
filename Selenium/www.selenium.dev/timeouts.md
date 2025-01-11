@@ -1,13 +1,13 @@
 ## Table of Contents
 
     - [Navigation](#navigation)
-- [selenium.webdriver.common.timeouts¶](#seleniumwebdrivercommontimeouts)
-  - [Usage¶](#usage)
-  - [Parameters¶](#parameters)
-  - [Usage¶](#usage)
-  - [Parameters¶](#parameters)
-  - [Usage¶](#usage)
-  - [Parameters¶](#parameters)
+- [selenium.webdriver.common.timeouts](#seleniumwebdrivercommontimeouts)
+  - [Usage](#usage)
+  - [Parameters](#parameters)
+  - [Usage](#usage)
+  - [Parameters](#parameters)
+  - [Usage](#usage)
+  - [Parameters](#parameters)
     - [Table of Contents](#table-of-contents)
     - [This Page](#this-page)
     - [Quick search](#quick-search)
@@ -20,7 +20,7 @@
   * Selenium 4.25.0 documentation »
   * selenium.webdriver.common.timeouts
 
-# selenium.webdriver.common.timeouts¶
+# selenium.webdriver.common.timeouts
 
 Classes
 
@@ -28,7 +28,7 @@ Classes
 ---|---  
   
 _class _selenium.webdriver.common.timeouts.Timeouts(_implicit_wait : float =
-0_, _page_load : float = 0_, _script : float = 0_)[source]¶
+0_, _page_load : float = 0_, _script : float = 0_)[source]
 
     
 
@@ -55,7 +55,7 @@ to wait for a page load to complete before throwing an error.
 
 wait for an asynchronous script to finish execution before throwing an error.
 
-implicit_wait¶
+implicit_wait
 
     
 
@@ -63,7 +63,7 @@ Get or set how many seconds to wait when searching for elements.
 
 This does not set the value on the remote end.
 
-## Usage¶
+## Usage
 
   * Get
     
@@ -73,11 +73,11 @@ This does not set the value on the remote end.
     
     * self.implicit_wait = value
 
-## Parameters¶
+## Parameters
 
 value: float
 
-page_load¶
+page_load
 
     
 
@@ -85,7 +85,7 @@ Get or set how many seconds to wait for the page to load.
 
 This does not set the value on the remote end.
 
-## Usage¶
+## Usage
 
   * Get
     
@@ -95,11 +95,11 @@ This does not set the value on the remote end.
     
     * self.page_load = value
 
-## Parameters¶
+## Parameters
 
 value: float
 
-script¶
+script
 
     
 
@@ -108,7 +108,7 @@ execution.
 
 This does not set the value on the remote end.
 
-## Usage¶
+## Usage
 
   * Get
     
@@ -118,7 +118,7 @@ This does not set the value on the remote end.
     
     * self.script = value
 
-## Parameters¶
+## Parameters
 
 value: float
 

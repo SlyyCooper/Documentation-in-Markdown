@@ -1,7 +1,7 @@
 ## Table of Contents
 
     - [Navigation](#navigation)
-- [selenium.webdriver.common.actions.pointer_input¶](#seleniumwebdrivercommonactionspointer_input)
+- [selenium.webdriver.common.actions.pointer_input](#seleniumwebdrivercommonactionspointer_input)
     - [Table of Contents](#table-of-contents)
     - [This Page](#this-page)
     - [Quick search](#quick-search)
@@ -14,7 +14,7 @@
   * Selenium 4.25.0 documentation »
   * selenium.webdriver.common.actions.pointer_input
 
-# selenium.webdriver.common.actions.pointer_input¶
+# selenium.webdriver.common.actions.pointer_input
 
 Classes
 
@@ -22,41 +22,41 @@ Classes
 ---|---  
   
 _class _selenium.webdriver.common.actions.pointer_input.PointerInput(_kind_ ,
-_name_)[source]¶
+_name_)[source]
 
     
 
-DEFAULT_MOVE_DURATION _ = 250_¶
+DEFAULT_MOVE_DURATION _ = 250_
 
     
 
-create_pointer_move(_duration =250_, _x : float = 0_, _y : float = 0_, _origin : WebElement | None = None_, _** kwargs_)[source]¶
+create_pointer_move(_duration =250_, _x : float = 0_, _y : float = 0_, _origin : WebElement | None = None_, _** kwargs_)[source]
     
 
-create_pointer_down(_** kwargs_)[source]¶
-
-    
-
-create_pointer_up(_button_)[source]¶
+create_pointer_down(_** kwargs_)[source]
 
     
 
-create_pointer_cancel()[source]¶
+create_pointer_up(_button_)[source]
 
     
 
-create_pause(_pause_duration : int | float = 0_) -> None[source]¶
-    
-
-encode()[source]¶
+create_pointer_cancel()[source]
 
     
 
-add_action(_action : Any_) -> None¶
+create_pause(_pause_duration : int | float = 0_) -> None[source]
+    
+
+encode()[source]
 
     
 
-clear_actions() -> None¶
+add_action(_action : Any_) -> None
+
+    
+
+clear_actions() -> None
 
     
 

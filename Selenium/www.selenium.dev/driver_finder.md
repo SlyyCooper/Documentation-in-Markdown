@@ -1,7 +1,7 @@
 ## Table of Contents
 
     - [Navigation](#navigation)
-- [selenium.webdriver.common.driver_finder¶](#seleniumwebdrivercommondriver_finder)
+- [selenium.webdriver.common.driver_finder](#seleniumwebdrivercommondriver_finder)
     - [Table of Contents](#table-of-contents)
     - [This Page](#this-page)
     - [Quick search](#quick-search)
@@ -14,7 +14,7 @@
   * Selenium 4.25.0 documentation »
   * selenium.webdriver.common.driver_finder
 
-# selenium.webdriver.common.driver_finder¶
+# selenium.webdriver.common.driver_finder
 
 Classes
 
@@ -22,7 +22,7 @@ Classes
 ---|---  
   
 _class _selenium.webdriver.common.driver_finder.DriverFinder(_service :
-Service_, _options : BaseOptions_)[source]¶
+Service_, _options : BaseOptions_)[source]
 
     
 
@@ -37,11 +37,11 @@ Parameters:
 
   * **options** – instance of the browser options class.
 
-get_browser_path() -> str[source]¶
+get_browser_path() -> str[source]
 
     
 
-get_driver_path() -> str[source]¶
+get_driver_path() -> str[source]
 
     
 

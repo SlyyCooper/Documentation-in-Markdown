@@ -1,7 +1,7 @@
 ## Table of Contents
 
     - [Navigation](#navigation)
-- [selenium.webdriver.common.actions.wheel_actions¶](#seleniumwebdrivercommonactionswheel_actions)
+- [selenium.webdriver.common.actions.wheel_actions](#seleniumwebdrivercommonactionswheel_actions)
     - [Table of Contents](#table-of-contents)
     - [This Page](#this-page)
     - [Quick search](#quick-search)
@@ -14,26 +14,26 @@
   * Selenium 4.25.0 documentation »
   * selenium.webdriver.common.actions.wheel_actions
 
-# selenium.webdriver.common.actions.wheel_actions¶
+# selenium.webdriver.common.actions.wheel_actions
 
 Classes
 
 `WheelActions`([source]) |   
 ---|---  
   
-_class _selenium.webdriver.common.actions.wheel_actions.WheelActions(_source : WheelInput | None = None_)[source]¶
+_class _selenium.webdriver.common.actions.wheel_actions.WheelActions(_source : WheelInput | None = None_)[source]
     
 
-pause(_duration : float = 0_)[source]¶
+pause(_duration : float = 0_)[source]
 
     
 
 scroll(_x =0_, _y =0_, _delta_x =0_, _delta_y =0_, _duration =0_, _origin
-='viewport'_)[source]¶
+='viewport'_)[source]
 
     
 
-PAUSE _ = 'pause'_¶
+PAUSE _ = 'pause'_
 
     
 

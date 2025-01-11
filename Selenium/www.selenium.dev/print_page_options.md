@@ -1,40 +1,40 @@
 ## Table of Contents
 
     - [Navigation](#navigation)
-- [selenium.webdriver.common.print_page_options¶](#seleniumwebdrivercommonprint_page_options)
-  - [Usage¶](#usage)
-  - [Parameters¶](#parameters)
-  - [Returns¶](#returns)
-  - [Usage¶](#usage)
-  - [Parameters¶](#parameters)
-  - [Returns¶](#returns)
-  - [Usage¶](#usage)
-  - [Parameters¶](#parameters)
-  - [Returns¶](#returns)
-  - [Usage¶](#usage)
-  - [Parameters¶](#parameters)
-  - [Returns¶](#returns)
-  - [Usage¶](#usage)
-  - [Parameters¶](#parameters)
-  - [Returns¶](#returns)
-  - [Usage¶](#usage)
-  - [Parameters¶](#parameters)
-  - [Returns¶](#returns)
-  - [Usage¶](#usage)
-  - [Parameters¶](#parameters)
-  - [Returns¶](#returns)
-  - [Usage¶](#usage)
-  - [Parameters¶](#parameters)
-  - [Returns¶](#returns)
-  - [Usage¶](#usage)
-  - [Parameters¶](#parameters)
-  - [Returns¶](#returns)
-  - [Usage¶](#usage)
-  - [Parameters¶](#parameters)
-  - [Returns¶](#returns)
-  - [Usage¶](#usage)
-  - [Parameters¶](#parameters)
-  - [Returns¶](#returns)
+- [selenium.webdriver.common.print_page_options](#seleniumwebdrivercommonprint_page_options)
+  - [Usage](#usage)
+  - [Parameters](#parameters)
+  - [Returns](#returns)
+  - [Usage](#usage)
+  - [Parameters](#parameters)
+  - [Returns](#returns)
+  - [Usage](#usage)
+  - [Parameters](#parameters)
+  - [Returns](#returns)
+  - [Usage](#usage)
+  - [Parameters](#parameters)
+  - [Returns](#returns)
+  - [Usage](#usage)
+  - [Parameters](#parameters)
+  - [Returns](#returns)
+  - [Usage](#usage)
+  - [Parameters](#parameters)
+  - [Returns](#returns)
+  - [Usage](#usage)
+  - [Parameters](#parameters)
+  - [Returns](#returns)
+  - [Usage](#usage)
+  - [Parameters](#parameters)
+  - [Returns](#returns)
+  - [Usage](#usage)
+  - [Parameters](#parameters)
+  - [Returns](#returns)
+  - [Usage](#usage)
+  - [Parameters](#parameters)
+  - [Returns](#returns)
+  - [Usage](#usage)
+  - [Parameters](#parameters)
+  - [Returns](#returns)
     - [Table of Contents](#table-of-contents)
     - [This Page](#this-page)
     - [Quick search](#quick-search)
@@ -47,24 +47,24 @@
   * Selenium 4.25.0 documentation »
   * selenium.webdriver.common.print_page_options
 
-# selenium.webdriver.common.print_page_options¶
+# selenium.webdriver.common.print_page_options
 
 Classes
 
 `PrintOptions`() |   
 ---|---  
   
-_class _selenium.webdriver.common.print_page_options.PrintOptions[source]¶
+_class _selenium.webdriver.common.print_page_options.PrintOptions[source]
 
     
 
-page_height¶
+page_height
 
     
 
 Gets and Sets page_height:
 
-## Usage¶
+## Usage
 
   * Get
     
@@ -74,11 +74,11 @@ Gets and Sets page_height:
     
     * self.page_height = value
 
-## Parameters¶
+## Parameters
 
 value: float
 
-## Returns¶
+## Returns
 
   * Get
     
@@ -88,13 +88,13 @@ value: float
     
     * None
 
-page_width¶
+page_width
 
     
 
 Gets and Sets page_width:
 
-## Usage¶
+## Usage
 
   * Get
     
@@ -104,11 +104,11 @@ Gets and Sets page_width:
     
     * self.page_width = value
 
-## Parameters¶
+## Parameters
 
 value: float
 
-## Returns¶
+## Returns
 
   * Get
     
@@ -118,13 +118,13 @@ value: float
     
     * None
 
-margin_top¶
+margin_top
 
     
 
 Gets and Sets margin_top:
 
-## Usage¶
+## Usage
 
   * Get
     
@@ -134,11 +134,11 @@ Gets and Sets margin_top:
     
     * self.margin_top = value
 
-## Parameters¶
+## Parameters
 
 value: float
 
-## Returns¶
+## Returns
 
   * Get
     
@@ -148,13 +148,13 @@ value: float
     
     * None
 
-margin_bottom¶
+margin_bottom
 
     
 
 Gets and Sets margin_bottom:
 
-## Usage¶
+## Usage
 
   * Get
     
@@ -164,11 +164,11 @@ Gets and Sets margin_bottom:
     
     * self.margin_bottom = value
 
-## Parameters¶
+## Parameters
 
 value: float
 
-## Returns¶
+## Returns
 
   * Get
     
@@ -178,13 +178,13 @@ value: float
     
     * None
 
-margin_left¶
+margin_left
 
     
 
 Gets and Sets margin_left:
 
-## Usage¶
+## Usage
 
   * Get
     
@@ -194,11 +194,11 @@ Gets and Sets margin_left:
     
     * self.margin_left = value
 
-## Parameters¶
+## Parameters
 
 value: float
 
-## Returns¶
+## Returns
 
   * Get
     
@@ -208,13 +208,13 @@ value: float
     
     * None
 
-margin_right¶
+margin_right
 
     
 
 Gets and Sets margin_right:
 
-## Usage¶
+## Usage
 
   * Get
     
@@ -224,11 +224,11 @@ Gets and Sets margin_right:
     
     * self.margin_right = value
 
-## Parameters¶
+## Parameters
 
 value: float
 
-## Returns¶
+## Returns
 
   * Get
     
@@ -238,13 +238,13 @@ value: float
     
     * None
 
-scale¶
+scale
 
     
 
 Gets and Sets scale:
 
-## Usage¶
+## Usage
 
   * Get
     
@@ -254,11 +254,11 @@ Gets and Sets scale:
     
     * self.scale = value
 
-## Parameters¶
+## Parameters
 
 value: float
 
-## Returns¶
+## Returns
 
   * Get
     
@@ -268,13 +268,13 @@ value: float
     
     * None
 
-orientation¶
+orientation
 
     
 
 Gets and Sets orientation:
 
-## Usage¶
+## Usage
 
   * Get
     
@@ -284,11 +284,11 @@ Gets and Sets orientation:
     
     * self.orientation = value
 
-## Parameters¶
+## Parameters
 
 value: Orientation
 
-## Returns¶
+## Returns
 
   * Get
     
@@ -298,13 +298,13 @@ value: Orientation
     
     * None
 
-background¶
+background
 
     
 
 Gets and Sets background:
 
-## Usage¶
+## Usage
 
   * Get
     
@@ -314,11 +314,11 @@ Gets and Sets background:
     
     * self.background = value
 
-## Parameters¶
+## Parameters
 
 value: bool
 
-## Returns¶
+## Returns
 
   * Get
     
@@ -328,13 +328,13 @@ value: bool
     
     * None
 
-shrink_to_fit¶
+shrink_to_fit
 
     
 
 Gets and Sets shrink_to_fit:
 
-## Usage¶
+## Usage
 
   * Get
     
@@ -344,11 +344,11 @@ Gets and Sets shrink_to_fit:
     
     * self.shrink_to_fit = value
 
-## Parameters¶
+## Parameters
 
 value: bool
 
-## Returns¶
+## Returns
 
   * Get
     
@@ -358,13 +358,13 @@ value: bool
     
     * None
 
-page_ranges¶
+page_ranges
 
     
 
 Gets and Sets page_ranges:
 
-## Usage¶
+## Usage
 
   * Get
     
@@ -374,11 +374,11 @@ Gets and Sets page_ranges:
     
     * self.page_ranges = value
 
-## Parameters¶
+## Parameters
 
 value: ` List[str]`
 
-## Returns¶
+## Returns
 
   * Get
     
@@ -388,7 +388,7 @@ value: ` List[str]`
     
     * None
 
-to_dict() -> Dict[str, Any][source]¶
+to_dict() -> Dict[str, Any][source]
 
     
 

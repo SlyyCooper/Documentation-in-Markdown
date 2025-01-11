@@ -1,7 +1,7 @@
 ## Table of Contents
 
     - [Navigation](#navigation)
-- [selenium.webdriver.common.actions.pointer_actions¶](#seleniumwebdrivercommonactionspointer_actions)
+- [selenium.webdriver.common.actions.pointer_actions](#seleniumwebdrivercommonactionspointer_actions)
     - [Table of Contents](#table-of-contents)
     - [This Page](#this-page)
     - [Quick search](#quick-search)
@@ -14,14 +14,14 @@
   * Selenium 4.25.0 documentation »
   * selenium.webdriver.common.actions.pointer_actions
 
-# selenium.webdriver.common.actions.pointer_actions¶
+# selenium.webdriver.common.actions.pointer_actions
 
 Classes
 
 `PointerActions`([source, duration]) | Args: - source: PointerInput instance - duration: override the default 250 msecs of DEFAULT_MOVE_DURATION in source  
 ---|---  
   
-_class _selenium.webdriver.common.actions.pointer_actions.PointerActions(_source : PointerInput | None = None_, _duration : int = 250_)[source]¶
+_class _selenium.webdriver.common.actions.pointer_actions.PointerActions(_source : PointerInput | None = None_, _duration : int = 250_)[source]
     
 
 Args: \- source: PointerInput instance \- duration: override the default 250
@@ -29,53 +29,53 @@ msecs of DEFAULT_MOVE_DURATION in source
 
 pointer_down(_button =0_, _width =None_, _height =None_, _pressure =None_,
 _tangential_pressure =None_, _tilt_x =None_, _tilt_y =None_, _twist =None_,
-_altitude_angle =None_, _azimuth_angle =None_)[source]¶
+_altitude_angle =None_, _azimuth_angle =None_)[source]
 
     
 
-pointer_up(_button =0_)[source]¶
+pointer_up(_button =0_)[source]
 
     
 
 move_to(_element_ , _x =0_, _y =0_, _width =None_, _height =None_, _pressure
 =None_, _tangential_pressure =None_, _tilt_x =None_, _tilt_y =None_, _twist
-=None_, _altitude_angle =None_, _azimuth_angle =None_)[source]¶
+=None_, _altitude_angle =None_, _azimuth_angle =None_)[source]
 
     
 
 move_by(_x_ , _y_ , _width =None_, _height =None_, _pressure =None_,
 _tangential_pressure =None_, _tilt_x =None_, _tilt_y =None_, _twist =None_,
-_altitude_angle =None_, _azimuth_angle =None_)[source]¶
+_altitude_angle =None_, _azimuth_angle =None_)[source]
 
     
 
 move_to_location(_x_ , _y_ , _width =None_, _height =None_, _pressure =None_,
 _tangential_pressure =None_, _tilt_x =None_, _tilt_y =None_, _twist =None_,
-_altitude_angle =None_, _azimuth_angle =None_)[source]¶
+_altitude_angle =None_, _azimuth_angle =None_)[source]
 
     
 
-click(_element : WebElement | None = None_, _button =0_)[source]¶
+click(_element : WebElement | None = None_, _button =0_)[source]
     
 
-context_click(_element : WebElement | None = None_)[source]¶
+context_click(_element : WebElement | None = None_)[source]
     
 
-click_and_hold(_element : WebElement | None = None_, _button =0_)[source]¶
+click_and_hold(_element : WebElement | None = None_, _button =0_)[source]
     
 
-release(_button =0_)[source]¶
-
-    
-
-double_click(_element : WebElement | None = None_)[source]¶
-    
-
-pause(_duration : float = 0_)[source]¶
+release(_button =0_)[source]
 
     
 
-PAUSE _ = 'pause'_¶
+double_click(_element : WebElement | None = None_)[source]
+    
+
+pause(_duration : float = 0_)[source]
+
+    
+
+PAUSE _ = 'pause'_
 
     
 

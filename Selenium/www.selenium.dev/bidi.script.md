@@ -1,7 +1,7 @@
 ## Table of Contents
 
     - [Navigation](#navigation)
-- [selenium.webdriver.common.bidi.script¶](#seleniumwebdrivercommonbidiscript)
+- [selenium.webdriver.common.bidi.script](#seleniumwebdrivercommonbidiscript)
     - [Table of Contents](#table-of-contents)
     - [This Page](#this-page)
     - [Quick search](#quick-search)
@@ -14,7 +14,7 @@
   * Selenium 4.25.0 documentation »
   * selenium.webdriver.common.bidi.script
 
-# selenium.webdriver.common.bidi.script¶
+# selenium.webdriver.common.bidi.script
 
 Classes
 
@@ -24,99 +24,99 @@ Classes
 `LogEntryAdded`() |   
 `Script`(conn) |   
   
-_class _selenium.webdriver.common.bidi.script.Script(_conn_)[source]¶
+_class _selenium.webdriver.common.bidi.script.Script(_conn_)[source]
 
     
 
-add_console_message_handler(_handler_)[source]¶
+add_console_message_handler(_handler_)[source]
 
     
 
-add_javascript_error_handler(_handler_)[source]¶
+add_javascript_error_handler(_handler_)[source]
 
     
 
-remove_console_message_handler(_id_)[source]¶
+remove_console_message_handler(_id_)[source]
 
     
 
-remove_javascript_error_handler(_id_)¶
+remove_javascript_error_handler(_id_)
 
     
 
-_class _selenium.webdriver.common.bidi.script.LogEntryAdded[source]¶
+_class _selenium.webdriver.common.bidi.script.LogEntryAdded[source]
 
     
 
-event_class _ = 'log.entryAdded'_¶
+event_class _ = 'log.entryAdded'_
 
     
 
-_classmethod _from_json(_json_)[source]¶
+_classmethod _from_json(_json_)[source]
 
     
 
 _class _selenium.webdriver.common.bidi.script.ConsoleLogEntry(_level : str_,
 _text : str_, _timestamp : str_, _method : str_, _args : List[dict]_, _type_ :
-str_)[source]¶
+str_)[source]
 
     
 
-level _: str_¶
+level _: str_
 
     
 
-text _: str_¶
+text _: str_
 
     
 
-timestamp _: str_¶
+timestamp _: str_
 
     
 
-method _: str_¶
+method _: str_
 
     
 
-args _: List[dict]_¶
+args _: List[dict]_
 
     
 
-type__: str_¶
+type__: str_
 
     
 
-_classmethod _from_json(_json_)[source]¶
+_classmethod _from_json(_json_)[source]
 
     
 
 _class _selenium.webdriver.common.bidi.script.JavaScriptLogEntry(_level :
 str_, _text : str_, _timestamp : str_, _stacktrace : dict_, _type_ :
-str_)[source]¶
+str_)[source]
 
     
 
-level _: str_¶
+level _: str_
 
     
 
-text _: str_¶
+text _: str_
 
     
 
-timestamp _: str_¶
+timestamp _: str_
 
     
 
-stacktrace _: dict_¶
+stacktrace _: dict_
 
     
 
-type__: str_¶
+type__: str_
 
     
 
-_classmethod _from_json(_json_)[source]¶
+_classmethod _from_json(_json_)[source]
 
     
 

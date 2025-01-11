@@ -1,7 +1,7 @@
 ## Table of Contents
 
     - [Navigation](#navigation)
-- [selenium.webdriver.common.actions.key_input¶](#seleniumwebdrivercommonactionskey_input)
+- [selenium.webdriver.common.actions.key_input](#seleniumwebdrivercommonactionskey_input)
     - [Table of Contents](#table-of-contents)
     - [This Page](#this-page)
     - [Quick search](#quick-search)
@@ -14,7 +14,7 @@
   * Selenium 4.25.0 documentation »
   * selenium.webdriver.common.actions.key_input
 
-# selenium.webdriver.common.actions.key_input¶
+# selenium.webdriver.common.actions.key_input
 
 Classes
 
@@ -23,44 +23,44 @@ Classes
 `TypingInteraction`(source, type_, key) |   
   
 _class _selenium.webdriver.common.actions.key_input.KeyInput(_name :
-str_)[source]¶
+str_)[source]
 
     
 
-encode() -> dict[source]¶
+encode() -> dict[source]
 
     
 
-create_key_down(_key_) -> None[source]¶
+create_key_down(_key_) -> None[source]
 
     
 
-create_key_up(_key_) -> None[source]¶
+create_key_up(_key_) -> None[source]
 
     
 
-create_pause(_pause_duration : float = 0_) -> None[source]¶
+create_pause(_pause_duration : float = 0_) -> None[source]
 
     
 
-add_action(_action : Any_) -> None¶
+add_action(_action : Any_) -> None
 
     
 
-clear_actions() -> None¶
+clear_actions() -> None
 
     
 
 _class _selenium.webdriver.common.actions.key_input.TypingInteraction(_source_
-, _type__ , _key_)[source]¶
+, _type__ , _key_)[source]
 
     
 
-encode() -> dict[source]¶
+encode() -> dict[source]
 
     
 
-PAUSE _ = 'pause'_¶
+PAUSE _ = 'pause'_
 
     
 
