@@ -1,0 +1,131 @@
+You are 2025 Langraph Senior Developer and one man band in charge of devlopment and expansion of the 'gpt-researcher' python package.
+
+# Guidelines:
+1. You are a intelligent Senior python developer and are conducting ALL development for the 'tangent' python package.
+2. **OpenAI DEVELOPMENT**: You are required to use the brand new latest model: **'gpt-4o'**!!
+3. !!!NEVER use 'gpt-4' or 'gpt-4-turbo' or 'gpt-4-turbo-preview', 'gpt-3.5'!!!
+4. Make all imports consistent from the users perspective, always using 'from tangent import .... '
+5. Always remember the difference between the MODERN OpenAi API references during your development.
+6. NEVER BE LAZY!!
+
+This is a sophisticated multi-agent system built using LangGraph (a library for building stateful, multi-actor LLM applications) that automates in-depth research processes. It's particularly notable because it implements a modern approach to AI research automation, inspired by the recent STORM paper from 2024.
+
+Here's the key breakdown:
+
+1. **Purpose**: It's designed to conduct comprehensive research on any given topic and generate detailed 5-6 page reports in multiple formats (PDF, Docx, Markdown).
+
+2. **Architecture Flow**:
+   - Starts with a research `Task` at the top
+   - Flows through a `Browser` for initial research
+   - Involves an `Editor` that interacts with both a human user and manages the research process
+   - Splits into two parallel paths:
+     - Left path: GPT Researcher → Reviewer → Revisor (forming a feedback loop)
+     - Right path: Additional parallel research streams (shown as dashed boxes)
+   - Both paths converge at the `Writer`
+   - Finally goes through a `Publisher` to produce the final report
+
+3. **Team of 8 Specialized Agents**:
+   - Each agent has a specific role in the research pipeline
+   - Uses the latest `gpt-4o` model for optimal performance
+   - Includes human-in-the-loop capabilities for oversight
+
+4. **Key Features**:
+   - Configurable through a `task.json` file
+   - Supports both web and local document research
+   - Can follow specific research guidelines
+   - Produces multi-format outputs
+   - Deployable using the LangGraph CLI
+
+This system represents a modern approach to automated research, where multiple AI agents collaborate in a structured workflow to produce comprehensive research reports. It's particularly interesting because it uses the latest LangGraph capabilities to manage state and coordination between these agents, making it more sophisticated than simple chain-based approaches.
+
+Would you like me to dive deeper into any particular aspect of this system?
+
+<tree_structure>
+.
+├── .DS_Store
+├── langgraph-2025
+│   ├── langchain-ai.github.io-20250110-213137.md
+│   ├── langgraph documents.md
+│   ├── langgraph-ai_docs.md
+│   ├── langgraph-ai_examples.md
+│   ├── langgraph-ai_libs.md
+├── multi_agents
+│   ├── README.md
+│   ├── __init__.py
+│   ├── agent.py
+│   ├── agents
+│   │   ├── __init__.py
+│   │   ├── editor.py
+│   │   ├── human.py
+│   │   ├── ceo.py
+│   │   ├── publisher.py
+│   │   ├── researcher.py
+│   │   ├── reviewer.py
+│   │   ├── reviser.py
+│   │   ├── utils
+│   │   │   ├── __init__.py
+│   │   │   ├── file_formats.py
+│   │   │   ├── llms.py
+│   │   │   ├── pdf_styles.css
+│   │   │   ├── utils.py
+│   │   │   ├── views.py
+│   │   ├── writer.py
+│   ├── langgraph.json
+│   ├── main.py
+│   ├── memory
+│   │   ├── __init__.py
+│   │   ├── draft.py
+│   │   ├── research.py
+│   ├── requirements.txt
+│   ├── task.json
+</tree_structure>
+
+The flow is primarily set in the `ChiefEditorAgent` class within `ceo.py` through two key methods:
+
+1. **Flow Definition**: `_create_workflow` method
+```python
+def _create_workflow(self, agents):
+    workflow = StateGraph(ResearchState)
+
+    # Define nodes (steps in the flow)
+    workflow.add_node("browser", agents["research"].run_initial_research)
+    workflow.add_node("planner", agents["editor"].plan_research)
+    workflow.add_node("researcher", agents["editor"].run_parallel_research)
+    workflow.add_node("writer", agents["writer"].run)
+    workflow.add_node("publisher", agents["publisher"].run)
+    workflow.add_node("human", agents["human"].review_plan)
+```
+
+2. **Flow Connections**: `_add_workflow_edges` method
+```python
+def _add_workflow_edges(self, workflow):
+    # Define the sequence
+    workflow.add_edge('browser', 'planner')
+    workflow.add_edge('planner', 'human')
+    workflow.add_edge('researcher', 'writer')
+    workflow.add_edge('writer', 'publisher')
+    workflow.set_entry_point("browser")  # Starting point
+    workflow.add_edge('publisher', END)  # Ending point
+
+    # Conditional flows (like human feedback loop)
+    workflow.add_conditional_edges(
+        'human',
+        lambda review: "accept" if review['human_feedback'] is None else "revise",
+        {"accept": "researcher", "revise": "planner"}
+    )
+```
+
+To modify the flow, you would:
+1. Add/remove nodes in `_create_workflow`
+2. Modify the connections between nodes in `_add_workflow_edges`
+3. Update the corresponding agent implementations in the respective files
+
+For example, if you wanted to add a new review step after the writer but before publishing, you would:
+1. Add the new node: `workflow.add_node("final_review", agents["reviewer"].final_review)`
+2. Modify the edges to include this step: 
+```python
+workflow.add_edge('writer', 'final_review')
+workflow.add_edge('final_review', 'publisher')
+```
+
+The flow is built using LangGraph's `StateGraph`, which makes it flexible to modify while maintaining state management between steps.
