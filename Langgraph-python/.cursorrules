@@ -1,0 +1,844 @@
+You are an expert software developer working on the **`multi_agents`** project. This code base integrates with **LangGraph**, **browser-use**, and **`gpt_researcher`** to orchestrate multiple specialized agents (research, review, revision, etc.) in a multi-step workflow. Below is **extremely** detailed documentation that includes the naming conventions, classes, file-by-file overviews, imports, and references to code lines. This documentation is authoritative—any modifications or additions you create must comply with these existing patterns and structures. Use your chain-of-thought internally, but only provide final, polished answers or code.
+
+Note that the 'gpt_researcher' package uses **"query"** for the users input, and the browser-use package uses **"task"** for the users input.
+---
+
+## Introduction
+
+The **`multi_agents`** codebase  is a multi-agent system leveraging the **`langgraph`** library for orchestrating stateful flows of specialized agent classes to collaboratively produce, refine, and publish research reports. Each “agent” performs a specialized role: research, editorial planning, revision, writing, publishing, etc. The entire pipeline can loop back or skip steps dynamically by evaluating “conditional edges.” Under the hood, it delegates core search, scraping, and summarization tasks to **`gpt_researcher`**. Meanwhile, `multi_agents` layers on advanced workflows—allowing multiple agents to pass drafts around, incorporate human feedback, and ultimately produce a polished deliverable in formats like PDF or DOCX.
+
+The system is built around **`langgraph.StateGraph`** from the `langgraph` library (not official LangChain, but conceptually similar). Each agent is typically represented as a node in a directed workflow graph. The flow can be **dynamic** (with conditional edges that can loop or revisit earlier agents) or **relatively linear**—depending on your design.
+
+---
+
+## Top-Level Architecture
+
+```
+multi_agents/
+├── __init__.py
+├── agent.py
+├── agents
+│   ├── __init__.py
+│   ├── utils
+│   │   ├── file_formats.py
+│   │   ├── llms.py <-- integrates with a "langchain_community" style for model calls
+│   │   ├── utils.py
+│   │   └── views.py
+│   ├── executives
+│   │   └── ceo.py <-- CEOAgent for orchestrating entire flow
+│   ├── management
+│   │   └── director.py
+│   ├── quality_dept
+│   │   ├── reviewer.py
+│   │   ├── reviser.py
+│   │   └── stakeholder.py
+│   ├── product_discovery_dept
+│   │   └── dhgate_agent.py
+│   ├── product_analysis_dept
+│   │   ├── writer.py
+│   │   └── publisher.py
+│   └── trend_dept
+│       └── web_researcher.py <-- uses gpt_researcher.GPTResearcher
+├── main.py
+└── memory
+    ├── __init__.py
+    ├── draft.py   <-- DraftState
+    └── research.py <-- ResearchState
+```
+
+### Agents Overview
+All Agents and Their Responsibilities
+
+Below is a table summarizing each agent class, file location, and main usage:
+
+| **Agent**         | **File**                | **Class Name**     | **Responsibility**                                                         | **Lines**     |
+|-------------------|-------------------------|--------------------|----------------------------------------------------------------------------|--------------|
+| ChiefEditor       | `ceo.py`      | `CEOAgent` | Top-level orchestrator; creates the main `StateGraph`, manages all phases. | Lines 19–119 |
+| Researcher        | `researcher.py`        | `ResearchAgent`    | Calls `gpt_researcher.GPTResearcher` to do actual searching and writing.    | Lines 6–58   |
+| Editor            | `director.py`            | `DirectorAgent`      | Plans outlines, organizes parallel sub-research flows, merges results.      | Lines 13–168 |
+| Reviewer          | `reviewer.py`          | `ReviewerAgent`    | Checks a draft vs. guidelines, returns revision notes or `None` if good.    | Lines 9–80   |
+| Reviser           | `reviser.py`           | `ReviserAgent`     | Revises a draft based on feedback from Reviewer; returns updated text.      | Lines 15–75  |
+| Writer            | `writer.py`            | `WriterAgent`      | Creates final introduction, conclusion, references from the research data.  | Lines 16–143 |
+| Publisher         | `publisher.py`         | `PublisherAgent`   | Publishes final text to PDF, DOCX, or Markdown.                             | Lines 9–64   |
+| Human (optional)  | `stakeholder.py`             | `StakeHolderAgent`       | If `include_human_feedback` is `true`, prompts a real user for feedback.    | Lines 5–52   |
+
+*Note that the GPT researcher agent in the /Users/tan/Documents/Work/Production/J.A.T/agents/utils/gpt_researcher_llm.py within the agents/agent_flow/trend_dept (trend department) is a **special** web research agent that uses the **gpt_researcher** python package. DO NOT EDIT UNLESS ABSOLUTELY NECESSARY.* and even then ask the user for permission prior to editing!!! It is the ONLY agent that uses the **gpt_researcher** python package.
+
+**Naming Conventions**:
+
+- Agents have the suffix “Agent.”  
+- Each agent class is singular: `WriterAgent`, `ReviserAgent`, etc.  
+- A `run(...)` or similarly named method is the primary entry point for that agent’s responsibilities.  
+
+**Syntax & Code**: All agents follow typical Python 3.7+ style with type hints, docstrings, and asynchronous methods (e.g., `async def run(...)`).
+
+**all** the agent classes defined in `agents/`:
+
+1. **`ResearchAgent`** (`researcher.py`)
+   - *Primary link to `gpt_researcher`.*  
+   - Performs initial and deeper searches by instantiating a `GPTResearcher` object with parameters like `query`, `report_type`, and so on.  
+   - Returns the generated text or “report” to the pipeline’s shared state (`research_state` or `draft_state`).
+
+2. **`DirectorAgent`** (`director.py`)
+   - Responsible for **planning** (creating an outline, sections) and also orchestrates parallel sub-research tasks.  
+   - Uses a local `langgraph.StateGraph` to define a mini-workflow of “research → review → revise.”  
+   - Typically deals with “section” queries in parallel, delegating deeper tasks to `ResearchAgent` or others.
+
+3. **`ReviewerAgent`** (`reviewer.py`)
+   - Takes a draft plus guidelines and **reviews** it.  
+   - If changes are needed, returns revision notes; if acceptable, returns `None`.
+
+4. **`ReviserAgent`** (`reviser.py`)
+   - Takes the existing draft plus the `ReviewerAgent` feedback.  
+   - Produces a revised draft and short “revision notes” describing changes.
+
+5. **`WriterAgent`** (`writer.py`)
+   - Writes or finalizes sections such as the introduction, table of contents, conclusion, references.  
+   - Returns these in a JSON structure so subsequent agents can integrate it (e.g., `PublisherAgent` or the orchestrator).
+
+6. **`PublisherAgent`** (`publisher.py`)
+   - Takes the final layout from `WriterAgent` (plus any data in the state).  
+   - Outputs the final research artifact in user-selected formats (Markdown, PDF, DOCX).  
+   - Uses functions from `utils/file_formats.py` for conversions.
+
+7. **`StakeHolderAgent`** (`stakeholder.py`)
+   - (Optional) Gathers real-time user feedback on outlines or partial drafts.  
+   - Can be integrated into the flow if `task.get("include_human_feedback")` is true.
+
+8. **`CEOAgent`** (`ceo.py`)
+   - The top-level orchestrator.  
+   - Creates the overarching `StateGraph` with nodes referencing multiple agents (e.g., “browser” → “planner” → “researcher” → “writer” → “publisher”).  
+   - If feedback is enabled, transitions to `StakeHolderAgent` at the correct stage.  
+   - Final step usually is `PublisherAgent` → `END`.
+
+---
+
+## Orchestration Flow
+
+### `StateGraph` from `langgraph`
+
+- The flow is configured in `CEOAgent._create_workflow(agents)`.
+- **Nodes** are assigned to specific agent methods (e.g., `"browser" -> researchAgent.run_initial_research`).
+- **Edges** define the transitions. For instance:
+  ```python
+  workflow.add_edge('browser', 'planner')
+  workflow.add_edge('planner', 'human')
+  workflow.add_edge('researcher', 'writer')
+  workflow.add_edge('writer', 'publisher')
+  workflow.set_entry_point("browser")
+  workflow.add_edge('publisher', END)
+  ```
+
+### Conditional Edges (Dynamic Flow)
+
+The code adds **conditional edges** that determine whether to go “accept” or “revise.” Example from `ceo.py`:
+
+```python
+workflow.add_conditional_edges(
+  'human',
+  lambda review: "accept" if review['human_feedback'] is None else "revise",
+  {"accept": "researcher", "revise": "planner"}
+)
+```
+
+If `human_feedback` is `None`, we skip back to “researcher” for main research. If it’s not `None`, we jump to “planner” to revisit sections. Similarly, in `director.py`, a separate sub-workflow delegates tasks to `ReviewAgent` or `ReviserAgent`.
+
+**Hence**: This is a dynamic multi-agent orchestration. The graph can loop back or skip certain agents, depending on conditions. You can absolutely have repeated cycles if the reviewer requests more revisions.
+
+
+## Detailed Agent Orchestration
+
+**`CEOAgent`** in `agents/ceo.py` orchestrates the entire multi-agent process:
+
+1. `_initialize_agents()` (line 43) creates a dictionary of all agent instances:
+   ```python
+   {
+     "writer": WriterAgent(...),
+     "editor": DirectorAgent(...),
+     "research": ResearchAgent(...),
+     "publisher": PublisherAgent(...),
+     "human": StakeHolderAgent(...)
+   }
+   ```
+2. `_create_workflow(...)` (line 52) sets up a `StateGraph(ResearchState)` with named nodes:
+   - Node `"browser"` → `research.run_initial_research`
+   - Node `"planner"` → `editor.plan_research`
+   - Node `"researcher"` → `editor.run_parallel_research`
+   - Node `"writer"` → `writer.run`
+   - Node `"publisher"` → `publisher.run`
+   - Node `"human"` → `human.review_plan`
+3. `_add_workflow_edges(...)` (line 68) wires the edges:
+   - `browser` → `planner`
+   - `planner` → `human`
+   - `human` → conditional → either `"accept": "researcher"` or `"revise": "planner"`
+   - `researcher` → `writer`
+   - `writer` → `publisher`
+   - `publisher` → `END`
+4. `run_research_task(...)` (line 95) compiles and executes the graph with `ainvoke(...)`. This triggers asynchronous calls to each agent method in the order or condition defined by the edges.
+
+### Sub-Flows with DirectorAgent
+
+Inside `director.py`, `DirectorAgent` sets up another **mini** `StateGraph(DraftState)` for subtopic research (line 125). That pipeline is:
+
+```
+researcher -> reviewer -> [ if review is None -> accept -> END ] [ else -> revise -> reviewer again ]
+```
+Hence, each subtopic spawns a parallel workflow (lines 67–71). The final results are consolidated as `research_data`.
+
+---
+
+## Adding or Removing Agents
+
+To **add** a new agent:
+
+1. Create a new `XAgent` class in `agents/` with the same structure and docstring style.  
+2. In `ceo.py` (or any relevant module), define a node in the `StateGraph` that references the new agent’s method:  
+   ```python
+   # Example: new agent added
+   workflow.add_node("my_new_agent", myNewAgent.run)
+   workflow.add_edge("some_previous_node", "my_new_agent")
+   ```
+3. If it depends on the `ResearchState` or `DraftState`, ensure you add or check the relevant fields in `memory/`.
+
+To **remove** or **bypass** an agent:
+
+1. Remove the node from the `StateGraph` definition or do not connect it with edges.  
+2. If you remove it from `agents/__init__.py`, no other agent can import it.  
+3. Adjust the transitions so the pipeline remains functional.
+
+To **change** the flow:
+
+- **`ceo.py`** (specifically `_add_workflow_edges`) is the top-level. You can rewire edges there or in your new code.  
+- If you want a sub-flow, see `director.py` for how it sets up a separate `StateGraph` referencing `ResearchAgent`, `ReviewerAgent`, and `ReviserAgent`.
+
+---
+
+## Memory Layer
+
+Two typed dictionaries define how data is passed:
+
+- **`ResearchState`** (`memory/research.py`):
+# ResearchState keeps track of the big picture
+# It is the state of the research project
+  ```python
+class ResearchState(TypedDict):
+    # Core Research Data
+    task: dict                # Main task configuration (query, guidelines, etc.)
+    initial_research: str     # First pass research from ResearchAgent
+    sections: List[str]      # List of all section topics to research
+    research_data: List[dict] # All research findings for each section
+    human_feedback: str      # Feedback from StakeHolderAgent (human)
+    # Report Structure
+    title: str               # Main research title
+    headers: dict            # Section headers and their structure
+    date: str               # When the research was conducted
+    table_of_contents: str   # Generated TOC from sections
+    introduction: str        # Opening section of report
+    conclusion: str          # Closing section of report
+    sources: List[str]      # All references and citations
+    report: str             # The complete final report text
+  ```
+
+- **`DraftState`** (`memory/draft.py`):
+# DraftState handles the details of each section
+# It is the state of the draft for each section
+```python
+class DraftState(TypedDict):
+    task: dict          # Configuration dictionary for the current task
+    topic: str          # The specific topic/section being worked on
+    draft: dict         # The actual content and structure of the draft
+    review: str         # Feedback from the ReviewerAgent
+    revision_notes: str # Notes from ReviserAgent about what changes were made
+  ```
+
+Agents pass these states around the graph. You can store additional fields if your new agent or flow requires them, but remain consistent with existing keys.
+
+---
+
+## How `multi_agents` Leverages `gpt_researcher`
+
+1. **`ResearchAgent`** initializes and calls a `GPTResearcher` from `gpt_researcher`. This is the main integration:
+   ```python
+   from gpt_researcher import GPTResearcher
+   ...
+   researcher = GPTResearcher(
+       query=query,
+       report_type=research_report,   # e.g. "research_report"
+       report_source=source,          # e.g. "web"
+       ...
+   )
+   await researcher.conduct_research()
+   final_report = await researcher.write_report()
+   ```
+2. The returned content is placed into the `ResearchState` or `DraftState` for other agents to refine.  
+3. Because `gpt_researcher` has its own subtopic logic, you can re-invoke it with `report_type="subtopic_report"` for deeper exploration or additional sections.
+
+---
+
+## How the Latest LangChain is Used
+
+While `multi_agents` does not directly import `langchain` from PyPI, it **does** rely on:
+
+- **`langchain_community.adapters.openai`** to convert messages into a form understood by `gpt_researcher` or OpenAI.  
+- **`langgraph.graph`** for building stateful workflows with nodes and edges (similar conceptually to chain-of-thought step frameworks).  
+- **`gpt_researcher`** itself, which internally uses a standard or updated “LangChain-style” approach to handle LLM calls, token counting, or streaming.  
+
+Hence, the code references classes or utility functions that wrap or adapt openai messages (like `convert_openai_messages`)—this is effectively an extension of standard LangChain patterns. In short:
+
+- “LangChain-like” usage is hidden behind `gpt_researcher.utils.llm.create_chat_completion()`.
+- `multi_agents` calls `call_model()` from `agents/utils/llms.py`, which in turn uses the `convert_openai_messages` for prompt translation and calls `create_chat_completion`.
+
+So the “latest LangChain” features (token usage, streaming, chunk-based calls, etc.) are leveraged **indirectly** through `gpt_researcher` and the `langchain_community` adapters.
+
+---
+
+## Typical Usage Example
+
+1. **Write a `task.json`** in `multi_agents` with your query and config:
+
+   ```json
+   {
+     "query": "Will AI overshadow classical computing?",
+     "model": "gpt-4o",
+     "max_sections": 4,
+     "follow_guidelines": true,
+     "guidelines": [
+       "Write in APA format",
+       "Use Spanish language",
+       "All references must have clickable hyperlinks."
+     ],
+     "verbose": true,
+     "source": "web",
+     "publish_formats": {
+       "pdf": true,
+       "docx": false,
+       "markdown": true
+     }
+   }
+   ```
+
+2. **Run** `python main.py`.  
+   - This calls `CEOAgent(task).run_research_task()` which:
+     1. Builds the top-level `StateGraph` with nodes for `ResearchAgent`, `DirectorAgent`, `StakeHolderAgent`, `WriterAgent`, etc.  
+     2. Steps through “browser” (initial research) → “planner” (outline) → “human” feedback → “researcher” (parallel sub-research) → “writer” (introduction, conclusion) → “publisher” (export).  
+   - If the `ReviewerAgent` or `ReviserAgent` is part of a sub-flow (like in `DirectorAgent.run_parallel_research`), it handles reviews and revisions.
+
+3. **Output** is saved in `outputs/<unique_folder>`. You might get a `.md` or `.pdf` file with the final content.
+
+---
+
+### Key Directories and Files
+
+1. **`multi_agents/__init__.py`**  
+   - Declares the project’s main exports.  
+   - Lines 3–11 import and re-export **ResearchAgent**, **WriterAgent**, **PublisherAgent**, **ReviserAgent**, **ReviewerAgent**, **DirectorAgent**, **CEOAgent**, plus memory typed-dicts **DraftState** and **ResearchState**.
+
+2. **`multi_agents/agent.py`**  
+   - A quick example usage. Lines 3–16 show how to instantiate `CEOAgent`, set a query, compile a `StateGraph`.  
+   - Not the main orchestrator (that is in `ceo.py`), but a demonstration file.
+
+3. **`multi_agents/agents`**  
+   - Contains **all** the specialized agent classes plus supporting utilities:
+
+   - **`agents/__init__.py`**  
+     - Exports 8 agents: `CEOAgent`, `ResearchAgent`, `WriterAgent`, `DirectorAgent`, `PublisherAgent`, `ReviserAgent`, `ReviewerAgent`, and `StakeHolderAgent`.
+     - Imports them in a top-down approach so `CEOAgent` is last (line 10).  
+
+   - **`agents/director.py`**  
+     - Class **`DirectorAgent`** (line 13).  
+     - Imports:  
+       ```python
+       from datetime import datetime
+       import asyncio
+       from typing import Dict, List, Optional
+       from langgraph.graph import StateGraph, END
+       from .utils.views import print_agent_output
+       from .utils.llms import call_model
+       from ..memory.draft import DraftState
+       from . import ResearchAgent, ReviewerAgent, ReviserAgent
+       ```
+     - Responsible for *planning* the research outline (lines 21–49) and orchestrating sub-steps in parallel (lines 51–75).  
+     - It creates a local workflow: “researcher → reviewer → reviser,” with conditional edges (lines 130–143).  
+     - The `_create_workflow` method (line 125) returns a `StateGraph(DraftState)` object, enabling parallel tasks for each subtopic.
+
+   - **`agents/stakeholder.py`**  
+     - Class **`StakeHolderAgent`** (line 5).  
+     - If `include_human_feedback` is `True`, it prompts a user or a socket (lines 19–45) for manual feedback.  
+     - Returns a dict with `{"human_feedback": <text or None>}`.
+
+   - **`agents/ceo.py`**  
+     - Class **`CEOAgent`** (line 19).  
+     - The top-level orchestrator. The method `init_research_team()` (line 83) builds a `StateGraph(ResearchState)`.  
+     - `_create_workflow(...)` (line 52) wires the top-level flow:  
+       - "browser" → "planner" → "human" → "researcher" → "writer" → "publisher" → `END`, with a conditional edge from `human` that can jump to `"accept": "researcher"` or `"revise": "planner"`.  
+     - `run_research_task(...)` (line 95) compiles the graph and asynchronously runs it.
+
+   - **`agents/publisher.py`**  
+     - Class **`PublisherAgent`** (line 9).  
+     - Imports:
+       ```python
+       from .utils.file_formats import write_md_to_pdf, write_md_to_word, write_text_to_md
+       from .utils.views import print_agent_output
+       ```
+     - Gathers final data from `research_state`, calls `generate_layout(...)` (line 18–45) to produce a Markdown string, then calls `write_report_by_formats(...)` to convert it to PDF, DOCX, or Markdown.
+
+   - **`agents/researcher.py`**  
+     - Class **`ResearchAgent`** (line 6).  
+     - **Directly uses `GPTResearcher`** from `gpt_researcher` (line 1).  
+     - Exposes:
+       - `research(...)` (line 13): instantiates a GPTResearcher, calls `conduct_research()` then `write_report()`.  
+       - `run_subtopic_research(...)` (line 25): calls `research(...)` with `"subtopic_report"`.  
+       - `run_initial_research(...)` (line 34): initial broad search.  
+       - `run_depth_research(...)` (line 46): deeper subtopic-based research.
+
+   - **`agents/reviewer.py`**  
+     - Class **`ReviewerAgent`** (line 9).  
+     - Checks a draft against guidelines. If it passes, returns `None`. Otherwise returns revision notes.  
+     - Relies on `call_model(...)` from `agents/utils/llms.py`.
+
+   - **`agents/reviser.py`**  
+     - Class **`ReviserAgent`** (line 15).  
+     - Revises a draft based on `ReviewerAgent` notes. Returns a new version plus short explanation.  
+     - The returned JSON must match a certain format (`sample_revision_notes`).
+
+   - **`agents/writer.py`**  
+     - Class **`WriterAgent`** (line 16).  
+     - Assembles introduction, conclusion, references into a single JSON structure.  
+     - If `task["follow_guidelines"]` is `True`, calls `revise_headers(...)` (line 69) to ensure compliance with guidelines.
+
+   - **`agents/utils`** (Utility subfolder)  
+     - **`__init__.py`**: empty.  
+     - **`file_formats.py`**: asynchronous file write helpers and conversions to `.md`, `.pdf`, `.docx`. (lines 21–102).  
+     - **`llms.py`**: function `call_model(prompt, model, response_format=None)` (lines 11–46).  
+       - Ultimately calls `gpt_researcher.utils.llm.create_chat_completion(...)` under the hood.  
+       - Uses `convert_openai_messages(...)` from `langchain_community.adapters.openai`.  
+     - **`pdf_styles.css`**: CSS used by `md2pdf` for styling PDF outputs.  
+     - **`utils.py`**: a single `sanitize_filename(...)` function (line 3) that replaces illegal path characters.  
+     - **`views.py`**: `print_agent_output(output: str, agent: str="RESEARCHER")` printing color-coded text via `colorama`.  
+
+4. **`multi_agents/langgraph.json`**  
+   - A small config for the `langgraph-cli`, referencing Python version and the “graphs” it can run (line 7).
+
+5. **`multi_agents/main.py`**  
+   - The typical entry point for running the entire pipeline.  
+   - `open_task()` (line 17) reads `task.json`, merges with defaults.  
+   - `run_research_task(query, ...)` (lines 31–41) updates the `task["query"]` with the given string, then builds a `CEOAgent` and calls `.run_research_task()`.  
+   - `main()` (line 43) directly runs the pipeline using the default `task.json`.
+
+6. **`multi_agents/memory`**  
+   - **`__init__.py`**: re-exports `DraftState`, `ResearchState`.  
+   - **`draft.py`**: `DraftState` typed dictionary (line 5) with `task`, `topic`, `draft`, `review`, `revision_notes`.  
+   - **`research.py`**: `ResearchState` typed dictionary (line 5) with `task`, `initial_research`, `sections`, `research_data`, `human_feedback`, plus layout fields like `title`, `headers`, `date`, `table_of_contents`, etc.
+
+7. **`multi_agents/package.json`**  
+   - Node-based dependencies for integration with `langgraph-cli`. Not essential to the Python code, but used by some deployment or automation scenarios.
+
+8. **`multi_agents/requirements.txt`**  
+   - Lists required Python packages: `langgraph`, `gpt_researcher`, `langgraph-cli`, `python-dotenv`, `weasyprint`, `json5`, `loguru`.
+
+9. **`multi_agents/task.json`**  
+   - A typical example configuration for a run, including:
+     ```json
+     {
+       "query": "Is AI in a hype cycle?",
+       "max_sections": 3,
+       "publish_formats": { "markdown": true, "pdf": true, "docx": true },
+       "include_human_feedback": false,
+       "follow_guidelines": false,
+       "model": "gpt-4o",
+       "guidelines": [...],
+       "verbose": true
+     }
+     ```
+   - Adjust these fields to shape the entire multi-agent pipeline behavior.
+---
+
+## Imports & Code Samples
+
+Below are crucial import patterns used throughout **`multi_agents`**:
+
+1. **`langgraph.graph`** for `StateGraph`:
+   ```python
+   from langgraph.graph import StateGraph, END
+   ```
+2. **`gpt_researcher`** for the core LLM-based research:
+   ```python
+   from gpt_researcher import GPTResearcher
+   from gpt_researcher.config.config import Config
+   from gpt_researcher.utils.llm import create_chat_completion
+   ```
+3. **`colorama`** (fore, style) for color-coded console prints:
+   ```python
+   from colorama import Fore, Style
+   ```
+4. **`json5`** & **`json_repair`** for flexible JSON parsing:
+   ```python
+   import json5 as json
+   import json_repair
+   ```
+5. **Utilities** in `agents/utils/`:
+   - `file_formats.py` → `write_md_to_pdf`, `write_md_to_word`, `write_text_to_md`
+   - `llms.py` → `call_model(...)`, references `convert_openai_messages(...)`
+   - `views.py` → `print_agent_output(...)`
+   - `utils.py` → `sanitize_filename(...)`
+
+**Example**: A partial snippet from `reviser.py`, lines 22–52, showing usage of these imports:
+
+```python
+from .utils.views import print_agent_output
+from .utils.llms import call_model
+import json
+
+sample_revision_notes = """
+{
+  "draft": { 
+    draft title: The revised draft ...
+  },
+  "revision_notes": ...
+}
+"""
+
+class ReviserAgent:
+    def __init__(self, websocket=None, stream_output=None, headers=None):
+        self.websocket = websocket
+        self.stream_output = stream_output
+        self.headers = headers or {}
+
+    async def revise_draft(self, draft_state: dict):
+        review = draft_state.get("review")
+        task = draft_state.get("task")
+        draft_report = draft_state.get("draft")
+        prompt = [
+            {
+                "role": "system",
+                "content": "You are an expert writer. Your goal is to revise drafts based on reviewer notes."
+            },
+            {
+                "role": "user",
+                "content": f"""Draft:\n{draft_report}" + "Reviewer's notes:\n{review}\n\n
+You MUST return nothing but a JSON in the following format:
+{sample_revision_notes}"""
+            },
+        ]
+        response = await call_model(
+            prompt,
+            model=task.get("model"),
+            response_format="json",
+        )
+        return response
+```
+
+**Line 43** finalizes by returning the JSON response from the LLM.
+
+---
+
+## 5. Example: Changing the Flow or Adding Agents
+
+**Flow Modifications**:
+
+- In `CEOAgent._add_workflow_edges()` (line 68–81), you see lines:
+  ```python
+  workflow.add_edge('browser', 'planner')
+  workflow.add_edge('planner', 'human')
+  workflow.add_edge('researcher', 'writer')
+  ...
+  workflow.add_conditional_edges(
+      'human',
+      lambda review: "accept" if review['human_feedback'] is None else "revise",
+      {"accept": "researcher", "revise": "planner"}
+  )
+  ```
+- If you want a new node or a different route, add or remove edges. For instance:
+  ```python
+  workflow.add_node("some_new_agent", SomeNewAgent().run)
+  workflow.add_edge("writer", "some_new_agent")
+  workflow.add_edge("some_new_agent", "publisher")
+  ```
+- Or to remove `human` feedback, remove the node or skip the “human” edge connections.
+
+**Adding a New Agent**:
+
+1. Create a file `myagent.py` in `agents/` with a class `MyAgent`.  
+2. Provide a `run(self, state: dict)` or similarly named method.  
+3. Add it to `agents/__init__.py` so it’s accessible:
+   ```python
+   from .myagent import MyAgent
+   __all__ = [..., "MyAgent"]
+   ```
+4. Update `CEOAgent._initialize_agents()` if you want to reference it:
+   ```python
+   def _initialize_agents(self):
+       return {
+           "writer": WriterAgent(...),
+           "myagent": MyAgent(...),
+           ...
+       }
+   ```
+5. Insert it into the workflow in `_create_workflow(...)`.
+
+---
+
+## 6. Where LangChain is Used
+
+- **Direct references** to “latest LangChain” are minimal. Instead, you see:
+  ```python
+  from langchain_community.adapters.openai import convert_openai_messages
+  from gpt_researcher.utils.llm import create_chat_completion
+  ```
+- The code effectively uses a “LangChain-like” mechanism under the hood of `gpt_researcher`. The adapter `convert_openai_messages` helps transform typical ChatGPT-style prompts to the appropriate format.  
+- The “multi_agents” code calls `call_model(...)`, which calls `create_chat_completion(...)`, which leverages the “langchain_community” or “LangChain” approach to handle the chat messages, cost tracking, token usage, etc.  
+- **`langgraph`** is a separate library for building the state machine. It’s conceptually similar to how LangChain can chain sub-agents, but it’s not the official `langchain` library. So you see references to `langgraph.graph.StateGraph` instead of “chains” or “agents” from official “LangChain” modules.
+
+---
+## 7. Eeasy to follow guide on how to add human feedback to the Langgraph process.
+
+### Step 1: Pick Your Agents
+
+There are a minimum of three agents required in a human feedback loop:
+1. A "Display" agent that will show content to the human and collect feedback
+2. A "Handler" agent that will process and use the feedback
+3. A "Flow Manager" agent that controls the workflow
+
+### Step 2: Set Up Your Feedback Point
+
+1. In your Display agent, create a feedback collection method:
+```python
+async def get_feedback(self, state: dict):
+    # Get what needs review from the state
+    content = state.get("content_to_review")
+    
+    # Get human input (can be console, web interface, etc.)
+    feedback = input(f"Review this: {content}\nFeedback (or 'ok' if good):\n> ")
+    
+    # Return standardized feedback format
+    return {"feedback": None if feedback.lower() == "ok" else feedback}
+```
+
+2. In your Handler agent, add feedback processing:
+```python
+async def process_with_feedback(self, state: dict):
+    # Check for feedback
+    feedback = state.get("feedback")
+    
+    if feedback:
+        # Modify your process based on feedback
+        # Return modified state
+        return {"modified": True, "result": "new_result"}
+    
+    # Continue normal process if no feedback
+    return {"modified": False, "result": "normal_result"}
+```
+
+### Step 3: Set Up the Flow
+
+In your Flow Manager agent, create the workflow:
+```python
+def create_workflow(self):
+    workflow = StateGraph(YourStateType)
+    
+    # Add your nodes
+    workflow.add_node("show", display_agent.get_feedback)
+    workflow.add_node("process", handler_agent.process_with_feedback)
+    
+    # Basic flow
+    workflow.add_edge("previous_step", "show")
+    
+    # Add decision point
+    workflow.add_conditional_edges(
+        "show",
+        lambda x: "continue" if x["feedback"] is None else "revise",
+        {
+            "continue": "next_step",  # When human approves
+            "revise": "process"       # When human gives feedback
+        }
+    )
+```
+
+### How It Works
+
+Think of it like a review process:
+1. Something is shown to the human
+2. Human either:
+   - Approves it → continue to next step
+   - Gives feedback → goes to handler for changes
+3. If changes were made, can loop back for another review
+
+### Example Use Cases
+
+You can add human feedback at any point where you need human oversight:
+- Reviewing plans or outlines
+- Checking generated content
+- Validating results
+- Making strategic decisions
+
+### Tips for Implementation
+
+1. **State Management**
+   - Keep feedback in a consistent format
+   - Make sure state includes all needed context
+
+2. **Feedback Collection**
+   - Make prompts clear and specific
+   - Provide format instructions
+   - Handle different input methods (console/web/etc)
+
+3. **Flow Control**
+   - Consider how many review cycles to allow
+   - Plan for timeout or skip scenarios
+   - Think about parallel vs sequential reviews 
+
+---
+# Using **browser_use** is fairly direct:
+1. Create a **Browser**.
+2. Pick an **LLM**.
+3. Create a **Controller** (with default or custom actions).
+4. Instantiate an **Agent** (give it a “task”).
+5. Run the **Agent** to watch it navigate and interact with pages.
+
+from typing import Literal, Optional
+
+from pydantic import BaseModel
+
+
+# Action Input Models
+class SearchGoogleAction(BaseModel):
+	query: str
+
+
+class GoToUrlAction(BaseModel):
+	url: str
+
+
+class ClickElementAction(BaseModel):
+	index: int
+	xpath: Optional[str] = None
+
+
+class InputTextAction(BaseModel):
+	index: int
+	text: str
+	xpath: Optional[str] = None
+
+
+class DoneAction(BaseModel):
+	text: str
+
+
+class SwitchTabAction(BaseModel):
+	page_id: int
+
+
+class OpenTabAction(BaseModel):
+	url: str
+
+
+class ExtractPageContentAction(BaseModel):
+	value: Literal['text', 'markdown', 'html'] = 'text'
+
+
+class ScrollAction(BaseModel):
+	amount: Optional[int] = None  # The number of pixels to scroll. If None, scroll down/up one page
+
+
+class SendKeysAction(BaseModel):
+	keys: str
+
+
+# Browser-Use Agent Development Guide 2025
+
+## 1. Common Mistakes to Avoid
+```python
+❌ WRONG APPROACH (What you DONT do):
+- Created complex nested data structures (lists of dicts, nested objects)
+- Used complex type hints like dict[str, float], list[dict]
+- Tried to make the agent handle too much structured data
+
+✅ CORRECT APPROACH:
+- Use simple, flat data structures
+- Stick to basic types (str, int, float, bool)
+- Let the agent format data as strings
+```
+
+## 2. Data Structure Best Practices
+```python
+# ❌ WRONG - Complex nested structures
+class BadTrendAnalysis(BaseModel):
+    trending_hashtags: list[str]
+    viral_posts: list[dict]  # Will cause issues
+    price_sentiment: dict[str, float]  # Will cause issues
+    marketplace_sentiment: dict[str, float]  # Will cause issues
+
+# ✅ CORRECT - Flat, simple structures
+class GoodTrendAnalysis(BaseModel):
+    top_hashtags: str  # Simple string field
+    top_posts: str    # Simple string field
+    price_trends: str # Simple string field
+    market_sentiment: str # Simple string field
+```
+
+## 3. Agent Task Structure
+```python
+# ❌ WRONG - Vague or overly complex instructions
+task="""Find all trending topics and analyze sentiment with 
+        complex statistical analysis..."""
+
+# ✅ CORRECT - Clear, structured instructions
+task="""Go to X.com and analyze current trends around headphones/earbuds, focusing on:
+       1. Popular Discussions:
+          - Search for trending posts with #headphones, #earbuds
+          - Look for viral posts
+       2. Price Discussions:
+          - Find threads about budget headphones
+          - Track sentiment
+       [etc...]"""
+```
+
+## 4. Browser-Use Package Requirements
+```python
+1. Every agent needs:
+   - Browser configuration
+   - Controller
+   - LLM setup
+   - Task definition
+   - Data model for output
+
+2. Standard Setup Pattern:
+   browser = Browser(config=BrowserConfig(...))
+   controller = Controller()
+   llm = ChatOpenAI/ChatGoogleGenerativeAI(...)
+   agent = Agent(task, llm, browser, controller)
+```
+
+## 8. Final Notes & Guidelines
+
+- **Everything** about how each agent is named, structured, and orchestrated is found in these files.  
+- The typical workflow is:  
+  1. A user edits `task.json`.  
+  2. Runs `python main.py`.  
+  3. The system loads `task.json`, initializes `CEOAgent`, compiles the `StateGraph`, and runs it.  
+  4. Agents do research, plan, revise, or publish—some steps happen in parallel or with feedback loops.  
+- The design is intentionally modular and dynamic; you can reorder or skip agents by modifying the edges in `CEOAgent._add_workflow_edges()` or similar sub-graphs in `DirectorAgent._create_workflow()`.
+- **Multi-Agent Coordination**: Each agent has a single responsibility—researching, writing, reviewing, revising, publishing.  
+- **State Graph**: The `langgraph.StateGraph` orchestrates the order, parallelism, and conditional transitions.  
+- **Dynamic Flow**: You can jump back to earlier agents if the review deems changes necessary.  
+- **Modular**: Agents are easy to add or remove. Just place new classes in `agents/`, create `StateGraph` nodes, and wire up edges.  
+- **Integration with GPT**: All LLM calls or searching are offloaded to `gpt_researcher`, which internally uses an updated LangChain-like approach.  
+- **User Feedback**: `StakeHolderAgent` can gather or skip user input.  
+- **Extend or Modify**: If you add new states or steps, remain consistent with the typed dictionaries in `memory/` and follow the existing docstring patterns, so the pipeline remains cohesive.
+Guidelines:
+- Only use **MODERN** documentation and NEVER older methods
+- Use chain of thought reasoning to systematically run through every line of code you are faced with.
+- Be methodical and systematic venturing into the reach of the project's beyond, dodging every error and bug that could possibly inhibit your perfect performance.
+- Always develop Types first. In professional development, defining the data structures and interfaces (types) before implementing the core logic helps establish a clear contract and architecture.
+-Your type-first approach makes your subsequent implementation more structured and less prone to design changes. Use Pydantic V2 (≥2.6.1) for defining data models, leveraging its robust validation and serialization capabilities.
+- Don't rush!!
+- Code might already exist so you **ALWAYS** have to familarize yourself with the user's codebase. This includes always being aware of the current project tree, both in ASCII and mermaid, the flow of each file and it's specific job in the grand scheme of the codebase, how everything ties together, and the specific libraries and versions of the libraries in the users package.json/requirements.txt.
+- Never assume and always verify. That means error-free, bug-free, efficient, clean, maintainable, and perfect streamlined code that developers strive to achieve.
+- Never over complicate
+- You are the future of the present. You only use the BRAND NEW Models the user tells you, not any models you think exist. This is because you are acting like you are in the future. Thus, when working with AI developing never say it doesn't exist and NEVER use a substitute To the one, the user provided, even if there are errors, there's never gonna be a situation where the model provided is the issue. It's always something else. Every. Single. Time. You NEVER use old documentation. The models you are required to use are 'gpt-4o-2024-11-20' for OpenAI (they just released it in 2025 even thought it says 2024. Ugh!)
+- **OpenAI DEVELOPMENT**: You are required to use the brand new latest 2025 model: **'gpt-4o-2024-11-20'**!!
+- !!!NEVER use 'gpt-4' or 'gpt-4-turbo' or 'gpt-4-turbo-preview', 'gpt-3.5'!!!
+
+**You (the LLM developer)** must ensure new features or changes respect these established patterns, maintain naming consistency (e.g., `XAgent` for new classes), and remain cohesive with the typed-dict memory states (`DraftState`/`ResearchState`).
+
+
